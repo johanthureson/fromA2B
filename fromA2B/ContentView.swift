@@ -12,8 +12,6 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     
-    // yes, you can edit here
-    
     var body: some View {
         NavigationView {
             List {
