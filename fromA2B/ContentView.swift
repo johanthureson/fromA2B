@@ -5,6 +5,20 @@
 //  Created by Johan Thureson on 2023-06-06.
 //
 
+/*
+api_468339455
+https://api.lyko.tech/v2/docs/
+ 
+ curl -X 'GET' \
+   'https://api.lyko.tech/v2/addresses?text=12%20Rue%20Sainte-Foy%2C%2075002%20Paris%2C%20France&lat=48.868714&lng=2.351026&limit=10&locale=en' \
+   -H 'accept: application/json' -H 'X-Api-Key: api_468339455'
+
+ curl -X 'GET' \
+   'https://api.lyko.tech/v2/addresses?lat=48.868714&lng=2.351026&limit=10&locale=en' \
+   -H 'accept: application/json' -H 'X-Api-Key: api_468339455'
+
+*/
+
 import SwiftUI
 import SwiftData
 
