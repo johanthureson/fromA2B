@@ -16,7 +16,6 @@
 		4D9A518A2A2EA2EF00647958 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51892A2EA2EF00647958 /* ContentView.swift */; };
 		4D9A518C2A2EA2F000647958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9A518B2A2EA2F000647958 /* Assets.xcassets */; };
 		4D9A518F2A2EA2F000647958 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9A518E2A2EA2F000647958 /* Preview Assets.xcassets */; };
-		4D9A51912A2EA2F000647958 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51902A2EA2F000647958 /* Item.swift */; };
 		4D9A519D2A2EA2F000647958 /* fromA2BTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A519C2A2EA2F000647958 /* fromA2BTests.swift */; };
 		4D9A51A72A2EA2F000647958 /* fromA2BUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51A62A2EA2F000647958 /* fromA2BUITests.swift */; };
 		4D9A51A92A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51A82A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift */; };
@@ -50,7 +49,6 @@
 		4D9A51892A2EA2EF00647958 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4D9A518B2A2EA2F000647958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D9A518E2A2EA2F000647958 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4D9A51902A2EA2F000647958 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4D9A51922A2EA2F000647958 /* fromA2B.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fromA2B.entitlements; sourceTree = "<group>"; };
 		4D9A51932A2EA2F000647958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D9A51982A2EA2F000647958 /* fromA2BTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fromA2BTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +114,6 @@
 				4D9A518B2A2EA2F000647958 /* Assets.xcassets */,
 				4D9A51872A2EA2EF00647958 /* fromA2BApp.swift */,
 				4D9A51892A2EA2EF00647958 /* ContentView.swift */,
-				4D9A51902A2EA2F000647958 /* Item.swift */,
 				4D9A51922A2EA2F000647958 /* fromA2B.entitlements */,
 				4D9A51932A2EA2F000647958 /* Info.plist */,
 				4D9A518D2A2EA2F000647958 /* Preview Content */,
@@ -281,7 +278,6 @@
 			files = (
 				4D9A518A2A2EA2EF00647958 /* ContentView.swift in Sources */,
 				4D1895552A6BB96500F3570A /* StopSelectionView.swift in Sources */,
-				4D9A51912A2EA2F000647958 /* Item.swift in Sources */,
 				4D18955B2A6BB9C600F3570A /* AppModel.swift in Sources */,
 				4D9A51882A2EA2EF00647958 /* fromA2BApp.swift in Sources */,
 				4D1895572A6BB96D00F3570A /* TripResultsView.swift in Sources */,

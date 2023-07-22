@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct fromA2BApp: App {
@@ -18,6 +17,5 @@ struct fromA2BApp: App {
             ContentView()
                 .environment(appModel)
         }
-        .modelContainer(for: Item.self)
     }
 }
