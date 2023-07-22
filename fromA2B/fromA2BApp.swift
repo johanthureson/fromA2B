@@ -10,10 +10,13 @@ import SwiftData
 
 @main
 struct fromA2BApp: App {
+    
+    @State private var appModel = AppModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(appModel)
         }
         .modelContainer(for: Item.self)
     }

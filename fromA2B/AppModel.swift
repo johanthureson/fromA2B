@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+@Observable class AppModel: Identifiable {
+    
+    
+    
+}
