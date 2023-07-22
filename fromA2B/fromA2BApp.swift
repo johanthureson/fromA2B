@@ -15,7 +15,7 @@ struct fromA2BApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabView()
+            ContentView()
                 .environment(appModel)
         }
         .modelContainer(for: Item.self)

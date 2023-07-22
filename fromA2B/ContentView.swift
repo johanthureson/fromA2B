@@ -1,5 +1,5 @@
 //
-//  TabView.swift
+//  ContentView.swift
 //  fromA2B
 //
 //  Created by Johan Thureson on 2023-06-06.
@@ -55,7 +55,7 @@ https://api.lyko.tech/v2/docs/
 import SwiftUI
 import SwiftData
 
-struct TabView: View {
+struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     
@@ -102,6 +102,6 @@ struct TabView: View {
 }
 
 #Preview {
-    TabView()
+    ContentView()
         .modelContainer(for: Item.self, inMemory: true)
 }
