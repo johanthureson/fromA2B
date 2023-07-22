@@ -7,9 +7,22 @@
 
 import SwiftUI
 
+@Observable private final class ViewModel {
+    var title = "Hello, World!"
+}
+
 struct TripDetailsView: View {
+    
+    @State private var viewModel = ViewModel()
+
     var body: some View {
-        Text("Hello, World!")
+        
+        VStack {
+            
+            Text(viewModel.title)
+            
+        }
+        
     }
 }
 

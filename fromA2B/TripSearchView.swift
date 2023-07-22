@@ -7,9 +7,29 @@
 
 import SwiftUI
 
+@Observable private final class ViewModel {
+    var title = "Hello, World!"
+}
+
 struct TripSearchView: View {
+
+    @State private var viewModel = ViewModel()
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        VStack {
+            
+            Text(viewModel.title)
+                .padding()
+            
+            Button {
+                viewModel.title = "viewModel update works!"
+            } label: {
+                Image(systemName: "plus")
+            }
+            .padding()
+            
+        }
     }
 }
 
