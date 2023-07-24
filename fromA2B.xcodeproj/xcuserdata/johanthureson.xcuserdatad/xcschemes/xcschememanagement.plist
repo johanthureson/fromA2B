@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>fromA2B-swedish.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>fromA2B.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4D9A51832A2EA2EF00647958</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D9A51972A2EA2F000647958</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D9A51A12A2EA2F000647958</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

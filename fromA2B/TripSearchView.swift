@@ -8,12 +8,14 @@
 import SwiftUI
 
 @Observable private final class ViewModel {
-    var title = "Hello, World!"
+    var title = String(localized: "tripSearchView.helloWorld")
+    //"Hello, World!"
 }
 
 struct TripSearchView: View {
 
     @State private var viewModel = ViewModel()
+    @State private var count = -1
     
     var body: some View {
         
@@ -23,7 +25,10 @@ struct TripSearchView: View {
                 .padding()
             
             Button {
-                viewModel.title = "viewModel update works!"
+                count += 1
+                viewModel.title = String(localized: "\(count) points")
+                // "viewModel update works!"
+
             } label: {
                 Image(systemName: "plus")
             }
