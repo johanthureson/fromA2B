@@ -126,33 +126,33 @@
 		4D2D915C2A6F46D0005F18CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4D2D915D2A6F46D9005F18CB /* Stops */,
-				4D2D915E2A6F46E7005F18CB /* Trips */,
+				4D2D91652A6F4724005F18CB /* StopResponse.swift */,
+				4D2D91762A6F4731005F18CB /* TripResponse.swift */,
+				4D2D915D2A6F46D9005F18CB /* StopResponse */,
+				4D2D915E2A6F46E7005F18CB /* TripResponse */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		4D2D915D2A6F46D9005F18CB /* Stops */ = {
+		4D2D915D2A6F46D9005F18CB /* StopResponse */ = {
 			isa = PBXGroup;
 			children = (
 				4D2D91622A6F4724005F18CB /* Icon.swift */,
-				4D2D91652A6F4724005F18CB /* StopResponse.swift */,
 				4D2D91632A6F4724005F18CB /* ProductAtStop.swift */,
 				4D2D91602A6F4724005F18CB /* StopLocation.swift */,
 				4D2D91612A6F4724005F18CB /* StopLocationOrCoordLocation.swift */,
 				4D2D915F2A6F4724005F18CB /* TechnicalMessage.swift */,
 				4D2D91642A6F4724005F18CB /* TechnicalMessages.swift */,
 			);
-			path = Stops;
+			path = StopResponse;
 			sourceTree = "<group>";
 		};
-		4D2D915E2A6F46E7005F18CB /* Trips */ = {
+		4D2D915E2A6F46E7005F18CB /* TripResponse */ = {
 			isa = PBXGroup;
 			children = (
 				4D2D91722A6F4731005F18CB /* Destination.swift */,
 				4D2D91792A6F4731005F18CB /* GisRef.swift */,
 				4D2D91742A6F4731005F18CB /* GisRoute.swift */,
-				4D2D91762A6F4731005F18CB /* TripResponse.swift */,
 				4D2D917A2A6F4732005F18CB /* Leg.swift */,
 				4D2D91702A6F4731005F18CB /* LegList.swift */,
 				4D2D916F2A6F4731005F18CB /* Origin.swift */,
@@ -162,7 +162,7 @@
 				4D2D91772A6F4731005F18CB /* Trip.swift */,
 				4D2D917B2A6F4732005F18CB /* TripStatus.swift */,
 			);
-			path = Trips;
+			path = TripResponse;
 			sourceTree = "<group>";
 		};
 		4D9A517B2A2EA2EF00647958 = {
