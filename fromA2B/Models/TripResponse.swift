@@ -14,6 +14,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 import Foundation
 
 struct TripResponse : Codable {
+    
 	let trip : [Trip]?
 	let resultStatus : ResultStatus?
 	let technicalMessages : TechnicalMessages?
