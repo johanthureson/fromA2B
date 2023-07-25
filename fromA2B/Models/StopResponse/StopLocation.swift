@@ -35,6 +35,20 @@ struct StopLocation : Codable {
 		case weight = "weight"
 		case products = "products"
 	}
+    
+    init(name: String, extId: String) {
+        
+        self.name = name
+        self.extId = extId
+
+        productAtStop = nil
+        timezoneOffset = nil
+        id = nil
+        lon = nil
+        lat = nil
+        weight = nil
+        products = nil
+    }
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)

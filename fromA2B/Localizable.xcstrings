@@ -54,6 +54,40 @@
         }
       }
     },
+    "stopButtonView.from" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "from"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "från"
+          }
+        }
+      }
+    },
+    "stopButtonView.to" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "to"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "till"
+          }
+        }
+      }
+    },
     "Trip Search" : {
       "localizations" : {
         "sv" : {
