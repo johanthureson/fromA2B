@@ -13,7 +13,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 
-/*
 struct StopResponse : Codable {
 	let stopLocationOrCoordLocation : [StopLocationOrCoordLocation]?
 	let technicalMessages : TechnicalMessages?
@@ -40,4 +39,4 @@ struct StopResponse : Codable {
 	}
 
 }
-*/
+
