@@ -86,6 +86,9 @@
 		4D2D917A2A6F4732005F18CB /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		4D2D917B2A6F4732005F18CB /* TripStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripStatus.swift; sourceTree = "<group>"; };
 		4D2D918B2A6FD644005F18CB /* StopButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopButtonView.swift; sourceTree = "<group>"; };
+		4D2D918E2A784580005F18CB /* location_origin.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = location_origin.json; sourceTree = "<group>"; };
+		4D2D918F2A7845A0005F18CB /* location_destination.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = location_destination.json; sourceTree = "<group>"; };
+		4D2D91902A7845AD005F18CB /* trip.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trip.json; sourceTree = "<group>"; };
 		4D9A51842A2EA2EF00647958 /* fromA2B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fromA2B.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9A51872A2EA2EF00647958 /* fromA2BApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BApp.swift; sourceTree = "<group>"; };
 		4D9A51892A2EA2EF00647958 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -212,6 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				4D9A518E2A2EA2F000647958 /* Preview Assets.xcassets */,
+				4D2D918E2A784580005F18CB /* location_origin.json */,
+				4D2D918F2A7845A0005F18CB /* location_destination.json */,
+				4D2D91902A7845AD005F18CB /* trip.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
