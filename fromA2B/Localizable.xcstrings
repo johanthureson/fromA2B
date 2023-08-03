@@ -54,6 +54,16 @@
         }
       }
     },
+    "Back to Main" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tillbaka till huvudvyn"
+          }
+        }
+      }
+    },
     "stopButtonView.from" : {
       "extractionState" : "manual",
       "localizations" : {
