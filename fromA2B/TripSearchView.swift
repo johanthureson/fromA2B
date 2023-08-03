@@ -7,37 +7,47 @@
 
 import SwiftUI
 
-@Observable private final class ViewModel {
+@Observable final class TripSearchViewModel {
+    
     var title = String(localized: "tripSearchView.helloWorld")
-    //"Hello, World!"
+    
+    var fromStopLocation: StopLocation?
+    var toStopLocation: StopLocation?
+    
+    init(fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
+        self.fromStopLocation = fromStopLocation
+        self.toStopLocation = toStopLocation
+    }
+    
+    var from = String(localized: "stopButtonView.from")
+    var to = String(localized: "stopButtonView.to")
 }
 
 struct TripSearchView: View {
 
-    @State private var viewModel = ViewModel()
-    @State private var count = -1
-    
+    @Bindable var viewModel = TripSearchViewModel()
+    @State private var showingSheet = false
+
     var body: some View {
         
         VStack {
             
-            Text(viewModel.title)
-                .padding()
-            
             Button {
-                count += 1
-                viewModel.title = String(localized: "\(count) points")
-                // "viewModel update works!"
-
+                showingSheet.toggle()
             } label: {
-                Image(systemName: "plus")
+                HStack {
+                    Text(viewModel.from)
+                    Text(viewModel.fromStopLocation?.name ?? "<>")
+                }
             }
             .padding()
-            
+            .sheet(isPresented: $showingSheet) {
+                StopSelectionView(selectedStopLocation: $viewModel.fromStopLocation, viewModel: StopSelectionViewModel(stopResponse: StopResponse.originStopResponse))
+            }
         }
     }
 }
 
 #Preview {
-    TripSearchView()
+    TripSearchView(viewModel: TripSearchViewModel(fromStopLocation: StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }
