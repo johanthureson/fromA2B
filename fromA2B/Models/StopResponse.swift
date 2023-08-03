@@ -13,7 +13,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 
-struct StopResponse : Codable {
+public struct StopResponse : Codable {
     
 	let stopLocationOrCoordLocation : [StopLocationOrCoordLocation]?
 	let technicalMessages : TechnicalMessages?
@@ -30,7 +30,7 @@ struct StopResponse : Codable {
 		case requestId = "requestId"
 	}
 
-	init(from decoder: Decoder) throws {
+	public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		stopLocationOrCoordLocation = try values.decodeIfPresent([StopLocationOrCoordLocation].self, forKey: .stopLocationOrCoordLocation)
 		technicalMessages = try values.decodeIfPresent(TechnicalMessages.self, forKey: .technicalMessages)

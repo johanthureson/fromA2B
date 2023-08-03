@@ -12,7 +12,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct StopLocationOrCoordLocation : Codable {
+struct StopLocationOrCoordLocation : Codable, Identifiable {
+    
+    var id = UUID()
+    
 	let stopLocation : StopLocation?
 
 	enum CodingKeys: String, CodingKey {
