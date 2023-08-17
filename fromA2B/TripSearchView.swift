@@ -35,7 +35,7 @@ struct TripSearchView: View {
         
         @Bindable var bindableTripSearchModel = tripSearchModel
 
-        VStack {
+        NavigationStack {
             
             Button {
                 showingFromSheet.toggle()
@@ -63,6 +63,12 @@ struct TripSearchView: View {
                 StopSelectionView(selectedStopLocation: $bindableTripSearchModel.toStopLocation)
             }
 
+            NavigationLink("Search") {
+                TripResultsView()
+            }
+            .disabled(tripSearchModel.fromStopLocation == nil || tripSearchModel.toStopLocation == nil)
+            .padding()
+            
         }
     }
     

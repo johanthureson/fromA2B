@@ -64,6 +64,16 @@
         }
       }
     },
+    "Search" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sök"
+          }
+        }
+      }
+    },
     "stopButtonView.from" : {
       "extractionState" : "manual",
       "localizations" : {
