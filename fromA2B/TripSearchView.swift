@@ -27,7 +27,8 @@ import Observation
 struct TripSearchView: View {
 
     @Bindable var viewModel = TripSearchViewModel()
-    @State private var showingSheet = false
+    @State private var showingFromSheet = false
+    @State private var showingToSheet = false
     @Environment(\.tripSearchModel) private var tripSearchModel
 
     var body: some View {
@@ -37,7 +38,7 @@ struct TripSearchView: View {
         VStack {
             
             Button {
-                showingSheet.toggle()
+                showingFromSheet.toggle()
             } label: {
                 HStack {
                     Text(viewModel.from)
@@ -45,11 +46,26 @@ struct TripSearchView: View {
                 }
             }
             .padding()
-            .sheet(isPresented: $showingSheet) {
+            .sheet(isPresented: $showingFromSheet) {
                 StopSelectionView(selectedStopLocation: $bindableTripSearchModel.fromStopLocation)
             }
+            
+            Button {
+                showingToSheet.toggle()
+            } label: {
+                HStack {
+                    Text(viewModel.to)
+                    Text(tripSearchModel.toStopLocation?.name ?? "<>")
+                }
+            }
+            .padding()
+            .sheet(isPresented: $showingToSheet) {
+                StopSelectionView(selectedStopLocation: $bindableTripSearchModel.toStopLocation)
+            }
+
         }
     }
+    
 }
 
 #Preview {

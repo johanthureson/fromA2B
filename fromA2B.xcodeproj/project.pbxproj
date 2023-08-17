@@ -32,7 +32,6 @@
 		4D2D91882A6F4732005F18CB /* GisRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91792A6F4731005F18CB /* GisRef.swift */; };
 		4D2D91892A6F4732005F18CB /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D917A2A6F4732005F18CB /* Leg.swift */; };
 		4D2D918A2A6F4732005F18CB /* TripStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D917B2A6F4732005F18CB /* TripStatus.swift */; };
-		4D2D918C2A6FD644005F18CB /* StopButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D918B2A6FD644005F18CB /* StopButtonView.swift */; };
 		4D2D91922A7945D5005F18CB /* StopResponse+json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91912A7945D5005F18CB /* StopResponse+json.swift */; };
 		4D2D91942A7965F0005F18CB /* location_origin.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D918E2A784580005F18CB /* location_origin.json */; };
 		4D2D91952A7965F1005F18CB /* location_origin.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D918E2A784580005F18CB /* location_origin.json */; };
@@ -98,7 +97,6 @@
 		4D2D91792A6F4731005F18CB /* GisRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GisRef.swift; sourceTree = "<group>"; };
 		4D2D917A2A6F4732005F18CB /* Leg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		4D2D917B2A6F4732005F18CB /* TripStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripStatus.swift; sourceTree = "<group>"; };
-		4D2D918B2A6FD644005F18CB /* StopButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopButtonView.swift; sourceTree = "<group>"; };
 		4D2D918E2A784580005F18CB /* location_origin.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = location_origin.json; sourceTree = "<group>"; };
 		4D2D918F2A7845A0005F18CB /* location_destination.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = location_destination.json; sourceTree = "<group>"; };
 		4D2D91902A7845AD005F18CB /* trip.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trip.json; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				4D2D915C2A6F46D0005F18CB /* Models */,
 				4D18955A2A6BB9C600F3570A /* AppModel.swift */,
 				4D1895522A6BB95600F3570A /* TripSearchView.swift */,
-				4D2D918B2A6FD644005F18CB /* StopButtonView.swift */,
 				4D1895542A6BB96500F3570A /* StopSelectionView.swift */,
 				4D1895562A6BB96D00F3570A /* TripResultsView.swift */,
 				4D1895582A6BB97200F3570A /* TripDetailsView.swift */,
@@ -399,7 +396,6 @@
 			files = (
 				4D2D917D2A6F4732005F18CB /* ResultStatus.swift in Sources */,
 				4D2D91832A6F4732005F18CB /* GisRoute.swift in Sources */,
-				4D2D918C2A6FD644005F18CB /* StopButtonView.swift in Sources */,
 				4D9A518A2A2EA2EF00647958 /* ContentView.swift in Sources */,
 				4D2D918A2A6F4732005F18CB /* TripStatus.swift in Sources */,
 				4D2D91812A6F4732005F18CB /* Destination.swift in Sources */,
