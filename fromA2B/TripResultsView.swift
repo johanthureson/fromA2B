@@ -19,7 +19,7 @@ struct TripResultsView: View {
             
                 ForEach(TripResponse.tripResponse?.trip ?? []) { trip in
                     
-                    NavigationLink(destination: TripDetailsView()) {
+                    NavigationLink(destination: TripDetailsView(trip: trip)) {
                         VStack {
                             fromToText(trip: trip)
                                 .padding()

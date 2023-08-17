@@ -7,25 +7,54 @@
 
 import SwiftUI
 
-@Observable private final class ViewModel {
-    var title = "Hello, World!"
-}
-
 struct TripDetailsView: View {
     
-    @State private var viewModel = ViewModel()
+    var trip: Trip
 
     var body: some View {
         
+        
         VStack {
+            fromToText(trip: trip)
+                .padding()
+                .font(.title2)
             
-            Text(viewModel.title)
-            
+            ForEach(trip.legList?.leg ?? []) { leg in
+                
+                VStack {
+                    timeToTime(leg: leg)
+                    fromToText(leg: leg)
+                }
+                .padding()
+
+            }
         }
         
     }
+        
+    private func timeToTime(leg: Leg) -> some View {
+        
+        let fromTime = leg.origin?.time?.dropLast(3) ?? ""
+        let toTime = leg.destination?.time?.dropLast(3) ?? ""
+        return Text(fromTime + "-" + toTime)
+    }
+
+    private func fromToText(trip: Trip) -> some View {
+        
+        let fromText = trip.origin?.name ?? ""
+        let toText = trip.destination?.name ?? ""
+        return Text(fromText + " -> " + toText)
+    }
+    
+    private func fromToText(leg: Leg) -> some View {
+        
+        let fromText = leg.origin?.name ?? ""
+        let toText = leg.destination?.name ?? ""
+        return Text(fromText + " -> " + toText)
+    }
+
 }
 
 #Preview {
-    TripDetailsView()
+    TripDetailsView(trip: TripResponse.tripResponse!.trip!.first!)
 }
