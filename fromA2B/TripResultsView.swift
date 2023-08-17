@@ -7,23 +7,49 @@
 
 import SwiftUI
 
-@Observable private final class ViewModel {
-    var title = "Hello, World!"
-}
-
 struct TripResultsView: View {
     
-    @State private var viewModel = ViewModel()
+    @Environment(\.tripSearchModel) private var tripSearchModel
 
     var body: some View {
         
-        VStack {
+        NavigationStack {
             
-            Text(viewModel.title)
+            List {
             
+                ForEach(TripResponse.tripResponse?.trip ?? []) { trip in
+                    
+                    NavigationLink(destination: TripDetailsView()) {
+                        VStack {
+                            fromToText(trip: trip)
+                                .padding()
+                                .font(.title2)
+                            
+                            ForEach(trip.legList?.leg ?? []) { leg in
+                                fromToText(leg: leg)
+                                    .padding()
+                            }
+                        }
+                    }
+                }
+            }
         }
-        
     }
+    
+    private func fromToText(trip: Trip) -> some View {
+        
+        let fromText = trip.origin?.name ?? ""
+        let toText = trip.destination?.name ?? ""
+        return Text(fromText + " -> " + toText)
+    }
+    
+    private func fromToText(leg: Leg) -> some View {
+        
+        let fromText = leg.origin?.name ?? ""
+        let toText = leg.destination?.name ?? ""
+        return Text(fromText + " -> " + toText)
+    }
+
 }
 
 #Preview {

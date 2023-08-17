@@ -12,7 +12,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Leg : Codable {
+struct Leg : Codable, Identifiable {
+    
+    var id = UUID()
+    
 	let origin : Origin?
 	let destination : Destination?
 	let gisRef : GisRef?
