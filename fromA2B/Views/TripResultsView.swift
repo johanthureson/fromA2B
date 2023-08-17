@@ -6,14 +6,10 @@
 //
 
 import SwiftUI
-import Alamofire
 
 struct TripResultsView: View {
     
     @Environment(\.tripSearchModel) private var tripSearchModel
-    
-    var tripList : [Trip]?
-
 
     var body: some View {
         
@@ -23,7 +19,7 @@ struct TripResultsView: View {
             
                 ForEach(TripResponse.tripResponse?.trip ?? []) { trip in
                     
-                    NavigationLink(destination: TripDetailsView() /*TripDetailsView(trip: trip)*/ ) {
+                    NavigationLink(destination: TripDetailsView(trip: trip)) {
                         VStack {
                             fromToText(trip: trip)
                                 .padding()
@@ -38,20 +34,6 @@ struct TripResultsView: View {
                 }
             }
         }
-        .onAppear {
-            tripSearch()
-        }
-    }
-    
-    private func tripSearch() {
-        /*
-        tripSearchModel.fromStopLocation
-        tripSearchModel.toStopLocation
-         */
-        
-        
-        
-        
     }
     
     private func fromToText(trip: Trip) -> some View {
