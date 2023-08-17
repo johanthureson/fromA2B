@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Observation
 
 @Observable final class TripSearchViewModel {
     
@@ -27,9 +28,12 @@ struct TripSearchView: View {
 
     @Bindable var viewModel = TripSearchViewModel()
     @State private var showingSheet = false
+    @Environment(\.tripSearchModel) private var tripSearchModel
 
     var body: some View {
         
+        @Bindable var bindableTripSearchModel = tripSearchModel
+
         VStack {
             
             Button {
@@ -37,12 +41,12 @@ struct TripSearchView: View {
             } label: {
                 HStack {
                     Text(viewModel.from)
-                    Text(viewModel.fromStopLocation?.name ?? "<>")
+                    Text(tripSearchModel.fromStopLocation?.name ?? "<>")
                 }
             }
             .padding()
             .sheet(isPresented: $showingSheet) {
-                StopSelectionView(selectedStopLocation: $viewModel.fromStopLocation, viewModel: StopSelectionViewModel(stopResponse: StopResponse.originStopResponse))
+                StopSelectionView(selectedStopLocation: $bindableTripSearchModel.fromStopLocation)
             }
         }
     }

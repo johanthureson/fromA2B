@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Observation
 
 @Observable
 public final class StopSelectionViewModel {
@@ -19,13 +20,12 @@ public final class StopSelectionViewModel {
 
 struct StopSelectionView: View {
     
-    @Bindable private var viewModel = StopSelectionViewModel()
+    private var viewModel = StopSelectionViewModel()
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
     
-    init(selectedStopLocation: Binding<StopLocation?>, viewModel: StopSelectionViewModel = StopSelectionViewModel()) {
+    init(selectedStopLocation: Binding<StopLocation?>) {
         _selectedStopLocation = selectedStopLocation
-        self.viewModel = viewModel
     }
 
     var body: some View {
@@ -38,7 +38,7 @@ struct StopSelectionView: View {
             .padding()
             
             List {
-                ForEach(viewModel.stopResponse?.stopLocationOrCoordLocation ?? []) { stopLocationOrCoordLocation in
+                ForEach(StopResponse.originStopResponse?.stopLocationOrCoordLocation ?? []) { stopLocationOrCoordLocation in
                     VStack {
                         Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
                     }
@@ -53,5 +53,5 @@ struct StopSelectionView: View {
 }
 
 #Preview {
-    StopSelectionView(selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation), viewModel: StopSelectionViewModel(stopResponse: StopResponse.originStopResponse))
+    StopSelectionView(selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }

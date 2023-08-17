@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @Environment(AppModel.self) private var appModel
     
+    @State var tripSearchModel = TripSearchModel()
+
     var body: some View {
         
         TabView {
@@ -19,6 +21,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Trip Search", systemImage: "􀊫")
                 }
+                .environment(tripSearchModel)
 
         }
         
