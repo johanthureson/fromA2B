@@ -10,12 +10,9 @@ import SwiftUI
 @main
 struct fromA2BApp: App {
     
-    @State private var appModel = AppModel()
-
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(appModel)
         }
     }
 }

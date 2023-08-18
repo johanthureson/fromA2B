@@ -8,14 +8,6 @@
 import Foundation
 import SwiftUI
 
-@Observable class AppModel: Identifiable {
-    
-    
-    
-}
-
-
-
 @Observable
 public class TripSearchModel {
     var fromStopLocation: StopLocation?
