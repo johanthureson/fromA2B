@@ -10,11 +10,16 @@ import Observation
 
 struct StopSelectionView: View {
     
+    enum FocusField: Hashable {
+      case field
+    }
+
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
     @State private var bustStopName: String = ""
     @State private var stops: [StopLocationOrCoordLocation]?
     @State private var errorMessage = ""
+    @FocusState private var focusedField: FocusField?
     
     init(selectedStopLocation: Binding<StopLocation?>) {
         _selectedStopLocation = selectedStopLocation
@@ -29,13 +34,20 @@ struct StopSelectionView: View {
             }
             .padding()
             
-            TextField("Enter your name", text: $bustStopName)
+            TextField("Bus stop name", text: $bustStopName)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+                .focused($focusedField, equals: .field)
+                .onAppear {
+                    self.focusedField = .field
+                }
             
             Button("Search") {
                 Task {
                     await fetchStops()
                 }
             }
+            .padding()
 
             List {
                 ForEach(stops ?? []) { stopLocationOrCoordLocation in
