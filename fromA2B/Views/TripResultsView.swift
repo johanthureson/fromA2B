@@ -6,20 +6,72 @@
 //
 
 import SwiftUI
+import Alamofire
+import Observation
+
+@Observable
+class TripResultsViewModel {
+    
+    var fromStopLocation: StopLocation?
+    var toStopLocation: StopLocation?
+    var errorMessage = ""
+    var trips: [Trip] = []
+    var preview = false
+    
+    init(
+        preview: Bool = false,
+        fromStopLocation: StopLocation? = nil,
+        toStopLocation: StopLocation? = nil,
+        errorMessage: String = "",
+        trips: [Trip] = [Trip]()
+    ) {
+        self.preview = preview
+        self.fromStopLocation = fromStopLocation
+        self.toStopLocation = toStopLocation
+        self.errorMessage = errorMessage
+        self.trips = trips
+    }
+
+    func fetchTrips() async {
+        await MainActor.run {
+            self.errorMessage = ""
+        }
+        if let res = await NetworkAPI.getTrips(
+            originId: fromStopLocation?.extId,
+            destId: toStopLocation?.extId) {
+            await MainActor.run {
+                self.trips = res
+            }
+        } else {
+            await MainActor.run {
+                self.errorMessage = "Fetch data failed"
+            }
+        }
+    }
+}
 
 struct TripResultsView: View {
     
     @Environment(\.tripSearchModel) private var tripSearchModel
+    var fromStopLocation: StopLocation?
+    var toStopLocation: StopLocation?
+    @State var viewModel: TripResultsViewModel
+    
+    init(viewModel: TripResultsViewModel? = nil, fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
+        self.viewModel = viewModel ?? TripResultsViewModel(fromStopLocation: fromStopLocation, toStopLocation: toStopLocation)
+        self.fromStopLocation = fromStopLocation
+        self.toStopLocation = toStopLocation
+    }
 
     var body: some View {
-        
-        NavigationStack {
-            
+        VStack(spacing: 16) {
+            if viewModel.errorMessage != "" {
+                Text(viewModel.errorMessage)
+            }
             List {
-            
-                ForEach(TripResponse.tripResponse?.trip ?? []) { trip in
+                ForEach(viewModel.trips) { trip in
                     
-                    NavigationLink(destination: TripDetailsView(trip: trip)) {
+                    NavigationLink(destination: TripDetailsView(trip: trip) ) {
                         VStack {
                             fromToText(trip: trip)
                                 .padding()
@@ -31,6 +83,15 @@ struct TripResultsView: View {
                             }
                         }
                     }
+                }
+            }
+            .listStyle(.inset)
+        }
+        .padding()
+        .onAppear {
+            Task {
+                if !viewModel.preview {
+                    await viewModel.fetchTrips()
                 }
             }
         }
@@ -49,9 +110,8 @@ struct TripResultsView: View {
         let toText = leg.destination?.name ?? ""
         return Text(fromText + " -> " + toText)
     }
-
 }
 
 #Preview {
-    TripResultsView()
+    TripResultsView(viewModel: TripResultsViewModel(preview: true, trips: TripResponse.tripResponse!.trip!))
 }

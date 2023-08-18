@@ -53,6 +53,8 @@
 		4D9A51A72A2EA2F000647958 /* fromA2BUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51A62A2EA2F000647958 /* fromA2BUITests.swift */; };
 		4D9A51A92A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51A82A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift */; };
 		4DD356E32A8E91A2009E3ACE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD356E22A8E91A2009E3ACE /* Alamofire */; };
+		4DD356E62A8E9A4E009E3ACE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */; };
+		4DD356E82A8E9A7A009E3ACE /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		4D9A51A22A2EA2F000647958 /* fromA2BUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fromA2BUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9A51A62A2EA2F000647958 /* fromA2BUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BUITests.swift; sourceTree = "<group>"; };
 		4D9A51A82A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 				4DD356DF2A8E8B8D009E3ACE /* Views */,
 				4D2D915C2A6F46D0005F18CB /* Models */,
 				4DD356E02A8E8BB6009E3ACE /* Misc */,
+				4DD356E42A8E9A2C009E3ACE /* Network */,
 				4D9A518D2A2EA2F000647958 /* Preview Content */,
 			);
 			path = fromA2B;
@@ -269,6 +274,15 @@
 				4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		4DD356E42A8E9A2C009E3ACE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */,
+				4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,9 +443,11 @@
 				4D2D91842A6F4732005F18CB /* ServiceDays.swift in Sources */,
 				4D2D917C2A6F4732005F18CB /* Product.swift in Sources */,
 				4D2D91662A6F4724005F18CB /* TechnicalMessage.swift in Sources */,
+				4DD356E82A8E9A7A009E3ACE /* NetworkAPI.swift in Sources */,
 				4D2D91922A7945D5005F18CB /* StopResponse+json.swift in Sources */,
 				4D2D91892A6F4732005F18CB /* Leg.swift in Sources */,
 				4D1895552A6BB96500F3570A /* StopSelectionView.swift in Sources */,
+				4DD356E62A8E9A4E009E3ACE /* NetworkManager.swift in Sources */,
 				4D2D917F2A6F4732005F18CB /* LegList.swift in Sources */,
 				4D18955B2A6BB9C600F3570A /* AppModel.swift in Sources */,
 				4D2D916C2A6F4724005F18CB /* StopResponse.swift in Sources */,

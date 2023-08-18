@@ -8,19 +8,8 @@
 import SwiftUI
 import Observation
 
-@Observable
-public final class StopSelectionViewModel {
-    
-    public var stopResponse: StopResponse?
-
-    public init(stopResponse: StopResponse? = nil) {
-        self.stopResponse = stopResponse
-    }
-}
-
 struct StopSelectionView: View {
     
-    private var viewModel = StopSelectionViewModel()
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
     
