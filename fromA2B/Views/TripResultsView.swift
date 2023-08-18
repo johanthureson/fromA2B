@@ -53,14 +53,10 @@ class TripResultsViewModel {
 struct TripResultsView: View {
     
     @Environment(\.tripSearchModel) private var tripSearchModel
-    var fromStopLocation: StopLocation?
-    var toStopLocation: StopLocation?
     @State var viewModel: TripResultsViewModel
     
     init(viewModel: TripResultsViewModel? = nil, fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
         self.viewModel = viewModel ?? TripResultsViewModel(fromStopLocation: fromStopLocation, toStopLocation: toStopLocation)
-        self.fromStopLocation = fromStopLocation
-        self.toStopLocation = toStopLocation
     }
 
     var body: some View {
