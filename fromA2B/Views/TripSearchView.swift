@@ -67,7 +67,8 @@ struct TripSearchView: View {
     private func getTripResultsView(bindableTripSearchModel: TripSearchModel) -> some View {
         tripSearchModel.fromStopLocation = bindableTripSearchModel.fromStopLocation
         tripSearchModel.toStopLocation = bindableTripSearchModel.toStopLocation
-        return TripResultsView(fromStopLocation: tripSearchModel.fromStopLocation, toStopLocation: tripSearchModel.toStopLocation)
+        let tripResultsViewModel = TripResultsViewModel(fromStopLocation: bindableTripSearchModel.fromStopLocation, toStopLocation: bindableTripSearchModel.toStopLocation)
+        return TripResultsView(viewModel: tripResultsViewModel)
     }
     
 }

@@ -12,24 +12,24 @@ import Observation
 @Observable
 class TripResultsViewModel {
     
+    var preview = false
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
     var errorMessage = ""
     var trips: [Trip] = []
-    var preview = false
     
     init(
         preview: Bool = false,
         fromStopLocation: StopLocation? = nil,
         toStopLocation: StopLocation? = nil,
-        errorMessage: String = "",
-        trips: [Trip] = [Trip]()
+        trips: [Trip] = [Trip](),
+        errorMessage: String = ""
     ) {
         self.preview = preview
         self.fromStopLocation = fromStopLocation
         self.toStopLocation = toStopLocation
-        self.errorMessage = errorMessage
         self.trips = trips
+        self.errorMessage = errorMessage
     }
 
     func fetchTrips() async {
@@ -52,11 +52,10 @@ class TripResultsViewModel {
 
 struct TripResultsView: View {
     
-    @Environment(\.tripSearchModel) private var tripSearchModel
     @State var viewModel: TripResultsViewModel
     
-    init(viewModel: TripResultsViewModel? = nil, fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
-        self.viewModel = viewModel ?? TripResultsViewModel(fromStopLocation: fromStopLocation, toStopLocation: toStopLocation)
+    init(viewModel: TripResultsViewModel) {
+        self.viewModel = viewModel
     }
 
     var body: some View {
