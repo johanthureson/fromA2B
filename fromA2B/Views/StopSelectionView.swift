@@ -12,6 +12,9 @@ struct StopSelectionView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
+    @State private var bustStopName: String = ""
+    @State private var stops: [StopLocationOrCoordLocation]?
+    @State private var errorMessage = ""
     
     init(selectedStopLocation: Binding<StopLocation?>) {
         _selectedStopLocation = selectedStopLocation
@@ -26,8 +29,16 @@ struct StopSelectionView: View {
             }
             .padding()
             
+            TextField("Enter your name", text: $bustStopName)
+            
+            Button("Search") {
+                Task {
+                    await fetchStops()
+                }
+            }
+
             List {
-                ForEach(StopResponse.originStopResponse?.stopLocationOrCoordLocation ?? []) { stopLocationOrCoordLocation in
+                ForEach(stops ?? []) { stopLocationOrCoordLocation in
                     VStack {
                         Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
                     }
@@ -39,6 +50,22 @@ struct StopSelectionView: View {
             }
         }
     }
+    
+    func fetchStops() async {
+        await MainActor.run {
+            self.errorMessage = ""
+        }
+        if let res = await NetworkAPI.getStops(busStopName: bustStopName) {
+            await MainActor.run {
+                self.stops = res
+            }
+        } else {
+            await MainActor.run {
+                self.errorMessage = "Fetch data failed"
+            }
+        }
+    }
+
 }
 
 #Preview {

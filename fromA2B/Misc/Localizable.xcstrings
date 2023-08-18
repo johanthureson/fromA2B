@@ -64,6 +64,16 @@
         }
       }
     },
+    "Bus stop name" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hållplatsnamn"
+          }
+        }
+      }
+    },
     "Search" : {
       "localizations" : {
         "sv" : {
