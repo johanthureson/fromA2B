@@ -41,6 +41,11 @@ struct StopSelectionView: View {
                 .onAppear {
                     self.focusedField = .field
                 }
+                .onSubmit {
+                    Task {
+                        await fetchStops()
+                    }
+                }
             
             Button("Search") {
                 Task {
