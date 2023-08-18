@@ -23,6 +23,7 @@ struct TripDetailsView: View {
                 
                 VStack {
                     timeToTime(leg: leg)
+                    Text(leg.product?.first?.name ?? "")
                     fromToText(leg: leg)
                 }
                 .padding()
