@@ -10,23 +10,13 @@ import Observation
 
 @Observable final class TripSearchViewModel {
     
-    var title = String(localized: "tripSearchView.helloWorld")
-    
-    var fromStopLocation: StopLocation?
-    var toStopLocation: StopLocation?
-    
-    init(fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
-        self.fromStopLocation = fromStopLocation
-        self.toStopLocation = toStopLocation
-    }
-    
     var from = String(localized: "stopButtonView.from")
     var to = String(localized: "stopButtonView.to")
 }
 
 struct TripSearchView: View {
 
-    @Bindable var viewModel = TripSearchViewModel()
+    private var viewModel = TripSearchViewModel()
     @State private var showingFromSheet = false
     @State private var showingToSheet = false
     @Environment(\.tripSearchModel) private var tripSearchModel
@@ -83,5 +73,5 @@ struct TripSearchView: View {
 }
 
 #Preview {
-    TripSearchView(viewModel: TripSearchViewModel(fromStopLocation: StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
+    TripSearchView()
 }
