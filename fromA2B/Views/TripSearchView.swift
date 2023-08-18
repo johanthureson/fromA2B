@@ -42,6 +42,7 @@ struct TripSearchView: View {
             } label: {
                 HStack {
                     Text(viewModel.from)
+                        .foregroundColor(.black)
                     Text(tripSearchModel.fromStopLocation?.name ?? "<>")
                 }
             }
@@ -55,6 +56,7 @@ struct TripSearchView: View {
             } label: {
                 HStack {
                     Text(viewModel.to)
+                        .foregroundColor(.black)
                     Text(tripSearchModel.toStopLocation?.name ?? "<>")
                 }
             }

@@ -36,7 +36,7 @@ struct TripDetailsView: View {
         
         let fromTime = leg.origin?.time?.dropLast(3) ?? ""
         let toTime = leg.destination?.time?.dropLast(3) ?? ""
-        return Text(fromTime + "-" + toTime)
+        return Text(fromTime + "-" + toTime).foregroundColor(.red)
     }
 
     private func fromToText(trip: Trip) -> some View {
