@@ -7,19 +7,33 @@
 
 import SwiftUI
 
-struct TripDetailsView: View {
+@Observable
+fileprivate class TripDetailsViewModel {
     
     var trip: Trip
+    
+    init(trip: Trip) {
+        self.trip = trip
+    }
+}
+
+struct TripDetailsView: View {
+    
+    @State fileprivate var viewModel: TripDetailsViewModel
+    
+    init(trip: Trip) {
+        self.viewModel = TripDetailsViewModel(trip: trip)
+    }
 
     var body: some View {
         
         
         VStack {
-            fromToText(trip: trip)
+            fromToText(trip: viewModel.trip)
                 .padding()
                 .font(.title2)
             
-            ForEach(trip.legList?.leg ?? []) { leg in
+            ForEach(viewModel.trip.legList?.leg ?? []) { leg in
                 
                 VStack {
                     timeToTime(leg: leg)
