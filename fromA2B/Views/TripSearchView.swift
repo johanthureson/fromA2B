@@ -8,7 +8,8 @@
 import SwiftUI
 import Observation
 
-@Observable final class TripSearchViewModel {
+@Observable
+fileprivate class TripSearchViewModel {
     
     var from = String(localized: "stopButtonView.from")
     var to = String(localized: "stopButtonView.to")
