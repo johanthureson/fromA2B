@@ -28,11 +28,12 @@ struct StopSelectionView: View {
       case field
     }
 
+    @FocusState private var focusedField: FocusField?
     @Environment(\.presentationMode) var presentationMode
+
     @Binding var selectedStopLocation: StopLocation?
     @Bindable fileprivate var viewModel: StopSelectionViewModel
     
-    @FocusState private var focusedField: FocusField?
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
         _viewModel = Bindable(StopSelectionViewModel(stops: stops))
