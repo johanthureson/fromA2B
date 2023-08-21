@@ -12,6 +12,11 @@ import SwiftUI
 public class TripSearchModel {
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
+    
+    init(fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
+        self.fromStopLocation = fromStopLocation
+        self.toStopLocation = toStopLocation
+    }
 }
 
 @Observable class StopLocationModel: Identifiable {
