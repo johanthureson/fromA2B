@@ -11,6 +11,7 @@ import Observation
 @Observable
 class StopSelectionViewModel {
     var bustStopName: String = ""
+    var errorMessage = ""
 }
 
 struct StopSelectionView: View {
@@ -24,7 +25,6 @@ struct StopSelectionView: View {
     @State var viewModel = StopSelectionViewModel()
     
     @State private var stops: [StopLocationOrCoordLocation]?
-    @State private var errorMessage = ""
     @FocusState private var focusedField: FocusField?
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
@@ -77,7 +77,7 @@ struct StopSelectionView: View {
     
     func fetchStops() async {
         await MainActor.run {
-            self.errorMessage = ""
+            self.viewModel.errorMessage = ""
         }
         if let res = await NetworkAPI.getStops(busStopName: viewModel.bustStopName) {
             await MainActor.run {
@@ -85,7 +85,7 @@ struct StopSelectionView: View {
             }
         } else {
             await MainActor.run {
-                self.errorMessage = "Fetch data failed"
+                self.viewModel.errorMessage = "Fetch data failed"
             }
         }
     }
