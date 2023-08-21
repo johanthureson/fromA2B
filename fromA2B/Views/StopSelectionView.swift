@@ -14,11 +14,13 @@ fileprivate class StopSelectionViewModel {
     var bustStopTextFieldString: String = ""
     var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
+    var selectedStopLocation: Bindable<StopLocation?>
     
-    init(bustStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
+    init(bustStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "", selectedStopLocation: Bindable<StopLocation?>) {
         self.bustStopTextFieldString = bustStopName
         self.stops = stops
         self.errorMessage = errorMessage
+        self.selectedStopLocation = selectedStopLocation
     }
 }
 
@@ -31,13 +33,13 @@ struct StopSelectionView: View {
     @FocusState private var focusedField: FocusField?
     @Environment(\.presentationMode) var presentationMode
 
-    @Binding var selectedStopLocation: StopLocation?
+//    @Binding var selectedStopLocation: StopLocation?
     @State fileprivate var viewModel: StopSelectionViewModel
     
     
-    init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
-        _viewModel = State(initialValue: StopSelectionViewModel(stops: stops))
-        _selectedStopLocation = selectedStopLocation
+    init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Bindable<StopLocation?>) {
+        _viewModel = State(initialValue: StopSelectionViewModel(stops: stops, selectedStopLocation: selectedStopLocation))
+//        _selectedStopLocation = selectedStopLocation
     }
 
     var body: some View {
@@ -75,7 +77,7 @@ struct StopSelectionView: View {
                         Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
                     }
                     .onTapGesture {
-                        self.selectedStopLocation = stopLocationOrCoordLocation.stopLocation
+                        self.viewModel.selectedStopLocation = Binding(stopLocationOrCoordLocation.stopLocation)
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
