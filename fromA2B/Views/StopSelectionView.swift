@@ -10,12 +10,13 @@ import Observation
 
 @Observable
 fileprivate class StopSelectionViewModel {
-    var bustStopName: String = ""
+    
+    var bustStopTextFieldString: String = ""
     var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
     
     init(bustStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
-        self.bustStopName = bustStopName
+        self.bustStopTextFieldString = bustStopName
         self.stops = stops
         self.errorMessage = errorMessage
     }
@@ -47,7 +48,7 @@ struct StopSelectionView: View {
             }
             .padding()
             
-            TextField("Bus stop name", text: $viewModel.bustStopName)
+            TextField("Bus stop name", text: $viewModel.bustStopTextFieldString)
                 .textFieldStyle(.roundedBorder)
                 .padding()
                 .focused($focusedField, equals: .field)
@@ -85,7 +86,7 @@ struct StopSelectionView: View {
         await MainActor.run {
             self.viewModel.errorMessage = ""
         }
-        if let res = await NetworkAPI.getStops(busStopName: viewModel.bustStopName) {
+        if let res = await NetworkAPI.getStops(busStopName: viewModel.bustStopTextFieldString) {
             await MainActor.run {
                 self.viewModel.stops = res
             }
