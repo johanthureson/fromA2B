@@ -21,7 +21,8 @@ struct StopSelectionView: View {
     @State private var errorMessage = ""
     @FocusState private var focusedField: FocusField?
     
-    init(selectedStopLocation: Binding<StopLocation?>) {
+    init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
+        _stops = State(initialValue: stops)
         _selectedStopLocation = selectedStopLocation
     }
 
@@ -86,5 +87,8 @@ struct StopSelectionView: View {
 }
 
 #Preview {
-    StopSelectionView(selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
+    StopSelectionView(
+        stops: StopResponse.originStopResponse?.stopLocationOrCoordLocation,
+        selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation)
+    )
 }
