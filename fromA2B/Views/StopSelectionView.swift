@@ -32,11 +32,11 @@ struct StopSelectionView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @Binding var selectedStopLocation: StopLocation?
-    @Bindable fileprivate var viewModel: StopSelectionViewModel
+    @State fileprivate var viewModel: StopSelectionViewModel
     
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
-        _viewModel = Bindable(StopSelectionViewModel(stops: stops))
+        _viewModel = State(initialValue: StopSelectionViewModel(stops: stops))
         _selectedStopLocation = selectedStopLocation
     }
 
