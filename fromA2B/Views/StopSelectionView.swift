@@ -8,31 +8,33 @@
 import SwiftUI
 import Observation
 
+enum FocusField: Hashable {
+  case field
+}
+
 @Observable
 fileprivate class StopSelectionViewModel {
     
     var bustStopTextFieldString: String = ""
     var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
+    @FocusState var focusedField: FocusField?
     
-    init(bustStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
-        self.bustStopTextFieldString = bustStopName
+    init(bustStopTextFieldString: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "", focusedField: FocusState<FocusField?> = FocusState()) {
+        self.bustStopTextFieldString = bustStopTextFieldString
         self.stops = stops
         self.errorMessage = errorMessage
+        self.focusedField = focusedField
     }
 }
 
 struct StopSelectionView: View {
     
-    enum FocusField: Hashable {
-      case field
-    }
 
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
     @Bindable fileprivate var viewModel: StopSelectionViewModel
     
-    @FocusState private var focusedField: FocusField?
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
         _viewModel = Bindable(StopSelectionViewModel(stops: stops))
@@ -51,9 +53,9 @@ struct StopSelectionView: View {
             TextField("Bus stop name", text: $viewModel.bustStopTextFieldString)
                 .textFieldStyle(.roundedBorder)
                 .padding()
-                .focused($focusedField, equals: .field)
+                .focused($viewModel.focusedField, equals: .field)
                 .onAppear {
-                    self.focusedField = .field
+//                    self.viewModel.focusedField = .field
                 }
                 .onSubmit {
                     Task {
