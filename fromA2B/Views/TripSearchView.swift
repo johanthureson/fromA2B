@@ -12,13 +12,13 @@ import Observation
     
     var from = String(localized: "stopButtonView.from")
     var to = String(localized: "stopButtonView.to")
+    var showingFromSheet = false
+    var showingToSheet = false
 }
 
 struct TripSearchView: View {
 
-    private var viewModel = TripSearchViewModel()
-    @State private var showingFromSheet = false
-    @State private var showingToSheet = false
+    @State private var viewModel = TripSearchViewModel()
     @Environment(\.tripSearchModel) private var tripSearchModel
 
     var body: some View {
@@ -28,7 +28,7 @@ struct TripSearchView: View {
         NavigationStack {
             
             Button {
-                showingFromSheet.toggle()
+                viewModel.showingFromSheet.toggle()
             } label: {
                 HStack {
                     Text(viewModel.from)
@@ -37,12 +37,12 @@ struct TripSearchView: View {
                 }
             }
             .padding()
-            .sheet(isPresented: $showingFromSheet) {
+            .sheet(isPresented: $viewModel.showingFromSheet) {
                 StopSelectionView(selectedStopLocation: $bindableTripSearchModel.fromStopLocation)
             }
             
             Button {
-                showingToSheet.toggle()
+                viewModel.showingToSheet.toggle()
             } label: {
                 HStack {
                     Text(viewModel.to)
@@ -51,7 +51,7 @@ struct TripSearchView: View {
                 }
             }
             .padding()
-            .sheet(isPresented: $showingToSheet) {
+            .sheet(isPresented: $viewModel.showingToSheet) {
                 StopSelectionView(selectedStopLocation: $bindableTripSearchModel.toStopLocation)
             }
 
