@@ -18,8 +18,8 @@ import Observation
 
 struct TripSearchView: View {
 
-    @State private var viewModel = TripSearchViewModel()
     @Environment(\.tripSearchModel) private var tripSearchModel
+    @State private var viewModel = TripSearchViewModel()
 
     var body: some View {
         
