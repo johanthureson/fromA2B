@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct StopLocation : Codable, Observable {
+struct StopLocation : Codable {
 	let productAtStop : [ProductAtStop]?
 	let timezoneOffset : Int?
 	let id : String?
