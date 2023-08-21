@@ -8,6 +8,11 @@
 import SwiftUI
 import Observation
 
+@Observable
+class StopSelectionViewModel {
+    var bustStopName: String = ""
+}
+
 struct StopSelectionView: View {
     
     enum FocusField: Hashable {
@@ -16,7 +21,8 @@ struct StopSelectionView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
-    @State private var bustStopName: String = ""
+    @State var viewModel = StopSelectionViewModel()
+    
     @State private var stops: [StopLocationOrCoordLocation]?
     @State private var errorMessage = ""
     @FocusState private var focusedField: FocusField?
@@ -35,7 +41,7 @@ struct StopSelectionView: View {
             }
             .padding()
             
-            TextField("Bus stop name", text: $bustStopName)
+            TextField("Bus stop name", text: $viewModel.bustStopName)
                 .textFieldStyle(.roundedBorder)
                 .padding()
                 .focused($focusedField, equals: .field)
@@ -73,7 +79,7 @@ struct StopSelectionView: View {
         await MainActor.run {
             self.errorMessage = ""
         }
-        if let res = await NetworkAPI.getStops(busStopName: bustStopName) {
+        if let res = await NetworkAPI.getStops(busStopName: viewModel.bustStopName) {
             await MainActor.run {
                 self.stops = res
             }
