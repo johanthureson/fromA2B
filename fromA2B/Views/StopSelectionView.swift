@@ -11,7 +11,14 @@ import Observation
 @Observable
 class StopSelectionViewModel {
     var bustStopName: String = ""
+    var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
+    
+    init(bustStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
+        self.bustStopName = bustStopName
+        self.stops = stops
+        self.errorMessage = errorMessage
+    }
 }
 
 struct StopSelectionView: View {
@@ -22,13 +29,12 @@ struct StopSelectionView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
-    @State var viewModel = StopSelectionViewModel()
+    @State var viewModel: StopSelectionViewModel
     
-    @State private var stops: [StopLocationOrCoordLocation]?
     @FocusState private var focusedField: FocusField?
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
-        _stops = State(initialValue: stops)
+        _viewModel = State(initialValue: StopSelectionViewModel(stops: stops))
         _selectedStopLocation = selectedStopLocation
     }
 
@@ -62,7 +68,7 @@ struct StopSelectionView: View {
             .padding()
 
             List {
-                ForEach(stops ?? []) { stopLocationOrCoordLocation in
+                ForEach(viewModel.stops ?? []) { stopLocationOrCoordLocation in
                     VStack {
                         Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
                     }
@@ -81,7 +87,7 @@ struct StopSelectionView: View {
         }
         if let res = await NetworkAPI.getStops(busStopName: viewModel.bustStopName) {
             await MainActor.run {
-                self.stops = res
+                self.viewModel.stops = res
             }
         } else {
             await MainActor.run {
