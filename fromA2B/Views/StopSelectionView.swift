@@ -9,7 +9,7 @@ import SwiftUI
 import Observation
 
 @Observable
-class StopSelectionViewModel {
+fileprivate class StopSelectionViewModel {
     var bustStopName: String = ""
     var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
@@ -29,7 +29,7 @@ struct StopSelectionView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedStopLocation: StopLocation?
-    @State var viewModel: StopSelectionViewModel
+    @State fileprivate var viewModel: StopSelectionViewModel
     
     @FocusState private var focusedField: FocusField?
     
