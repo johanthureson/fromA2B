@@ -19,15 +19,6 @@ public class AppModel {
     }
 }
 
-@Observable class StopLocationModel: Identifiable {
-    let id = UUID()
-    var stopLocation: StopLocation
-    
-    init(stopLocation: StopLocation) {
-        self.stopLocation = stopLocation
-    }
-}
-
 extension EnvironmentValues {
     var appModel: AppModel {
         get { self[AppModelKey.self] }
