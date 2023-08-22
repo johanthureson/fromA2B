@@ -290,8 +290,8 @@
 		4DD356E42A8E9A2C009E3ACE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */,
 				4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */,
+				4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
