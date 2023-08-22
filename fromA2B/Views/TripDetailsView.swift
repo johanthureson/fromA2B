@@ -27,7 +27,6 @@ struct TripDetailsView: View {
 
     var body: some View {
         
-        
         VStack {
             fromToText(trip: viewModel.trip)
                 .padding()
