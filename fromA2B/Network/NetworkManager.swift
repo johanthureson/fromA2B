@@ -25,11 +25,14 @@ actor NetworkManager: GlobalActor {
      */
 
     func get(path: String, parameters: Parameters?) async throws -> Data {
+        var parametersWithAccessId = parameters
+        parametersWithAccessId?["accessId"] = "661da78d-bf7c-4b44-8f33-c02ebc44228a"
+
        // You must resume the continuation exactly once
         return try await withCheckedThrowingContinuation { continuation in
             AF.request(
                 API_BASE_URL + path,
-                parameters: parameters,
+                parameters: parametersWithAccessId,
                 headers: nil,
                 requestModifier: { $0.timeoutInterval = self.maxWaitTime }
             )

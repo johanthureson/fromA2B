@@ -13,7 +13,6 @@ class NetworkAPI {
         do {
             let parameters = [
                 "input": busStopName ?? "",
-                "accessId": "661da78d-bf7c-4b44-8f33-c02ebc44228a",
             ]
             let data = try await NetworkManager.shared.get(
                 path: "/location.name?format=json",
@@ -35,7 +34,6 @@ class NetworkAPI {
                 "destId": destId ?? "",
                 "passlist": "true",
                 "showPassingPoints": "true",
-                "accessId": "661da78d-bf7c-4b44-8f33-c02ebc44228a",
             ]
             
             let data = try await NetworkManager.shared.get(
