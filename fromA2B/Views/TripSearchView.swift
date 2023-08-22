@@ -13,8 +13,6 @@ fileprivate class TripSearchViewModel {
     
     var from = String(localized: "stopButtonView.from")
     var to = String(localized: "stopButtonView.to")
-    var showingFromSheet = false
-    var showingToSheet = false
 }
 
 struct TripSearchView: View {
@@ -28,40 +26,17 @@ struct TripSearchView: View {
 
         NavigationStack {
             
-            Button {
-                viewModel.showingFromSheet.toggle()
-            } label: {
-                HStack {
-                    Text(viewModel.from)
-                        .foregroundColor(.black)
-                    Text(tripSearchModel.fromStopLocation?.name ?? "<>")
-                }
-            }
-            .padding()
-            .sheet(isPresented: $viewModel.showingFromSheet) {
-                StopSelectionView(selectedStopLocation: $bindableTripSearchModel.fromStopLocation)
-            }
+            StopChoiceButtonView(directionText: viewModel.from,
+                                 stopLocation: $bindableTripSearchModel.fromStopLocation)
             
-            Button {
-                viewModel.showingToSheet.toggle()
-            } label: {
-                HStack {
-                    Text(viewModel.to)
-                        .foregroundColor(.black)
-                    Text(tripSearchModel.toStopLocation?.name ?? "<>")
-                }
-            }
-            .padding()
-            .sheet(isPresented: $viewModel.showingToSheet) {
-                StopSelectionView(selectedStopLocation: $bindableTripSearchModel.toStopLocation)
-            }
+            StopChoiceButtonView(directionText: viewModel.to,
+                                 stopLocation: $bindableTripSearchModel.toStopLocation)
 
             NavigationLink("Search") {
                 getTripResultsView(bindableTripSearchModel: bindableTripSearchModel)
             }
             .disabled(tripSearchModel.fromStopLocation == nil || tripSearchModel.toStopLocation == nil)
             .padding()
-            
         }
     }
     
