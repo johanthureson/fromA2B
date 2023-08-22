@@ -20,6 +20,21 @@ fileprivate class StopSelectionViewModel {
         self.stops = stops
         self.errorMessage = errorMessage
     }
+    
+    func fetchStops() async {
+        await MainActor.run {
+            errorMessage = ""
+        }
+        if let res = await NetworkAPI.getStops(busStopName: bustStopTextFieldString) {
+            await MainActor.run {
+                stops = res
+            }
+        } else {
+            await MainActor.run {
+                errorMessage = "Fetch data failed"
+            }
+        }
+    }
 }
 
 struct StopSelectionView: View {
@@ -58,13 +73,13 @@ struct StopSelectionView: View {
                 }
                 .onSubmit {
                     Task {
-                        await fetchStops()
+                        await viewModel.fetchStops()
                     }
                 }
             
             Button("Search") {
                 Task {
-                    await fetchStops()
+                    await viewModel.fetchStops()
                 }
             }
             .padding()
@@ -82,22 +97,6 @@ struct StopSelectionView: View {
             }
         }
     }
-    
-    func fetchStops() async {
-        await MainActor.run {
-            self.viewModel.errorMessage = ""
-        }
-        if let res = await NetworkAPI.getStops(busStopName: viewModel.bustStopTextFieldString) {
-            await MainActor.run {
-                self.viewModel.stops = res
-            }
-        } else {
-            await MainActor.run {
-                self.viewModel.errorMessage = "Fetch data failed"
-            }
-        }
-    }
-
 }
 
 #Preview {
