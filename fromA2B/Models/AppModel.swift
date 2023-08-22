@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @Observable
-public class TripSearchModel {
+public class AppModel {
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
     
@@ -29,12 +29,12 @@ public class TripSearchModel {
 }
 
 extension EnvironmentValues {
-    var tripSearchModel: TripSearchModel {
-        get { self[TripSearchModelKey.self] }
-        set { self[TripSearchModelKey.self] = newValue }
+    var appModel: AppModel {
+        get { self[AppModelKey.self] }
+        set { self[AppModelKey.self] = newValue }
     }
 }
 
-private struct TripSearchModelKey: EnvironmentKey {
-    static var defaultValue: TripSearchModel = TripSearchModel()
+private struct AppModelKey: EnvironmentKey {
+    static var defaultValue: AppModel = AppModel()
 }

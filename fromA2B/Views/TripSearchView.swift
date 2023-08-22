@@ -17,33 +17,33 @@ fileprivate class TripSearchViewModel {
 
 struct TripSearchView: View {
 
-    @Environment(\.tripSearchModel) private var tripSearchModel
+    @Environment(\.appModel) private var appModel
     @State private var viewModel = TripSearchViewModel()
 
     var body: some View {
         
-        @Bindable var bindableTripSearchModel = tripSearchModel
+        @Bindable var bindableAppModel = appModel
 
         NavigationStack {
             
             StopChoiceButtonView(directionText: viewModel.from,
-                                 stopLocation: $bindableTripSearchModel.fromStopLocation)
+                                 stopLocation: $bindableAppModel.fromStopLocation)
             
             StopChoiceButtonView(directionText: viewModel.to,
-                                 stopLocation: $bindableTripSearchModel.toStopLocation)
+                                 stopLocation: $bindableAppModel.toStopLocation)
 
             NavigationLink("Search") {
-                getTripResultsView(bindableTripSearchModel: bindableTripSearchModel)
+                getTripResultsView(bindableAppModel: bindableAppModel)
             }
-            .disabled(tripSearchModel.fromStopLocation == nil || tripSearchModel.toStopLocation == nil)
+            .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
             .padding()
         }
     }
     
-    private func getTripResultsView(bindableTripSearchModel: TripSearchModel) -> some View {
-        tripSearchModel.fromStopLocation = bindableTripSearchModel.fromStopLocation
-        tripSearchModel.toStopLocation = bindableTripSearchModel.toStopLocation
-        let tripResultsViewModel = TripResultsViewModel(fromStopLocation: bindableTripSearchModel.fromStopLocation, toStopLocation: bindableTripSearchModel.toStopLocation)
+    private func getTripResultsView(bindableAppModel: AppModel) -> some View {
+        appModel.fromStopLocation = bindableAppModel.fromStopLocation
+        appModel.toStopLocation = bindableAppModel.toStopLocation
+        let tripResultsViewModel = TripResultsViewModel(fromStopLocation: bindableAppModel.fromStopLocation, toStopLocation: bindableAppModel.toStopLocation)
         return TripResultsView(viewModel: tripResultsViewModel)
     }
     
@@ -51,8 +51,8 @@ struct TripSearchView: View {
 
 #Preview {
     TripSearchView()
-        .environment(\.tripSearchModel,
-                      TripSearchModel(
+        .environment(\.appModel,
+                      AppModel(
                         fromStopLocation:
                             StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }

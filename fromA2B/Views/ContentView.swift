@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var tripSearchModel = TripSearchModel()
+    @State var appModel = AppModel()
 
     var body: some View {
         
@@ -19,7 +19,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Trip Search", systemImage: "􀊫")
                 }
-                .environment(tripSearchModel)
+                .environment(appModel)
 
         }
         
