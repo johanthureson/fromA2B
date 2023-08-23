@@ -12,4 +12,11 @@ import ViewInspector
 
 final class fromA2BTests: XCTestCase {
 
+    func testViewInspectorBaseline() throws {
+      let expected = "it lives!"
+      let sut = Text(expected)
+      let value = try sut.inspect().text().string()
+      XCTAssertEqual(value, expected)
+    }
+
 }
