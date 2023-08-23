@@ -271,7 +271,7 @@
 		4D9A51862A2EA2EF00647958 /* fromA2B */ = {
 			isa = PBXGroup;
 			children = (
-				4DD356DF2A8E8B8D009E3ACE /* Views */,
+				4DD356DF2A8E8B8D009E3ACE /* MainViews */,
 				4D8814732A94D35100B4D252 /* SubViews */,
 				4D2D915C2A6F46D0005F18CB /* Models */,
 				4DD356E42A8E9A2C009E3ACE /* Network */,
@@ -312,7 +312,7 @@
 			path = fromA2BUITests;
 			sourceTree = "<group>";
 		};
-		4DD356DF2A8E8B8D009E3ACE /* Views */ = {
+		4DD356DF2A8E8B8D009E3ACE /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
 				4D9A51892A2EA2EF00647958 /* ContentView.swift */,
@@ -321,7 +321,7 @@
 				4D1895562A6BB96D00F3570A /* TripResultsView.swift */,
 				4D1895582A6BB97200F3570A /* TripDetailsView.swift */,
 			);
-			path = Views;
+			path = MainViews;
 			sourceTree = "<group>";
 		};
 		4DD356E02A8E8BB6009E3ACE /* Misc */ = {
