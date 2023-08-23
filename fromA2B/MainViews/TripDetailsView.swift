@@ -19,20 +19,20 @@ fileprivate class TripDetailsViewModel {
 
 struct TripDetailsView: View {
     
-    @State fileprivate var viewModel: TripDetailsViewModel
+    @State fileprivate var model: TripDetailsViewModel
     
     init(trip: Trip) {
-        self.viewModel = TripDetailsViewModel(trip: trip)
+        self.model = TripDetailsViewModel(trip: trip)
     }
 
     var body: some View {
         
         VStack {
-            fromToText(trip: viewModel.trip)
+            fromToText(trip: model.trip)
                 .padding()
                 .font(.title2)
             
-            ForEach(viewModel.trip.legList?.leg ?? []) { leg in
+            ForEach(model.trip.legList?.leg ?? []) { leg in
                 
                 VStack {
                     timeToTime(leg: leg)

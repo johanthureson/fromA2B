@@ -47,11 +47,11 @@ struct StopSelectionView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @Binding var selectedStopLocation: StopLocation?
-    @State fileprivate var viewModel: StopSelectionViewModel
+    @State fileprivate var model: StopSelectionViewModel
     
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
-        _viewModel = State(initialValue: StopSelectionViewModel(stops: stops))
+        _model = State(initialValue: StopSelectionViewModel(stops: stops))
         _selectedStopLocation = selectedStopLocation
     }
 
@@ -64,7 +64,7 @@ struct StopSelectionView: View {
             }
             .padding()
             
-            TextField("Bus stop name", text: $viewModel.bustStopTextFieldString)
+            TextField("Bus stop name", text: $model.bustStopTextFieldString)
                 .textFieldStyle(.roundedBorder)
                 .padding()
                 .focused($focusedField, equals: .field)
@@ -73,19 +73,19 @@ struct StopSelectionView: View {
                 }
                 .onSubmit {
                     Task {
-                        await viewModel.fetchStops()
+                        await model.fetchStops()
                     }
                 }
             
             Button("Search") {
                 Task {
-                    await viewModel.fetchStops()
+                    await model.fetchStops()
                 }
             }
             .padding()
 
             List {
-                ForEach(viewModel.stops ?? []) { stopLocationOrCoordLocation in
+                ForEach(model.stops ?? []) { stopLocationOrCoordLocation in
                     VStack {
                         Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
                     }

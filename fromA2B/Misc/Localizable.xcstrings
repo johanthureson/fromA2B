@@ -145,19 +145,19 @@
         }
       }
     },
-    "tripSearchView.viewModelUpdateWorks" : {
+    "tripSearchView.modelUpdateWorks" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "viewModel update works!"
+            "value" : "model update works!"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "viewModel-uppdateringen fungerar!"
+            "value" : "model-uppdateringen fungerar!"
           }
         }
       }

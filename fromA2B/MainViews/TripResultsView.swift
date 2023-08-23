@@ -51,19 +51,19 @@ class TripResultsViewModel {
 
 struct TripResultsView: View {
     
-    @State var viewModel: TripResultsViewModel
+    @State var model: TripResultsViewModel
     
-    init(viewModel: TripResultsViewModel) {
-        self.viewModel = viewModel
+    init(model: TripResultsViewModel) {
+        self.model = model
     }
 
     var body: some View {
         VStack(spacing: 16) {
-            if viewModel.errorMessage != "" {
-                Text(viewModel.errorMessage)
+            if model.errorMessage != "" {
+                Text(model.errorMessage)
             }
             List {
-                ForEach(viewModel.trips) { trip in
+                ForEach(model.trips) { trip in
                     
                     NavigationLink(destination: TripDetailsView(trip: trip) ) {
                         VStack {
@@ -84,8 +84,8 @@ struct TripResultsView: View {
         .padding()
         .onAppear {
             Task {
-                if !viewModel.preview {
-                    await viewModel.fetchTrips()
+                if !model.preview {
+                    await model.fetchTrips()
                 }
             }
         }
@@ -107,5 +107,5 @@ struct TripResultsView: View {
 }
 
 #Preview {
-    TripResultsView(viewModel: TripResultsViewModel(preview: true, trips: TripResponse.tripResponse!.trip!))
+    TripResultsView(model: TripResultsViewModel(preview: true, trips: TripResponse.tripResponse!.trip!))
 }

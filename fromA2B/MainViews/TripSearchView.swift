@@ -18,7 +18,7 @@ fileprivate class TripSearchViewModel {
 struct TripSearchView: View {
 
     @Environment(\.appModel) private var appModel
-    @State private var viewModel = TripSearchViewModel()
+    @State private var model = TripSearchViewModel()
 
     var body: some View {
         
@@ -26,10 +26,10 @@ struct TripSearchView: View {
 
         NavigationStack {
             
-            StopChoiceButtonView(directionText: viewModel.from,
+            StopChoiceButtonView(directionText: model.from,
                                  stopLocation: $bindableAppModel.fromStopLocation)
             
-            StopChoiceButtonView(directionText: viewModel.to,
+            StopChoiceButtonView(directionText: model.to,
                                  stopLocation: $bindableAppModel.toStopLocation)
 
             NavigationLink("Search") {
@@ -43,8 +43,10 @@ struct TripSearchView: View {
     private func getTripResultsView(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
-        let tripResultsViewModel = TripResultsViewModel(fromStopLocation: bindableAppModel.fromStopLocation, toStopLocation: bindableAppModel.toStopLocation)
-        return TripResultsView(viewModel: tripResultsViewModel)
+        let tripResultsViewModel = TripResultsViewModel(
+            fromStopLocation: bindableAppModel.fromStopLocation,
+            toStopLocation: bindableAppModel.toStopLocation)
+        return TripResultsView(model: tripResultsViewModel)
     }
     
 }
