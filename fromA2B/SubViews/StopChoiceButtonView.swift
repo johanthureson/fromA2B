@@ -11,7 +11,7 @@ struct StopChoiceButtonView: View {
     
     @State var showingSheet = false
     var directionText: String = ""
-    var stopLocation: Binding<StopLocation?>
+    var selectedStopLocation: Binding<StopLocation?>
 
     var body: some View {
         
@@ -21,17 +21,17 @@ struct StopChoiceButtonView: View {
             HStack {
                 Text(directionText)
                     .foregroundColor(.black)
-                Text(stopLocation.wrappedValue?.name ?? "<>")
+                Text(selectedStopLocation.wrappedValue?.name ?? "<>")
             }
         }
         .padding()
         .sheet(isPresented: $showingSheet) {
-            StopSelectionView(selectedStopLocation: stopLocation)
+            StopSelectionView(selectedStopLocation: selectedStopLocation)
         }
     }
 }
 
 #Preview {
     StopChoiceButtonView(directionText: "From",
-                         stopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
+                         selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }
