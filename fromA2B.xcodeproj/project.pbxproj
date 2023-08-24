@@ -47,6 +47,7 @@
 		4D2D91A02A7966DC005F18CB /* StaticFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D919F2A7966DC005F18CB /* StaticFunctions.swift */; };
 		4D8048EC2A97A28D00C69747 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
 		4D8048ED2A97A28D00C69747 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
+		4D8048F02A97DDEE00C69747 /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8048EF2A97DDEE00C69747 /* Mocker */; };
 		4D8814752A94D36600B4D252 /* StopChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8814742A94D36600B4D252 /* StopChoiceButtonView.swift */; };
 		4D88147D2A96109100B4D252 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 4D88147C2A96109100B4D252 /* ViewInspector */; };
 		4D88147E2A96138800B4D252 /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91652A6F4724005F18CB /* StopResponse.swift */; };
@@ -180,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD356E32A8E91A2009E3ACE /* Alamofire in Frameworks */,
+				4D8048F02A97DDEE00C69747 /* Mocker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +372,7 @@
 			name = fromA2B;
 			packageProductDependencies = (
 				4DD356E22A8E91A2009E3ACE /* Alamofire */,
+				4D8048EF2A97DDEE00C69747 /* Mocker */,
 			);
 			productName = fromA2B;
 			productReference = 4D9A51842A2EA2EF00647958 /* fromA2B.app */;
@@ -450,6 +453,7 @@
 			packageReferences = (
 				4DD356E12A8E91A2009E3ACE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4D88147B2A96109100B4D252 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				4D8048EE2A97DDEE00C69747 /* XCRemoteSwiftPackageReference "Mocker" */,
 			);
 			productRefGroup = 4D9A51852A2EA2EF00647958 /* Products */;
 			projectDirPath = "";
@@ -923,6 +927,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4D8048EE2A97DDEE00C69747 /* XCRemoteSwiftPackageReference "Mocker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/Mocker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.1;
+			};
+		};
 		4D88147B2A96109100B4D252 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nalexn/ViewInspector";
@@ -942,6 +954,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4D8048EF2A97DDEE00C69747 /* Mocker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8048EE2A97DDEE00C69747 /* XCRemoteSwiftPackageReference "Mocker" */;
+			productName = Mocker;
+		};
 		4D88147C2A96109100B4D252 /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4D88147B2A96109100B4D252 /* XCRemoteSwiftPackageReference "ViewInspector" */;
