@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "8CE02981-9472-4788-BD8D-D0AC187659FE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:fromA2B.xcodeproj",
+        "identifier" : "4D9A51972A2EA2F000647958",
+        "name" : "fromA2BTests"
+      }
+    }
+  ],
+  "version" : 1
+}
