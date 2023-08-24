@@ -122,6 +122,7 @@
 
 /* Begin PBXFileReference section */
 		4D05CDF82A9780B3009264F7 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
+		4D05CDF92A9781EF009264F7 /* FullTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FullTests.xctestplan; sourceTree = "<group>"; };
 		4D1895522A6BB95600F3570A /* TripSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchView.swift; sourceTree = "<group>"; };
 		4D1895542A6BB96500F3570A /* StopSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopSelectionView.swift; sourceTree = "<group>"; };
 		4D1895562A6BB96D00F3570A /* TripResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResultsView.swift; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05CDF82A9780B3009264F7 /* UnitTests.xctestplan */,
+				4D05CDF92A9781EF009264F7 /* FullTests.xctestplan */,
 				4D9A51862A2EA2EF00647958 /* fromA2B */,
 				4D9A519B2A2EA2F000647958 /* fromA2BTests */,
 				4D9A51A52A2EA2F000647958 /* fromA2BUITests */,

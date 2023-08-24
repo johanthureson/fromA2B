@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "F5CD8003-1C0F-4F68-A8D7-383EA5C49D46",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:fromA2B.xcodeproj",
+        "identifier" : "4D9A51972A2EA2F000647958",
+        "name" : "fromA2BTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:fromA2B.xcodeproj",
+        "identifier" : "4D9A51A12A2EA2F000647958",
+        "name" : "fromA2BUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
