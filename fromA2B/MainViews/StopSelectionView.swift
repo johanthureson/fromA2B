@@ -63,6 +63,7 @@ struct StopSelectionView: View {
                 presentationMode.wrappedValue.dismiss()
             }
             .padding()
+            .accessibility(identifier: "back_button")
             
             TextField("Bus stop name", text: $model.bustStopTextFieldString)
                 .textFieldStyle(.roundedBorder)
@@ -95,6 +96,7 @@ struct StopSelectionView: View {
                     }
                 }
             }
+            
         }
     }
 }

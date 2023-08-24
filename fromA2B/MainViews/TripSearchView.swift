@@ -28,9 +28,11 @@ struct TripSearchView: View {
             
             StopChoiceButtonView(directionText: model.from,
                                  selectedStopLocation: $bindableAppModel.fromStopLocation)
+            .accessibility(identifier: "from_button")
             
             StopChoiceButtonView(directionText: model.to,
                                  selectedStopLocation: $bindableAppModel.toStopLocation)
+            .accessibility(identifier: "to_button")
 
             NavigationLink("Search") {
                 getTripResultsView(bindableAppModel: bindableAppModel)

@@ -22,6 +22,7 @@ struct StopChoiceButtonView: View {
                 Text(directionText)
                     .foregroundColor(.black)
                 Text(selectedStopLocation.wrappedValue?.name ?? "<>")
+                    .accessibility(identifier: "stop_name")
             }
         }
         .padding()
