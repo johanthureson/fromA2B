@@ -2,9 +2,18 @@
   "configurations" : [
     {
       "id" : "F5CD8003-1C0F-4F68-A8D7-383EA5C49D46",
-      "name" : "Configuration 1",
+      "name" : "Swedish",
       "options" : {
-
+        "language" : "sv",
+        "region" : "SE"
+      }
+    },
+    {
+      "id" : "7466480A-7AE4-4E13-ABB5-C1A4CA791DFB",
+      "name" : "English",
+      "options" : {
+        "language" : "en",
+        "region" : "US"
       }
     }
   ],
