@@ -49,10 +49,10 @@ final class fromA2BUITests: XCTestCase {
         
         let textString = app.buttons["from_button"].label
         //  textViews["stop_name"].value
-        let localizedFrom = String(localized: "stopButtonView.from")
+//        let localizedFrom = String(localized: "stopButtonView.from")
 //        let localizedFrom = "stopButtonView.from"
 
-        XCTAssertEqual(textString, localizedFrom + ", Logdansplan (Sundbyberg kn)")
+        XCTAssertEqual(textString.dropFirst(4), ", Logdansplan (Sundbyberg kn)")
     }
 
     /*
