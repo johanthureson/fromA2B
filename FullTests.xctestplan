@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "F5CD8003-1C0F-4F68-A8D7-383EA5C49D46",
+      "id" : "5197BDA8-92D9-4BA8-B406-FABE1E5019FE",
       "name" : "Swedish",
       "options" : {
         "language" : "sv",
@@ -9,7 +9,7 @@
       }
     },
     {
-      "id" : "7466480A-7AE4-4E13-ABB5-C1A4CA791DFB",
+      "id" : "B99956D6-5855-413D-B759-8B4E97EC73F6",
       "name" : "English",
       "options" : {
         "language" : "en",
