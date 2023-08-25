@@ -12,7 +12,11 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct LegList : Codable {
+struct LegList : Codable, Equatable {
+    static func == (lhs: LegList, rhs: LegList) -> Bool {
+        lhs.leg == rhs.leg
+    }
+    
 	let leg : [Leg]?
 
 	enum CodingKeys: String, CodingKey {

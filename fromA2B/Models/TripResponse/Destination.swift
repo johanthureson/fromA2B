@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Destination : Codable {
+struct Destination : Codable, Equatable {
 	let name : String?
 	let type : String?
 	let id : String?

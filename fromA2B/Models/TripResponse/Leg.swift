@@ -12,7 +12,12 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Leg : Codable, Identifiable {
+struct Leg : Codable, Identifiable, Equatable {
+    static func == (lhs: Leg, rhs: Leg) -> Bool {
+        lhs.origin == rhs.origin &&
+        lhs.destination == rhs.destination
+    }
+    
     
     var id = UUID()
     

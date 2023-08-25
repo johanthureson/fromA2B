@@ -12,7 +12,13 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Trip : Codable, Identifiable {
+struct Trip : Codable, Identifiable, Equatable {
+    static func == (lhs: Trip, rhs: Trip) -> Bool {
+        lhs.origin == rhs.origin &&
+        lhs.destination == rhs.destination &&
+        lhs.legList == rhs.legList
+    }
+    
     
     var id = UUID()
 
