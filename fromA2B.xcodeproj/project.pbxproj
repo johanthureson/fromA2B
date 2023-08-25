@@ -48,6 +48,7 @@
 		4D8048EC2A97A28D00C69747 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
 		4D8048ED2A97A28D00C69747 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
 		4D8048F02A97DDEE00C69747 /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8048EF2A97DDEE00C69747 /* Mocker */; };
+		4D8048F22A98A3E300C69747 /* TripResultsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8048F12A98A3E300C69747 /* TripResultsViewTests.swift */; };
 		4D8814752A94D36600B4D252 /* StopChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8814742A94D36600B4D252 /* StopChoiceButtonView.swift */; };
 		4D88147D2A96109100B4D252 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 4D88147C2A96109100B4D252 /* ViewInspector */; };
 		4D88147E2A96138800B4D252 /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91652A6F4724005F18CB /* StopResponse.swift */; };
@@ -156,6 +157,7 @@
 		4D2D91902A7845AD005F18CB /* trip.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = trip.json; sourceTree = "<group>"; };
 		4D2D91912A7945D5005F18CB /* StopResponse+json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StopResponse+json.swift"; sourceTree = "<group>"; };
 		4D2D919F2A7966DC005F18CB /* StaticFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFunctions.swift; sourceTree = "<group>"; };
+		4D8048F12A98A3E300C69747 /* TripResultsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResultsViewTests.swift; sourceTree = "<group>"; };
 		4D8814742A94D36600B4D252 /* StopChoiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopChoiceButtonView.swift; sourceTree = "<group>"; };
 		4D8814A82A9615B300B4D252 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		4D8814AA2A961D5E00B4D252 /* TripSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchViewTests.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				4D9A519C2A2EA2F000647958 /* fromA2BTests.swift */,
 				4D8814A82A9615B300B4D252 /* ContentViewTests.swift */,
 				4D8814AA2A961D5E00B4D252 /* TripSearchViewTests.swift */,
+				4D8048F12A98A3E300C69747 /* TripResultsViewTests.swift */,
 			);
 			path = fromA2BTests;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				4D8814932A96142C00B4D252 /* ResultStatus.swift in Sources */,
 				4D8814862A96142100B4D252 /* ProductAtStop.swift in Sources */,
 				4D2D919D2A796615005F18CB /* StopResponse+json.swift in Sources */,
+				4D8048F22A98A3E300C69747 /* TripResultsViewTests.swift in Sources */,
 				4D8814842A96141900B4D252 /* AppModel.swift in Sources */,
 				4D88149B2A96142C00B4D252 /* Product.swift in Sources */,
 				4D8814AB2A961D5E00B4D252 /* TripSearchViewTests.swift in Sources */,
