@@ -7,6 +7,27 @@
 
 import SwiftUI
 import Observation
+import SwiftData
+
+
+
+@Model
+class FromToModel: Equatable {
+    var fromStopLocation: StopLocation?
+    var toStopLocation: StopLocation?
+    
+    init(fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
+        self.fromStopLocation = fromStopLocation
+        self.toStopLocation = toStopLocation
+    }
+    
+    static func == (lhs: FromToModel, rhs: FromToModel) -> Bool {
+        lhs.fromStopLocation == rhs.fromStopLocation &&
+        lhs.toStopLocation == rhs.toStopLocation
+    }
+}
+
+
 
 @Observable
 class TripResultsViewModel {
@@ -51,17 +72,50 @@ class TripResultsViewModel {
 
 struct TripResultsView: View {
     
+    @Environment(\.modelContext) private var modelContext
     @State var model: TripResultsViewModel
     
-    init(model: TripResultsViewModel) {
-        self.model = model
-    }
+    @Query var fromToModels: [FromToModel]
+
+    @State var saved = false
 
     var body: some View {
         VStack(spacing: 16) {
             if model.errorMessage != "" {
                 Text(model.errorMessage)
             }
+            
+            Button {
+                let fromToModel = FromToModel(fromStopLocation: model.fromStopLocation,
+                                              toStopLocation: model.toStopLocation)
+                if !saved {
+                    modelContext.insert(fromToModel)
+                } else {
+                    if fromToModels.contains(fromToModel) {
+                        print()
+                    }
+                    modelContext.delete(fromToModel)
+                }
+                
+                do {
+                    try modelContext.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+                saved = fromToModels.count >= 0 && fromToModels.contains(fromToModel)
+                print()
+                
+            } label: {
+                VStack {
+                    if saved {
+                        Image(systemName: "star.fill")
+                    } else {
+                        Image(systemName: "star")
+                    }
+                }
+            }
+            .padding(.top)
+
             List {
                 ForEach(model.trips) { trip in
                     
@@ -88,6 +142,9 @@ struct TripResultsView: View {
                     await model.fetchTrips()
                 }
             }
+        }
+        .onAppear {
+            saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
         }
     }
     

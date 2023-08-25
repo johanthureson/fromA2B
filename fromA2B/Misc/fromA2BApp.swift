@@ -14,5 +14,6 @@ struct fromA2BApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: FromToModel.self)
     }
 }
