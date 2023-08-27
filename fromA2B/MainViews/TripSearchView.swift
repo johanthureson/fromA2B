@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Observation
+import SwiftData
 
 @Observable
 fileprivate class TripSearchViewModel {
@@ -19,6 +20,7 @@ struct TripSearchView: View {
 
     @Environment(\.appModel) private var appModel
     @State private var model = TripSearchViewModel()
+    @Query var fromToModels: [FromToModel]
 
     var body: some View {
         
@@ -39,6 +41,14 @@ struct TripSearchView: View {
             }
             .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
             .padding()
+            
+            List {
+                ForEach(fromToModels) { fromToModel in
+                    NavigationLink(getFromToString(fromToModel: fromToModel)) {
+                        getTripResultsView(fromToModel: fromToModel)
+                    }
+                }
+            }
         }
     }
     
@@ -51,6 +61,19 @@ struct TripSearchView: View {
         return TripResultsView(model: tripResultsViewModel)
     }
     
+    private func getTripResultsView(fromToModel: FromToModel) -> some View {
+        let tripResultsViewModel = TripResultsViewModel(
+            fromStopLocation: fromToModel.fromStopLocation,
+            toStopLocation: fromToModel.toStopLocation)
+        return TripResultsView(model: tripResultsViewModel)
+    }
+    
+    private func getFromToString(fromToModel: FromToModel) -> String {
+        let from = fromToModel.fromStopLocation?.name ?? "from"
+        let to = fromToModel.toStopLocation?.name ?? "to"
+        return from + "\n -> \n" + to
+    }
+
 }
 
 #Preview {
