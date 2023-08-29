@@ -11,12 +11,12 @@ import Observation
 @Observable
 fileprivate class StopSelectionViewModel {
     
-    var bustStopTextFieldString: String = ""
+    var busStopTextFieldString: String = ""
     var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
     
-    init(bustStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
-        self.bustStopTextFieldString = bustStopName
+    init(busStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
+        self.busStopTextFieldString = busStopName
         self.stops = stops
         self.errorMessage = errorMessage
     }
@@ -25,7 +25,7 @@ fileprivate class StopSelectionViewModel {
         await MainActor.run {
             errorMessage = ""
         }
-        if let res = await NetworkAPI.getStops(busStopName: bustStopTextFieldString) {
+        if let res = await NetworkAPI.getStops(busStopName: busStopTextFieldString) {
             await MainActor.run {
                 stops = res
             }
@@ -65,7 +65,7 @@ struct StopSelectionView: View {
             .padding()
             .accessibility(identifier: "back_button")
             
-            TextField("Bus stop name", text: $model.bustStopTextFieldString)
+            TextField("Bus stop name", text: $model.busStopTextFieldString)
                 .textFieldStyle(.roundedBorder)
                 .padding()
                 .focused($focusedField, equals: .field)
