@@ -10,7 +10,9 @@ import Mocker
 import Alamofire
 
 final class TripResultsViewTests: XCTestCase {
-    func testUserFetchingURLSession() {
+    
+    /// It should correctly fetch and parse the user.
+    func testUserFetching() {
         
         let configuration = URLSessionConfiguration.af.default
         configuration.protocolClasses = [MockingURLProtocol.self] + (configuration.protocolClasses ?? [])
