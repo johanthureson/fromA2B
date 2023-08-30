@@ -124,13 +124,15 @@
 		4DF9D64C2A9F4F66003D210A /* StopLocationOrCoordLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91612A6F4724005F18CB /* StopLocationOrCoordLocation.swift */; };
 		4DF9D64D2A9F4F66003D210A /* ProductAtStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91632A6F4724005F18CB /* ProductAtStop.swift */; };
 		4DF9D64E2A9F4F73003D210A /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91652A6F4724005F18CB /* StopResponse.swift */; };
-		4DF9D6502A9F5220003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
 		4DF9D6972A9F5D44003D210A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9D6962A9F5D44003D210A /* WidgetKit.framework */; };
 		4DF9D6992A9F5D44003D210A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9D6982A9F5D44003D210A /* SwiftUI.framework */; };
 		4DF9D69C2A9F5D44003D210A /* fromA2BwidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D69B2A9F5D44003D210A /* fromA2BwidgetBundle.swift */; };
 		4DF9D69E2A9F5D44003D210A /* fromA2Bwidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D69D2A9F5D44003D210A /* fromA2Bwidget.swift */; };
 		4DF9D6A02A9F5D45003D210A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF9D69F2A9F5D45003D210A /* Assets.xcassets */; };
 		4DF9D6A42A9F5D45003D210A /* fromA2BwidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4DF9D6942A9F5D44003D210A /* fromA2BwidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4DF9D6A92A9F6971003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
+		4DF9D6AA2A9F6976003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
+		4DF9D6AB2A9F6976003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -446,7 +448,6 @@
 		4D9A519B2A2EA2F000647958 /* fromA2BTests */ = {
 			isa = PBXGroup;
 			children = (
-				4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */,
 				4D9A519C2A2EA2F000647958 /* fromA2BTests.swift */,
 				4D8814A82A9615B300B4D252 /* ContentViewTests.swift */,
 				4D8814AA2A961D5E00B4D252 /* TripSearchViewTests.swift */,
@@ -495,6 +496,7 @@
 			children = (
 				4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */,
 				4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */,
+				4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -858,6 +860,7 @@
 				4D2D916A2A6F4724005F18CB /* ProductAtStop.swift in Sources */,
 				4D2D91682A6F4724005F18CB /* StopLocationOrCoordLocation.swift in Sources */,
 				4D2D91882A6F4732005F18CB /* GisRef.swift in Sources */,
+				4DF9D6A92A9F6971003D210A /* MockURLProtocol.swift in Sources */,
 				4D1895572A6BB96D00F3570A /* TripResultsView.swift in Sources */,
 				4D2D91A02A7966DC005F18CB /* StaticFunctions.swift in Sources */,
 				4D1895532A6BB95600F3570A /* TripSearchView.swift in Sources */,
@@ -880,7 +883,7 @@
 				4D8048F22A98A3E300C69747 /* TripResultsViewTests.swift in Sources */,
 				4D8814842A96141900B4D252 /* AppModel.swift in Sources */,
 				4D88149B2A96142C00B4D252 /* Product.swift in Sources */,
-				4DF9D6502A9F5220003D210A /* MockURLProtocol.swift in Sources */,
+				4DF9D6AA2A9F6976003D210A /* MockURLProtocol.swift in Sources */,
 				4D8814AB2A961D5E00B4D252 /* TripSearchViewTests.swift in Sources */,
 				4D8814882A96142100B4D252 /* StopLocationOrCoordLocation.swift in Sources */,
 				4D8814972A96142C00B4D252 /* LegList.swift in Sources */,
@@ -910,6 +913,7 @@
 			files = (
 				4D8814852A96141900B4D252 /* AppModel.swift in Sources */,
 				4D88148D2A96142100B4D252 /* StopLocation.swift in Sources */,
+				4DF9D6AB2A9F6976003D210A /* MockURLProtocol.swift in Sources */,
 				4D8814A32A96142D00B4D252 /* TripStatus.swift in Sources */,
 				4D88149E2A96142D00B4D252 /* ResultStatus.swift in Sources */,
 				4D8814A22A96142D00B4D252 /* LegList.swift in Sources */,
