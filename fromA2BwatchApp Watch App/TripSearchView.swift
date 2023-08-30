@@ -18,16 +18,16 @@ fileprivate class TripSearchViewModel {
 
 struct TripSearchView: View {
 
-    @Environment(\.appModel) private var appModel
+//    @Environment(\.appModel) private var appModel
     @State private var model = TripSearchViewModel()
     @Query var fromToModels: [FromToModel]
 
     var body: some View {
         
-        @Bindable var bindableAppModel = appModel
+//        @Bindable var bindableAppModel = appModel
 
         NavigationStack {
-            
+            /*
             StopChoiceButtonView(directionText: model.from,
                                  selectedStopLocation: $bindableAppModel.fromStopLocation)
             .accessibility(identifier: "from_button")
@@ -41,17 +41,19 @@ struct TripSearchView: View {
             }
             .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
             .padding()
-            
+            */
+            Text("A")
             List {
                 ForEach(fromToModels) { fromToModel in
-                    NavigationLink(getFromToString(fromToModel: fromToModel)) {
-                        getTripResultsView(fromToModel: fromToModel)
-                    }
+                    Text(fromToModel.fromStopLocation?.name ?? "hej")
+//                    NavigationLink(getFromToString(fromToModel: fromToModel)) {
+//                        getTripResultsView(fromToModel: fromToModel)
+//                    }
                 }
             }
         }
     }
-    
+    /*
     private func getTripResultsView(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
@@ -67,15 +69,17 @@ struct TripSearchView: View {
             toStopLocation: fromToModel.toStopLocation)
         return TripResultsView(model: tripResultsViewModel)
     }
-    
+    */
+    /*
     private func getFromToString(fromToModel: FromToModel) -> String {
         let from = fromToModel.fromStopLocation?.name ?? "from"
         let to = fromToModel.toStopLocation?.name ?? "to"
         return from + "\n -> \n" + to
     }
+    */
 
 }
-
+/*
 #Preview {
     TripSearchView()
         .environment(\.appModel,
@@ -83,3 +87,4 @@ struct TripSearchView: View {
                         fromStopLocation:
                             StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }
+*/

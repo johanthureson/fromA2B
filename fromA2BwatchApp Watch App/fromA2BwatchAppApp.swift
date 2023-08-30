@@ -13,5 +13,6 @@ struct fromA2BwatchApp_Watch_AppApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: FromToModel.self)
     }
 }
