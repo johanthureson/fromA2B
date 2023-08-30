@@ -13,7 +13,12 @@ private let API_BASE_URL = "https://api.resrobot.se/v2.1"
 actor NetworkManager: GlobalActor {
     
     static let shared = NetworkManager()
-    private init() {}
+
+    private let sessionManager: Session
+
+    init(sessionManager: Session = AF) {
+        self.sessionManager = sessionManager
+    }
 
     private let maxWaitTime = 15.0
     
@@ -30,7 +35,7 @@ actor NetworkManager: GlobalActor {
 
        // You must resume the continuation exactly once
         return try await withCheckedThrowingContinuation { continuation in
-            AF.request(
+            sessionManager.request(
                 API_BASE_URL + path,
                 parameters: parametersWithAccessId,
                 headers: nil,
