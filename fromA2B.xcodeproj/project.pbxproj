@@ -131,8 +131,6 @@
 		4DF9D6A02A9F5D45003D210A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF9D69F2A9F5D45003D210A /* Assets.xcassets */; };
 		4DF9D6A42A9F5D45003D210A /* fromA2BwidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4DF9D6942A9F5D44003D210A /* fromA2BwidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4DF9D6A92A9F6971003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
-		4DF9D6AA2A9F6976003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
-		4DF9D6AB2A9F6976003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -883,7 +881,6 @@
 				4D8048F22A98A3E300C69747 /* TripResultsViewTests.swift in Sources */,
 				4D8814842A96141900B4D252 /* AppModel.swift in Sources */,
 				4D88149B2A96142C00B4D252 /* Product.swift in Sources */,
-				4DF9D6AA2A9F6976003D210A /* MockURLProtocol.swift in Sources */,
 				4D8814AB2A961D5E00B4D252 /* TripSearchViewTests.swift in Sources */,
 				4D8814882A96142100B4D252 /* StopLocationOrCoordLocation.swift in Sources */,
 				4D8814972A96142C00B4D252 /* LegList.swift in Sources */,
@@ -913,7 +910,6 @@
 			files = (
 				4D8814852A96141900B4D252 /* AppModel.swift in Sources */,
 				4D88148D2A96142100B4D252 /* StopLocation.swift in Sources */,
-				4DF9D6AB2A9F6976003D210A /* MockURLProtocol.swift in Sources */,
 				4D8814A32A96142D00B4D252 /* TripStatus.swift in Sources */,
 				4D88149E2A96142D00B4D252 /* ResultStatus.swift in Sources */,
 				4D8814A22A96142D00B4D252 /* LegList.swift in Sources */,
