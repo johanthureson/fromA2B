@@ -11,68 +11,6 @@ import Alamofire
 
 final class NetworkAPITests: XCTestCase {
     
-    
-    private var sut: NetworkManager!
-    
-    override func setUp() {
-        super.setUp()
-        
-        let configuration = URLSessionConfiguration.af.default
-        configuration.protocolClasses = [MockURLProtocol.self] + (configuration.protocolClasses ?? [])
-        let sessionManager = Session(configuration: configuration)
-
-//        let manager: SessionManager = {
-//            let configuration: URLSessionConfiguration = {
-//                let configuration = URLSessionConfiguration.default
-//                configuration.protocolClasses = [MockURLProtocol.self]
-//                return configuration
-//            }()
-//            
-//            return SessionManager(configuration: configuration)
-//        }()
-        sut = NetworkManager(sessionManager: sessionManager)
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-        
-        sut = nil
-    }
-    
-    func testStatusCode200ReturnsStatusCode200() async {
-        // given
-        MockURLProtocol.responseWithStatusCode(code: 200)
-        
-//        let expectation = XCTestExpectation(description: "Performs a request")
-        
-        // when
-        let result = await NetworkAPI.getStops(busStopName: "Logdansplan", networkManager: sut)
-//        sut.login(username: "username", password: "password") { (result) in
-//            XCTAssertEqual(result.response?.statusCode, 200)
-//            expectation.fulfill()
-//        }
-//        
-//        // then
-//        wait(for: [expectation], timeout: 3)
-        //
-//        XCTAssertEqual(result.response?.statusCode, 200)
-
-        XCTAssertEqual(result?.count, 10)
-    }
-
-    
-    
-    /*
-    // test getStops
-    func testGetStops() async throws {
-        let stops = await NetworkAPI.getStops(busStopName: "Kungsgatan")
-        XCTAssertNotNil(stops)
-        XCTAssertEqual(stops?.count, 10)
-        XCTAssertEqual(stops?.first?.stopLocation?.name, "Kungsgatan, Göteborg")
-    }
-    */
-
-    /*
     /// It should correctly fetch and parse the user.
     func testUserFetching() {
         
@@ -98,5 +36,15 @@ final class NetworkAPITests: XCTestCase {
         
         wait(for: [requestExpectation], timeout: 10.0)
     }
-    */
 }
+
+//
+//    // test getStops
+//    func testGetStops() async throws {
+//        let stops = await NetworkAPI.getStops(busStopName: "Kungsgatan")
+//        XCTAssertNotNil(stops)
+//        XCTAssertEqual(stops?.count, 10)
+//        XCTAssertEqual(stops?.first?.stopLocation?.name, "Kungsgatan, Göteborg")
+//    }
+//    
+//}

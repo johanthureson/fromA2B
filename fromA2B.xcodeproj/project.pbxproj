@@ -131,12 +131,6 @@
 		4DF9D6A02A9F5D45003D210A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF9D69F2A9F5D45003D210A /* Assets.xcassets */; };
 		4DF9D6A42A9F5D45003D210A /* fromA2BwidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4DF9D6942A9F5D44003D210A /* fromA2BwidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4DF9D6A92A9F6971003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
-		4DF9D6B02A9F8248003D210A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */; };
-		4DF9D6B12A9F8248003D210A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */; };
-		4DF9D6B42A9F8293003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
-		4DF9D6B52A9F8293003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
-		4DF9D6B62A9F8602003D210A /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */; };
-		4DF9D6B72A9F8603003D210A /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -891,7 +885,6 @@
 				4D8814882A96142100B4D252 /* StopLocationOrCoordLocation.swift in Sources */,
 				4D8814972A96142C00B4D252 /* LegList.swift in Sources */,
 				4D7BFB3D2A9DFA4B00FC9CE1 /* NetworkAPITests.swift in Sources */,
-				4DF9D6B62A9F8602003D210A /* NetworkAPI.swift in Sources */,
 				4D88147E2A96138800B4D252 /* StopResponse.swift in Sources */,
 				4D8814992A96142C00B4D252 /* Leg.swift in Sources */,
 				4D8814872A96142100B4D252 /* StopLocation.swift in Sources */,
@@ -900,13 +893,11 @@
 				4D8814962A96142C00B4D252 /* GisRef.swift in Sources */,
 				4D8814822A96140800B4D252 /* StaticFunctions.swift in Sources */,
 				4D8814952A96142C00B4D252 /* GisRoute.swift in Sources */,
-				4DF9D6B42A9F8293003D210A /* MockURLProtocol.swift in Sources */,
 				4D88149C2A96142D00B4D252 /* Origin.swift in Sources */,
 				4D8814892A96142100B4D252 /* TechnicalMessage.swift in Sources */,
 				4D8814A92A9615B300B4D252 /* ContentViewTests.swift in Sources */,
 				4D9A519D2A2EA2F000647958 /* fromA2BTests.swift in Sources */,
 				4D8814802A96139100B4D252 /* TripResponse.swift in Sources */,
-				4DF9D6B02A9F8248003D210A /* NetworkManager.swift in Sources */,
 				4D88148A2A96142100B4D252 /* TechnicalMessages.swift in Sources */,
 				4D8814982A96142C00B4D252 /* TripStatus.swift in Sources */,
 				4D88149A2A96142C00B4D252 /* Destination.swift in Sources */,
@@ -919,13 +910,11 @@
 			files = (
 				4D8814852A96141900B4D252 /* AppModel.swift in Sources */,
 				4D88148D2A96142100B4D252 /* StopLocation.swift in Sources */,
-				4DF9D6B72A9F8603003D210A /* NetworkAPI.swift in Sources */,
 				4D8814A32A96142D00B4D252 /* TripStatus.swift in Sources */,
 				4D88149E2A96142D00B4D252 /* ResultStatus.swift in Sources */,
 				4D8814A22A96142D00B4D252 /* LegList.swift in Sources */,
 				4D9A51A92A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift in Sources */,
 				4D88148C2A96142100B4D252 /* ProductAtStop.swift in Sources */,
-				4DF9D6B52A9F8293003D210A /* MockURLProtocol.swift in Sources */,
 				4D9A51A72A2EA2F000647958 /* fromA2BUITests.swift in Sources */,
 				4D88147F2A96138900B4D252 /* StopResponse.swift in Sources */,
 				4D88148F2A96142100B4D252 /* TechnicalMessage.swift in Sources */,
@@ -941,7 +930,6 @@
 				4D8814812A96139100B4D252 /* TripResponse.swift in Sources */,
 				4D88149D2A96142D00B4D252 /* Trip.swift in Sources */,
 				4D88149F2A96142D00B4D252 /* ServiceDays.swift in Sources */,
-				4DF9D6B12A9F8248003D210A /* NetworkManager.swift in Sources */,
 				4D8814832A96140900B4D252 /* StaticFunctions.swift in Sources */,
 				4D8814A72A96142D00B4D252 /* Origin.swift in Sources */,
 			);
