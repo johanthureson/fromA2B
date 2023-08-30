@@ -114,6 +114,25 @@
 		4DF9D5832A9F452D003D210A /* fromA2B_Watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D5822A9F452D003D210A /* fromA2B_Watch_Watch_AppUITests.swift */; };
 		4DF9D5852A9F452D003D210A /* fromA2B_Watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D5842A9F452D003D210A /* fromA2B_Watch_Watch_AppUITestsLaunchTests.swift */; };
 		4DF9D5882A9F452D003D210A /* fromA2B Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4DF9D5652A9F452C003D210A /* fromA2B Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4DF9D5D62A9F4873003D210A /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91652A6F4724005F18CB /* StopResponse.swift */; };
+		4DF9D5D72A9F487E003D210A /* TripResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91762A6F4731005F18CB /* TripResponse.swift */; };
+		4DF9D5D82A9F4882003D210A /* StopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91602A6F4724005F18CB /* StopLocation.swift */; };
+		4DF9D5D92A9F4882003D210A /* StopLocationOrCoordLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91612A6F4724005F18CB /* StopLocationOrCoordLocation.swift */; };
+		4DF9D5DA2A9F4882003D210A /* TechnicalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D915F2A6F4724005F18CB /* TechnicalMessage.swift */; };
+		4DF9D5DB2A9F4882003D210A /* TechnicalMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91642A6F4724005F18CB /* TechnicalMessages.swift */; };
+		4DF9D5DC2A9F4882003D210A /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91622A6F4724005F18CB /* Icon.swift */; };
+		4DF9D5DD2A9F4882003D210A /* ProductAtStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91632A6F4724005F18CB /* ProductAtStop.swift */; };
+		4DF9D5DE2A9F4886003D210A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D916D2A6F4731005F18CB /* Product.swift */; };
+		4DF9D5DF2A9F4886003D210A /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91722A6F4731005F18CB /* Destination.swift */; };
+		4DF9D5E02A9F4886003D210A /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D916F2A6F4731005F18CB /* Origin.swift */; };
+		4DF9D5E12A9F4886003D210A /* ResultStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D916E2A6F4731005F18CB /* ResultStatus.swift */; };
+		4DF9D5E22A9F4886003D210A /* GisRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91792A6F4731005F18CB /* GisRef.swift */; };
+		4DF9D5E32A9F4886003D210A /* TripStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D917B2A6F4732005F18CB /* TripStatus.swift */; };
+		4DF9D5E42A9F4886003D210A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91772A6F4731005F18CB /* Trip.swift */; };
+		4DF9D5E52A9F4886003D210A /* GisRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91742A6F4731005F18CB /* GisRoute.swift */; };
+		4DF9D5E62A9F4886003D210A /* ServiceDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91752A6F4731005F18CB /* ServiceDays.swift */; };
+		4DF9D5E72A9F4886003D210A /* LegList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91702A6F4731005F18CB /* LegList.swift */; };
+		4DF9D5E82A9F4886003D210A /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D917A2A6F4732005F18CB /* Leg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -826,8 +845,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF9D5E12A9F4886003D210A /* ResultStatus.swift in Sources */,
+				4DF9D5D92A9F4882003D210A /* StopLocationOrCoordLocation.swift in Sources */,
+				4DF9D5D62A9F4873003D210A /* StopResponse.swift in Sources */,
+				4DF9D5E52A9F4886003D210A /* GisRoute.swift in Sources */,
+				4DF9D5E72A9F4886003D210A /* LegList.swift in Sources */,
+				4DF9D5DF2A9F4886003D210A /* Destination.swift in Sources */,
+				4DF9D5E62A9F4886003D210A /* ServiceDays.swift in Sources */,
+				4DF9D5DD2A9F4882003D210A /* ProductAtStop.swift in Sources */,
+				4DF9D5DA2A9F4882003D210A /* TechnicalMessage.swift in Sources */,
+				4DF9D5DC2A9F4882003D210A /* Icon.swift in Sources */,
+				4DF9D5E02A9F4886003D210A /* Origin.swift in Sources */,
+				4DF9D5DE2A9F4886003D210A /* Product.swift in Sources */,
+				4DF9D5E82A9F4886003D210A /* Leg.swift in Sources */,
+				4DF9D5D82A9F4882003D210A /* StopLocation.swift in Sources */,
 				4DF9D56A2A9F452C003D210A /* ContentView.swift in Sources */,
+				4DF9D5DB2A9F4882003D210A /* TechnicalMessages.swift in Sources */,
 				4DF9D5682A9F452C003D210A /* fromA2B_WatchApp.swift in Sources */,
+				4DF9D5D72A9F487E003D210A /* TripResponse.swift in Sources */,
+				4DF9D5E32A9F4886003D210A /* TripStatus.swift in Sources */,
+				4DF9D5E42A9F4886003D210A /* Trip.swift in Sources */,
+				4DF9D5E22A9F4886003D210A /* GisRef.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
