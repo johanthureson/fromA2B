@@ -9,12 +9,12 @@ import Foundation
 
 class NetworkAPI {
 
-    static func getStops(busStopName: String?) async -> [StopLocationOrCoordLocation]? {
+    static func getStops(busStopName: String?, networkManager: NetworkManager = NetworkManager.shared) async -> [StopLocationOrCoordLocation]? {
         do {
             let parameters = [
                 "input": busStopName ?? "",
             ]
-            let data = try await NetworkManager.shared.get(
+            let data = try await networkManager.get(
                 path: "/location.name?format=json",
                 parameters: parameters
             )
