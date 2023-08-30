@@ -11,24 +11,6 @@ import SwiftData
 
 
 
-@Model
-class FromToModel: Equatable {
-    var fromStopLocation: StopLocation?
-    var toStopLocation: StopLocation?
-    
-    init(fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
-        self.fromStopLocation = fromStopLocation
-        self.toStopLocation = toStopLocation
-    }
-    
-    static func == (lhs: FromToModel, rhs: FromToModel) -> Bool {
-        lhs.fromStopLocation == rhs.fromStopLocation &&
-        lhs.toStopLocation == rhs.toStopLocation
-    }
-}
-
-
-
 @Observable
 class TripResultsViewModel {
     

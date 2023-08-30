@@ -115,6 +115,7 @@
 		4DF9D6102A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D60F2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift */; };
 		4DF9D6132A9F4A48003D210A /* fromA2BwatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4DF9D5F02A9F4A46003D210A /* fromA2BwatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4DF9D61F2A9F4AF9003D210A /* TripSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D61E2A9F4AF9003D210A /* TripSearchView.swift */; };
+		4DF9D6452A9F4E68003D210A /* FromToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D6442A9F4E68003D210A /* FromToModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,7 @@
 		4DF9D60D2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchApp_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		4DF9D60F2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DF9D61E2A9F4AF9003D210A /* TripSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchView.swift; sourceTree = "<group>"; };
+		4DF9D6442A9F4E68003D210A /* FromToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 		4D2D915C2A6F46D0005F18CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4DF9D6442A9F4E68003D210A /* FromToModel.swift */,
 				4D18955A2A6BB9C600F3570A /* AppModel.swift */,
 				4D2D91652A6F4724005F18CB /* StopResponse.swift */,
 				4D2D91762A6F4731005F18CB /* TripResponse.swift */,
@@ -746,6 +749,7 @@
 				4D18955B2A6BB9C600F3570A /* AppModel.swift in Sources */,
 				4D2D916C2A6F4724005F18CB /* StopResponse.swift in Sources */,
 				4D9A51882A2EA2EF00647958 /* fromA2BApp.swift in Sources */,
+				4DF9D6452A9F4E68003D210A /* FromToModel.swift in Sources */,
 				4D2D916A2A6F4724005F18CB /* ProductAtStop.swift in Sources */,
 				4D2D91682A6F4724005F18CB /* StopLocationOrCoordLocation.swift in Sources */,
 				4D2D91882A6F4732005F18CB /* GisRef.swift in Sources */,
