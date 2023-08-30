@@ -114,6 +114,7 @@
 		4DF9D60E2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D60D2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITests.swift */; };
 		4DF9D6102A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D60F2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift */; };
 		4DF9D6132A9F4A48003D210A /* fromA2BwatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4DF9D5F02A9F4A46003D210A /* fromA2BwatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4DF9D61F2A9F4AF9003D210A /* TripSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D61E2A9F4AF9003D210A /* TripSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,7 @@
 		4DF9D6092A9F4A47003D210A /* fromA2BwatchApp Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fromA2BwatchApp Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF9D60D2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchApp_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		4DF9D60F2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DF9D61E2A9F4AF9003D210A /* TripSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 			children = (
 				4DF9D5F22A9F4A46003D210A /* fromA2BwatchAppApp.swift */,
 				4DF9D5F42A9F4A46003D210A /* ContentView.swift */,
+				4DF9D61E2A9F4AF9003D210A /* TripSearchView.swift */,
 				4DF9D5F62A9F4A47003D210A /* Assets.xcassets */,
 				4DF9D5F82A9F4A47003D210A /* Preview Content */,
 			);
@@ -826,6 +829,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF9D61F2A9F4AF9003D210A /* TripSearchView.swift in Sources */,
 				4DF9D5F52A9F4A46003D210A /* ContentView.swift in Sources */,
 				4DF9D5F32A9F4A46003D210A /* fromA2BwatchAppApp.swift in Sources */,
 			);
