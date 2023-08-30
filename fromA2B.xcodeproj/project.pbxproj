@@ -125,10 +125,6 @@
 		4DF9D64D2A9F4F66003D210A /* ProductAtStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91632A6F4724005F18CB /* ProductAtStop.swift */; };
 		4DF9D64E2A9F4F73003D210A /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91652A6F4724005F18CB /* StopResponse.swift */; };
 		4DF9D6502A9F5220003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
-		4DF9D6712A9F5A96003D210A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9D6702A9F5A96003D210A /* WidgetKit.framework */; };
-		4DF9D6732A9F5A96003D210A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9D6722A9F5A96003D210A /* SwiftUI.framework */; };
-		4DF9D6762A9F5A96003D210A /* fromA2Bextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D6752A9F5A96003D210A /* fromA2Bextension.swift */; };
-		4DF9D6782A9F5A97003D210A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF9D6772A9F5A97003D210A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,12 +244,6 @@
 		4DF9D61E2A9F4AF9003D210A /* TripSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchView.swift; sourceTree = "<group>"; };
 		4DF9D6442A9F4E68003D210A /* FromToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToModel.swift; sourceTree = "<group>"; };
 		4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
-		4DF9D66E2A9F5A96003D210A /* fromA2BextensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = fromA2BextensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DF9D6702A9F5A96003D210A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		4DF9D6722A9F5A96003D210A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		4DF9D6752A9F5A96003D210A /* fromA2Bextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2Bextension.swift; sourceTree = "<group>"; };
-		4DF9D6772A9F5A97003D210A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4DF9D6792A9F5A97003D210A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,15 +289,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4DF9D66B2A9F5A96003D210A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4DF9D6732A9F5A96003D210A /* SwiftUI.framework in Frameworks */,
-				4DF9D6712A9F5A96003D210A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +358,6 @@
 				4DF9D5F12A9F4A46003D210A /* fromA2BwatchApp Watch App */,
 				4DF9D6022A9F4A47003D210A /* fromA2BwatchApp Watch AppTests */,
 				4DF9D60C2A9F4A48003D210A /* fromA2BwatchApp Watch AppUITests */,
-				4DF9D6742A9F5A96003D210A /* fromA2Bextension */,
-				4DF9D66F2A9F5A96003D210A /* Frameworks */,
 				4D9A51852A2EA2EF00647958 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -392,7 +371,6 @@
 				4DF9D5F02A9F4A46003D210A /* fromA2BwatchApp Watch App.app */,
 				4DF9D5FF2A9F4A47003D210A /* fromA2BwatchApp Watch AppTests.xctest */,
 				4DF9D6092A9F4A47003D210A /* fromA2BwatchApp Watch AppUITests.xctest */,
-				4DF9D66E2A9F5A96003D210A /* fromA2BextensionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -515,25 +493,6 @@
 			path = "fromA2BwatchApp Watch AppUITests";
 			sourceTree = "<group>";
 		};
-		4DF9D66F2A9F5A96003D210A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4DF9D6702A9F5A96003D210A /* WidgetKit.framework */,
-				4DF9D6722A9F5A96003D210A /* SwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4DF9D6742A9F5A96003D210A /* fromA2Bextension */ = {
-			isa = PBXGroup;
-			children = (
-				4DF9D6752A9F5A96003D210A /* fromA2Bextension.swift */,
-				4DF9D6772A9F5A97003D210A /* Assets.xcassets */,
-				4DF9D6792A9F5A97003D210A /* Info.plist */,
-			);
-			path = fromA2Bextension;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -652,23 +611,6 @@
 			productReference = 4DF9D6092A9F4A47003D210A /* fromA2BwatchApp Watch AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		4DF9D66D2A9F5A96003D210A /* fromA2BextensionExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4DF9D67C2A9F5A97003D210A /* Build configuration list for PBXNativeTarget "fromA2BextensionExtension" */;
-			buildPhases = (
-				4DF9D66A2A9F5A96003D210A /* Sources */,
-				4DF9D66B2A9F5A96003D210A /* Frameworks */,
-				4DF9D66C2A9F5A96003D210A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = fromA2BextensionExtension;
-			productName = fromA2BextensionExtension;
-			productReference = 4DF9D66E2A9F5A96003D210A /* fromA2BextensionExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -701,9 +643,6 @@
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 4DF9D5EF2A9F4A46003D210A;
 					};
-					4DF9D66D2A9F5A96003D210A = {
-						CreatedOnToolsVersion = 15.0;
-					};
 				};
 			};
 			buildConfigurationList = 4D9A517F2A2EA2EF00647958 /* Build configuration list for PBXProject "fromA2B" */;
@@ -731,7 +670,6 @@
 				4DF9D5EF2A9F4A46003D210A /* fromA2BwatchApp Watch App */,
 				4DF9D5FE2A9F4A47003D210A /* fromA2BwatchApp Watch AppTests */,
 				4DF9D6082A9F4A47003D210A /* fromA2BwatchApp Watch AppUITests */,
-				4DF9D66D2A9F5A96003D210A /* fromA2BextensionExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -792,14 +730,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4DF9D66C2A9F5A96003D210A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4DF9D6782A9F5A97003D210A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,14 +873,6 @@
 			files = (
 				4DF9D6102A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift in Sources */,
 				4DF9D60E2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4DF9D66A2A9F5A96003D210A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4DF9D6762A9F5A96003D210A /* fromA2Bextension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1394,66 +1316,6 @@
 			};
 			name = Release;
 		};
-		4DF9D67A2A9F5A97003D210A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y8NX76ELDN;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = fromA2Bextension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = fromA2Bextension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nu.sing2.fromA2B.watchkitapp.fromA2Bextension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		4DF9D67B2A9F5A97003D210A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y8NX76ELDN;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = fromA2Bextension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = fromA2Bextension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nu.sing2.fromA2B.watchkitapp.fromA2Bextension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1516,15 +1378,6 @@
 			buildConfigurations = (
 				4DF9D6192A9F4A48003D210A /* Debug */,
 				4DF9D61A2A9F4A48003D210A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4DF9D67C2A9F5A97003D210A /* Build configuration list for PBXNativeTarget "fromA2BextensionExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4DF9D67A2A9F5A97003D210A /* Debug */,
-				4DF9D67B2A9F5A97003D210A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
