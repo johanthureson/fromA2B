@@ -63,7 +63,7 @@ final class RequestManager: RequestManagerProtocol {
 
   func perform<T: Decodable>(_ request: RequestProtocol) async throws -> T {
     // let authToken = try await requestAccessToken()
-    let data = try await apiManager.perform(request)
+    let data = try await apiManager.perform(request, authToken: "")
     let decoded: T = try parser.parse(data: data)
     return decoded
   }
