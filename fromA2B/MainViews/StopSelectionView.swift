@@ -28,7 +28,13 @@ fileprivate class StopSelectionViewModel {
         
         errorMessage = ""
         isLoading = true
-
+/*
+ vad kan gå fel?
+ borde jag lägga in RequestManagerProtocol,
+ så jag kan skapa vyn med mock
+ och inspektera?
+ fast jag gör ju ui-tester inför merge till master
+ */
         do {
             let stopRespons: StopResponse = try await requestManager.perform(
                 StopsRequest.getStops(
