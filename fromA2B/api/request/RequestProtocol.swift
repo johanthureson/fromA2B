@@ -48,7 +48,7 @@ extension RequestProtocol {
   }
 
   var addAuthorizationToken: Bool {
-    true
+    false
   }
 
   var params: [String: Any] {
