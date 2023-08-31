@@ -1,3 +1,7 @@
+/*
+ https://www.kodeco.com/books/real-world-ios-by-tutorials/v1.0/chapters/3-data-layer-networking#toc-chapter-007-anchor-003
+ */
+
 /// Copyright (c) 2022 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -95,3 +99,4 @@ extension RequestProtocol {
     return urlRequest
   }
 }
+
