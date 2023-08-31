@@ -6,15 +6,24 @@
 //
 
 import Foundation
+import Alamofire
 
 class NetworkAPI {
+    
+    static let shared = NetworkAPI()
+    
+    private let networkManager: NetworkManager
+    
+    init(sessionManager: Session = AF) {
+        self.networkManager = NetworkManager(sessionManager: sessionManager)
+    }
 
-    static func getStops(busStopName: String?) async -> [StopLocationOrCoordLocation]? {
+    func getStops(busStopName: String?) async -> [StopLocationOrCoordLocation]? {
         do {
             let parameters = [
                 "input": busStopName ?? "",
             ]
-            let data = try await NetworkManager.shared.get(
+            let data = try await networkManager.get(
                 path: "/location.name?format=json",
                 parameters: parameters
             )
@@ -26,7 +35,7 @@ class NetworkAPI {
         }
     }
 
-    static func getTrips(originId: String?, destId: String?) async -> [Trip]? {
+    func getTrips(originId: String?, destId: String?) async -> [Trip]? {
         do {
             
             let parameters = [
@@ -36,7 +45,7 @@ class NetworkAPI {
                 "showPassingPoints": "true",
             ]
             
-            let data = try await NetworkManager.shared.get(
+            let data = try await networkManager.get(
                 path: "/trip?format=json",
                 parameters: parameters
             )
@@ -48,7 +57,7 @@ class NetworkAPI {
         }
     }
 
-    private static func parseData<T: Decodable>(data: Data) throws -> T{
+    private func parseData<T: Decodable>(data: Data) throws -> T{
         guard let decodedData = try? JSONDecoder().decode(T.self, from: data)
         else {
             throw NSError(

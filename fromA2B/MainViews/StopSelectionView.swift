@@ -25,7 +25,7 @@ fileprivate class StopSelectionViewModel {
         await MainActor.run {
             errorMessage = ""
         }
-        if let res = await NetworkAPI.getStops(busStopName: busStopTextFieldString) {
+        if let res = await NetworkAPI.shared.getStops(busStopName: busStopTextFieldString) {
             await MainActor.run {
                 stops = res
             }

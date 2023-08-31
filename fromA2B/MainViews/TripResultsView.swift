@@ -38,7 +38,7 @@ class TripResultsViewModel {
         await MainActor.run {
             self.errorMessage = ""
         }
-        if let res = await NetworkAPI.getTrips(
+        if let res = await NetworkAPI.shared.getTrips(
             originId: fromStopLocation?.extId,
             destId: toStopLocation?.extId) {
             await MainActor.run {
