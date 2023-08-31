@@ -11,6 +11,9 @@ import Observation
 @Observable
 fileprivate class StopSelectionViewModel {
     
+    var isLoading = false
+    private let requestManager = RequestManager()
+
     var busStopTextFieldString: String = ""
     var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
@@ -22,19 +25,30 @@ fileprivate class StopSelectionViewModel {
     }
     
     func fetchStops() async {
-        await MainActor.run {
-            errorMessage = ""
-        }
-        if let res = await NetworkAPI.shared.getStops(busStopName: busStopTextFieldString) {
-            await MainActor.run {
-                stops = res
-            }
-        } else {
-            await MainActor.run {
-                errorMessage = "Fetch data failed"
-            }
+        
+        errorMessage = ""
+        isLoading = true
+
+        do {
+            let stopRespons: StopResponse = try await requestManager.perform(
+                StopsRequest.getStops(
+                    busStopName: busStopTextFieldString))
+            
+            stops = stopRespons.stopLocationOrCoordLocation
+            
+            await stopLoading()
+            
+        } catch {
+            await stopLoading()
+            errorMessage = "Fetch data failed"
         }
     }
+    
+    @MainActor
+    func stopLoading() async {
+        isLoading = false
+    }
+
 }
 
 struct StopSelectionView: View {
@@ -97,6 +111,11 @@ struct StopSelectionView: View {
                 }
             }
             
+        }
+        .overlay {
+            if model.isLoading {
+                ProgressView("Finding Stops near you...")
+            }
         }
     }
 }

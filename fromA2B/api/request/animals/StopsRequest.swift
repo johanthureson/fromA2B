@@ -35,7 +35,7 @@ enum StopsRequest: RequestProtocol {
     case getStops(busStopName: String?)
     
     var path: String {
-        "/location.name"
+        "/v2.1/location.name"
     }
     
     var urlParams: [String: String?] {
@@ -48,6 +48,7 @@ enum StopsRequest: RequestProtocol {
             if let busStopName {
                 params["input"] = busStopName
             }
+            params["accessId"] = "661da78d-bf7c-4b44-8f33-c02ebc44228a"
             return params
         }
     }
@@ -57,13 +58,12 @@ enum StopsRequest: RequestProtocol {
     }
 }
 
-
 enum TripsRequest: RequestProtocol {
     
     case getTrips(originId: String?, destId: String?)
     
     var path: String {
-        "/trip"
+        "/v2.1/trip"
     }
     
     var urlParams: [String: String?] {
@@ -80,6 +80,7 @@ enum TripsRequest: RequestProtocol {
             }
             params["passlist"] = "true"
             params["showPassingPoints"] = "true"
+            params["accessId"] = "661da78d-bf7c-4b44-8f33-c02ebc44228a"
             return params
         }
     }

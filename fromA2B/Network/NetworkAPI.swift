@@ -4,7 +4,7 @@
 //
 //  Created by Johan Thureson on 2023-08-17.
 //
-
+/*
 import Foundation
 import Alamofire
 
@@ -69,3 +69,4 @@ class NetworkAPI {
         return decodedData
     }
 }
+*/

@@ -74,6 +74,12 @@
         }
       }
     },
+    "Finding Stops near you..." : {
+
+    },
+    "Finding Trips near you..." : {
+
+    },
     "Search" : {
       "localizations" : {
         "sv" : {

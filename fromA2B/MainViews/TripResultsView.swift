@@ -14,6 +14,9 @@ import SwiftData
 @Observable
 class TripResultsViewModel {
     
+    var isLoading = false
+    private let requestManager = RequestManager()
+
     var preview = false
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
@@ -35,20 +38,28 @@ class TripResultsViewModel {
     }
 
     func fetchTrips() async {
-        await MainActor.run {
-            self.errorMessage = ""
+        
+        errorMessage = ""
+        isLoading = true
+        
+        do {
+            let tripResponse: TripResponse = try await requestManager.perform(
+                TripsRequest.getTrips(
+                    originId: fromStopLocation?.extId,
+                    destId: toStopLocation?.extId))
+            trips = tripResponse.trip ?? [Trip]()
+            
+            await stopLoading()
+            
+        } catch {
+            await stopLoading()
+            errorMessage = "Fetch data failed"
         }
-        if let res = await NetworkAPI.shared.getTrips(
-            originId: fromStopLocation?.extId,
-            destId: toStopLocation?.extId) {
-            await MainActor.run {
-                self.trips = res
-            }
-        } else {
-            await MainActor.run {
-                self.errorMessage = "Fetch data failed"
-            }
-        }
+    }
+    
+    @MainActor
+    func stopLoading() async {
+        isLoading = false
     }
 }
 
@@ -127,6 +138,11 @@ struct TripResultsView: View {
         }
         .onAppear {
             saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
+        }
+        .overlay {
+            if model.isLoading {
+                ProgressView("Finding Trips near you...")
+            }
         }
     }
     
