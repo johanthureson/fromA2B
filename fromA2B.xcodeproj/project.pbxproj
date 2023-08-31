@@ -142,6 +142,9 @@
 		4DF3D2392AA0FE5500C4320D /* AppUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2342AA0FE5500C4320D /* AppUserDefaultsKeys.swift */; };
 		4DF3D23A2AA0FE5500C4320D /* AppUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2342AA0FE5500C4320D /* AppUserDefaultsKeys.swift */; };
 		4DF3D23B2AA0FE5500C4320D /* AppUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2342AA0FE5500C4320D /* AppUserDefaultsKeys.swift */; };
+		4DF3D2402AA123AF00C4320D /* NewNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D23F2AA123AF00C4320D /* NewNetworkTests.swift */; };
+		4DF3D25D2AA1312E00C4320D /* APIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2472AA125DC00C4320D /* APIManagerMock.swift */; };
+		4DF3D25F2AA1313600C4320D /* AnimalsRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2462AA125DC00C4320D /* AnimalsRequestMock.swift */; };
 		4DF9D5F32A9F4A46003D210A /* fromA2BwatchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D5F22A9F4A46003D210A /* fromA2BwatchAppApp.swift */; };
 		4DF9D5F52A9F4A46003D210A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D5F42A9F4A46003D210A /* ContentView.swift */; };
 		4DF9D5F72A9F4A47003D210A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF9D5F62A9F4A47003D210A /* Assets.xcassets */; };
@@ -303,6 +306,9 @@
 		4DF3D20F2AA0FD0700C4320D /* StopsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsRequest.swift; sourceTree = "<group>"; };
 		4DF3D2102AA0FD0700C4320D /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		4DF3D2342AA0FE5500C4320D /* AppUserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaultsKeys.swift; sourceTree = "<group>"; };
+		4DF3D23F2AA123AF00C4320D /* NewNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNetworkTests.swift; sourceTree = "<group>"; };
+		4DF3D2462AA125DC00C4320D /* AnimalsRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsRequestMock.swift; sourceTree = "<group>"; };
+		4DF3D2472AA125DC00C4320D /* APIManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerMock.swift; sourceTree = "<group>"; };
 		4DF9D5F02A9F4A46003D210A /* fromA2BwatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fromA2BwatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF9D5F22A9F4A46003D210A /* fromA2BwatchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchAppApp.swift; sourceTree = "<group>"; };
 		4DF9D5F42A9F4A46003D210A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -496,6 +502,7 @@
 		4D9A519B2A2EA2F000647958 /* fromA2BTests */ = {
 			isa = PBXGroup;
 			children = (
+				4DF3D2412AA125DC00C4320D /* Tests */,
 				4D9A519C2A2EA2F000647958 /* fromA2BTests.swift */,
 				4D8814A82A9615B300B4D252 /* ContentViewTests.swift */,
 				4D8814AA2A961D5E00B4D252 /* TripSearchViewTests.swift */,
@@ -629,6 +636,48 @@
 				4DF3D2342AA0FE5500C4320D /* AppUserDefaultsKeys.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		4DF3D2412AA125DC00C4320D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3D2422AA125DC00C4320D /* Core */,
+				4DF3D23F2AA123AF00C4320D /* NewNetworkTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		4DF3D2422AA125DC00C4320D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3D2432AA125DC00C4320D /* data */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4DF3D2432AA125DC00C4320D /* data */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3D2442AA125DC00C4320D /* api */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		4DF3D2442AA125DC00C4320D /* api */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3D2452AA125DC00C4320D /* mock */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		4DF3D2452AA125DC00C4320D /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3D2462AA125DC00C4320D /* AnimalsRequestMock.swift */,
+				4DF3D2472AA125DC00C4320D /* APIManagerMock.swift */,
+			);
+			path = mock;
 			sourceTree = "<group>";
 		};
 		4DF9D5F12A9F4A46003D210A /* fromA2BwatchApp Watch App */ = {
@@ -1025,6 +1074,7 @@
 				4D8814862A96142100B4D252 /* ProductAtStop.swift in Sources */,
 				4D2D919D2A796615005F18CB /* StopResponse+json.swift in Sources */,
 				4D8048F22A98A3E300C69747 /* TripResultsViewTests.swift in Sources */,
+				4DF3D2402AA123AF00C4320D /* NewNetworkTests.swift in Sources */,
 				4DF3D2122AA0FD0700C4320D /* AccessTokenManager.swift in Sources */,
 				4D8814842A96141900B4D252 /* AppModel.swift in Sources */,
 				4DF3D2152AA0FD0700C4320D /* APIConstants.swift in Sources */,
@@ -1036,6 +1086,7 @@
 				4D88147E2A96138800B4D252 /* StopResponse.swift in Sources */,
 				4D8814992A96142C00B4D252 /* Leg.swift in Sources */,
 				4DF3D2182AA0FD0700C4320D /* RequestManager.swift in Sources */,
+				4DF3D25D2AA1312E00C4320D /* APIManagerMock.swift in Sources */,
 				4DF3D22D2AA0FD0700C4320D /* StopsRequest.swift in Sources */,
 				4DF3D2272AA0FD0700C4320D /* AuthTokenRequest.swift in Sources */,
 				4D8814872A96142100B4D252 /* StopLocation.swift in Sources */,
@@ -1047,6 +1098,7 @@
 				4D8814952A96142C00B4D252 /* GisRoute.swift in Sources */,
 				4D88149C2A96142D00B4D252 /* Origin.swift in Sources */,
 				4DF3D22A2AA0FD0700C4320D /* RequestProtocol.swift in Sources */,
+				4DF3D25F2AA1313600C4320D /* AnimalsRequestMock.swift in Sources */,
 				4D8814892A96142100B4D252 /* TechnicalMessage.swift in Sources */,
 				4D8814A92A9615B300B4D252 /* ContentViewTests.swift in Sources */,
 				4DF3D23A2AA0FE5500C4320D /* AppUserDefaultsKeys.swift in Sources */,
