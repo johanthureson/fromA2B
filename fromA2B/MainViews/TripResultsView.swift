@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Observation
-//import SwiftData
+import SwiftData
 
 
 
@@ -65,10 +65,10 @@ class TripResultsViewModel {
 
 struct TripResultsView: View {
     
-//    @Environment(\.modelContext) private var modelContext
+    @Environment(\.modelContext) private var modelContext
     @State var model: TripResultsViewModel
     
-//    @Query var fromToModels: [FromToModel]
+    @Query var fromToModels: [FromToModel]
 
     @State var saved = false
 
@@ -77,7 +77,7 @@ struct TripResultsView: View {
             if model.errorMessage != "" {
                 Text(model.errorMessage)
             }
-            /*
+            
             Button {
                 let fromToModel = FromToModel(fromStopLocation: model.fromStopLocation,
                                               toStopLocation: model.toStopLocation)
@@ -108,7 +108,6 @@ struct TripResultsView: View {
                 }
             }
             .padding(.top)
-            */
 
             List {
                 ForEach(model.trips) { trip in
@@ -137,11 +136,9 @@ struct TripResultsView: View {
                 }
             }
         }
-        /*
         .onAppear {
             saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
         }
-        */
         .overlay {
             if model.isLoading {
                 ProgressView("Finding Trips near you...")
