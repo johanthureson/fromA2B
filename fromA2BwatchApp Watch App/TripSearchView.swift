@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Observation
-import SwiftData
+//import SwiftData
 
 @Observable
 fileprivate class TripSearchViewModel {

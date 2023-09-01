@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import SwiftData
-
+//import SwiftData
+/*
 @Model
 class FromToModel: Equatable {
     var fromStopLocation: StopLocation?
@@ -23,3 +23,4 @@ class FromToModel: Equatable {
         lhs.toStopLocation == rhs.toStopLocation
     }
 }
+*/
