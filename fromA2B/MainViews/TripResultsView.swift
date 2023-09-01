@@ -164,6 +164,8 @@ struct TripResultsView: View {
     }
 }
 
+/*
 #Preview {
     TripResultsView(model: TripResultsViewModel(preview: true, trips: TripResponse.tripResponse!.trip!))
 }
+*/

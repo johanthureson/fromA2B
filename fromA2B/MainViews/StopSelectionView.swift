@@ -126,9 +126,11 @@ struct StopSelectionView: View {
     }
 }
 
+/*
 #Preview {
     StopSelectionView(
         stops: StopResponse.originStopResponse?.stopLocationOrCoordLocation,
         selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation)
     )
 }
+*/
