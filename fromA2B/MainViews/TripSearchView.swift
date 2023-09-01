@@ -81,7 +81,6 @@ struct TripSearchView: View {
 
 }
 
-/*
 #Preview {
     TripSearchView()
         .environment(\.appModel,
@@ -89,4 +88,3 @@ struct TripSearchView: View {
                         fromStopLocation:
                             StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }
-*/
