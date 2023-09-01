@@ -72,4 +72,3 @@ struct TripDetailsView: View {
 #Preview {
     TripDetailsView(trip: TripResponse.tripResponse!.trip!.first!)
 }
-
