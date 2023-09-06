@@ -37,7 +37,7 @@ struct TripSearchScreen: View {
             .accessibility(identifier: "to_button")
 
             NavigationLink("Search") {
-                getTripResultsView(bindableAppModel: bindableAppModel)
+                getTripResultsScreen(bindableAppModel: bindableAppModel)
             }
             .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
             .padding()
@@ -47,27 +47,27 @@ struct TripSearchScreen: View {
                 ForEach(fromToModels) { fromToModel in
                     Text(fromToModel.fromStopLocation?.name ?? "hej")
 //                    NavigationLink(getFromToString(fromToModel: fromToModel)) {
-//                        getTripResultsView(fromToModel: fromToModel)
+//                        getTripResultsScreen(fromToModel: fromToModel)
 //                    }
                 }
             }
         }
     }
     /*
-    private func getTripResultsView(bindableAppModel: AppModel) -> some View {
+    private func getTripResultsScreen(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
-        let tripResultsViewModel = TripResultsViewModel(
+        let tripResultsScreenModel = TripResultsScreenModel(
             fromStopLocation: bindableAppModel.fromStopLocation,
             toStopLocation: bindableAppModel.toStopLocation)
-        return TripResultsView(model: tripResultsViewModel)
+        return TripResultsScreen(model: tripResultsScreenModel)
     }
     
-    private func getTripResultsView(fromToModel: FromToModel) -> some View {
-        let tripResultsViewModel = TripResultsViewModel(
+    private func getTripResultsScreen(fromToModel: FromToModel) -> some View {
+        let tripResultsScreenModel = TripResultsScreenModel(
             fromStopLocation: fromToModel.fromStopLocation,
             toStopLocation: fromToModel.toStopLocation)
-        return TripResultsView(model: tripResultsViewModel)
+        return TripResultsScreen(model: tripResultsScreenModel)
     }
     */
     /*
