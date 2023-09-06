@@ -10,7 +10,7 @@
 		4D1895532A6BB95600F3570A /* TripSearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1895522A6BB95600F3570A /* TripSearchScreen.swift */; };
 		4D1895552A6BB96500F3570A /* StopSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1895542A6BB96500F3570A /* StopSelectionScreen.swift */; };
 		4D1895572A6BB96D00F3570A /* TripResultsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1895562A6BB96D00F3570A /* TripResultsScreen.swift */; };
-		4D1895592A6BB97200F3570A /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1895582A6BB97200F3570A /* TripDetailsView.swift */; };
+		4D1895592A6BB97200F3570A /* TripDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1895582A6BB97200F3570A /* TripDetailsScreen.swift */; };
 		4D18955B2A6BB9C600F3570A /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D18955A2A6BB9C600F3570A /* AppModel.swift */; };
 		4D2D915B2A6EC3DB005F18CB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
 		4D2D91662A6F4724005F18CB /* TechnicalMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D915F2A6F4724005F18CB /* TechnicalMessage.swift */; };
@@ -195,7 +195,7 @@
 		4D1895522A6BB95600F3570A /* TripSearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchScreen.swift; sourceTree = "<group>"; };
 		4D1895542A6BB96500F3570A /* StopSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopSelectionScreen.swift; sourceTree = "<group>"; };
 		4D1895562A6BB96D00F3570A /* TripResultsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResultsScreen.swift; sourceTree = "<group>"; };
-		4D1895582A6BB97200F3570A /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
+		4D1895582A6BB97200F3570A /* TripDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsScreen.swift; sourceTree = "<group>"; };
 		4D18955A2A6BB9C600F3570A /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		4D2D915F2A6F4724005F18CB /* TechnicalMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnicalMessage.swift; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 				4D1895522A6BB95600F3570A /* TripSearchScreen.swift */,
 				4D1895542A6BB96500F3570A /* StopSelectionScreen.swift */,
 				4D1895562A6BB96D00F3570A /* TripResultsScreen.swift */,
-				4D1895582A6BB97200F3570A /* TripDetailsView.swift */,
+				4D1895582A6BB97200F3570A /* TripDetailsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -842,7 +842,7 @@
 				4D2D91A02A7966DC005F18CB /* StaticFunctions.swift in Sources */,
 				4DF3D2112AA0FD0700C4320D /* AccessTokenManager.swift in Sources */,
 				4D1895532A6BB95600F3570A /* TripSearchScreen.swift in Sources */,
-				4D1895592A6BB97200F3570A /* TripDetailsView.swift in Sources */,
+				4D1895592A6BB97200F3570A /* TripDetailsScreen.swift in Sources */,
 				4D2D916B2A6F4724005F18CB /* TechnicalMessages.swift in Sources */,
 				4D8814752A94D36600B4D252 /* StopChoiceButtonView.swift in Sources */,
 				4D2D91692A6F4724005F18CB /* Icon.swift in Sources */,

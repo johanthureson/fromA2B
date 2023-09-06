@@ -112,7 +112,7 @@ struct TripResultsScreen: View {
             List {
                 ForEach(model.trips) { trip in
                     
-                    NavigationLink(destination: TripDetailsView(trip: trip) ) {
+                    NavigationLink(destination: TripDetailsScreen(trip: trip) ) {
                         VStack {
                             fromToText(trip: trip)
                                 .padding()
