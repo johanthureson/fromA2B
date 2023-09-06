@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ContentScreen.swift
 //  fromA2B
 //
 //  Created by Johan Thureson on 2023-06-06.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentScreen: View {
     
     @State var appModel = AppModel()
 

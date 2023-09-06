@@ -14,7 +14,7 @@ final class ContentViewTests: XCTestCase {
     
     func testTabItemTitle() throws {
         let expected = "Trip Search"
-        let view = ContentView()
+        let view = ContentScreen()
         let tabTitle = try view
           .inspect()
           .find(text: expected)
