@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ContentScreen.swift
 //  fromA2BwatchApp Watch App
 //
 //  Created by Johan Thureson on 2023-08-30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentScreen: View {
     var body: some View {
         VStack {
 //            Image(systemName: "globe")
@@ -21,5 +21,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentScreen()
 }
