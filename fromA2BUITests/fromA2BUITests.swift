@@ -43,8 +43,7 @@ final class fromA2BUITests: XCTestCase {
         app.buttons["from_button"].tap()
 
         app.textFields.firstMatch.typeText("Logdansplan")
-        app.textFields.firstMatch.typeText("\n")
-        sleep(1)
+        app.buttons["search_button"].tap()
         app.collectionViews.firstMatch.cells.firstMatch.tap()
         
         let textString = app.buttons["from_button"].label
@@ -67,34 +66,6 @@ final class fromA2BUITests: XCTestCase {
     */
     
     func testUIRecorded() {
-        
-        
-        let app = XCUIApplication()
-        let searchButton = app.buttons["Search"]
-        searchButton.tap()
-        
-        let collectionViewsQuery = app.collectionViews
-        collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["T-Centralen Spårv (Stockholm kn)"]/*[[".cells.staticTexts[\"T-Centralen Spårv (Stockholm kn)\"]",".staticTexts[\"T-Centralen Spårv (Stockholm kn)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-        let tCentralenSpRvStockholmKnStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["T-Centralen Spårv (Stockholm kn)"]/*[[".buttons[\"from, T-Centralen Spårv (Stockholm kn)\"]",".staticTexts[\"T-Centralen Spårv (Stockholm kn)\"]",".staticTexts[\"stop_name\"]",".buttons[\"from_button\"]"],[[[-1,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
-        tCentralenSpRvStockholmKnStaticText.tap()
-        
-        let backButtonButton = app/*@START_MENU_TOKEN@*/.buttons["back_button"]/*[[".buttons[\"Back to Main\"]",".buttons[\"back_button\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        backButtonButton.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["<>"]/*[[".buttons[\"to, <>\"]",".staticTexts[\"<>\"]",".staticTexts[\"stop_name\"]",".buttons[\"to_button\"]"],[[[-1,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
-        searchButton.tap()
-        
-        let logdansplanSundbybergKnStaticText = collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["Logdansplan (Sundbyberg kn)"]/*[[".cells.staticTexts[\"Logdansplan (Sundbyberg kn)\"]",".staticTexts[\"Logdansplan (Sundbyberg kn)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        logdansplanSundbybergKnStaticText.tap()
-        logdansplanSundbybergKnStaticText.tap()
-        tCentralenSpRvStockholmKnStaticText.tap()
-        app.textFields["Bus stop name"].tap()
-        backButtonButton.tap()
-        
-        
-    }
-    
-    func testUIRecorded2() {
         
         
         let app2 = app
