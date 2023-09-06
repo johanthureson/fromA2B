@@ -15,7 +15,7 @@ struct ContentScreen: View {
         
         TabView {
             
-            TripSearchView()
+            TripSearchScreen()
                 .tabItem {
                     Label("Trip Search", systemImage: "􀊫")
                 }

@@ -14,7 +14,7 @@ struct ContentScreen: View {
 //                .imageScale(.large)
 //                .foregroundStyle(.tint)
 //            Text("Hello, world!")
-            TripSearchView()
+            TripSearchScreen()
         }
         .padding()
     }
