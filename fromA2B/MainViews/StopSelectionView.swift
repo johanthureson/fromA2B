@@ -104,6 +104,7 @@ struct StopSelectionView: View {
                 }
             }
             .padding()
+            .accessibility(identifier: "search_button")
 
             List {
                 ForEach(model.stops ?? []) { stopLocationOrCoordLocation in
