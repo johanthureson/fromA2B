@@ -17,7 +17,7 @@ struct ContentScreen: View {
             
             TripSearchScreen()
                 .tabItem {
-                    Label("Trip Search", systemImage: "􀊫")
+                    Label("Trip Search", systemImage: "magnifyingglass")
                 }
                 .environment(appModel)
 
