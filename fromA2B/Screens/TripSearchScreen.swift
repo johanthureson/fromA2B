@@ -1,5 +1,5 @@
 //
-//  TripSearchView.swift
+//  TripSearchScreen.swift
 //  fromA2B
 //
 //  Created by Johan Thureson on 2023-07-22.
@@ -10,16 +10,16 @@ import Observation
 import SwiftData
 
 @Observable
-fileprivate class TripSearchViewModel {
+fileprivate class TripSearchScreenModel {
     
     var from = String(localized: "stopButtonView.from")
     var to = String(localized: "stopButtonView.to")
 }
 
-struct TripSearchView: View {
+struct TripSearchScreen: View {
 
     @Environment(\.appModel) private var appModel
-    @State private var model = TripSearchViewModel()
+    @State private var model = TripSearchScreenModel()
     @Query var fromToModels: [FromToModel]
 
     var body: some View {
@@ -37,7 +37,7 @@ struct TripSearchView: View {
             .accessibility(identifier: "to_button")
 
             NavigationLink("Search") {
-                getTripResultsView(bindableAppModel: bindableAppModel)
+                getTripResultsScreen(bindableAppModel: bindableAppModel)
             }
             .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
             .padding()
@@ -45,27 +45,27 @@ struct TripSearchView: View {
             List {
                 ForEach(fromToModels) { fromToModel in
                     NavigationLink(getFromToString(fromToModel: fromToModel)) {
-                        getTripResultsView(fromToModel: fromToModel)
+                        getTripResultsScreen(fromToModel: fromToModel)
                     }
                 }
             }
         }
     }
     
-    private func getTripResultsView(bindableAppModel: AppModel) -> some View {
+    private func getTripResultsScreen(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
-        let tripResultsViewModel = TripResultsViewModel(
+        let tripResultsScreenModel = TripResultsScreenModel(
             fromStopLocation: bindableAppModel.fromStopLocation,
             toStopLocation: bindableAppModel.toStopLocation)
-        return TripResultsView(model: tripResultsViewModel)
+        return TripResultsScreen(model: tripResultsScreenModel)
     }
     
-    private func getTripResultsView(fromToModel: FromToModel) -> some View {
-        let tripResultsViewModel = TripResultsViewModel(
+    private func getTripResultsScreen(fromToModel: FromToModel) -> some View {
+        let tripResultsScreenModel = TripResultsScreenModel(
             fromStopLocation: fromToModel.fromStopLocation,
             toStopLocation: fromToModel.toStopLocation)
-        return TripResultsView(model: tripResultsViewModel)
+        return TripResultsScreen(model: tripResultsScreenModel)
     }
     
     private func getFromToString(fromToModel: FromToModel) -> String {
@@ -77,7 +77,7 @@ struct TripSearchView: View {
 }
 
 #Preview {
-    TripSearchView()
+    TripSearchScreen()
         .environment(\.appModel,
                       AppModel(
                         fromStopLocation:

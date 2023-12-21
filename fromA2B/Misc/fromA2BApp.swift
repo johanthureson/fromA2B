@@ -12,7 +12,7 @@ struct fromA2BApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentScreen()
         }
         .modelContainer(for: FromToModel.self)
     }

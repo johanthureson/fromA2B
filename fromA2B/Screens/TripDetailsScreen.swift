@@ -1,5 +1,5 @@
 //
-//  TripDetailsView.swift
+//  TripDetailsScreen.swift
 //  fromA2B
 //
 //  Created by Johan Thureson on 2023-07-22.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable
-fileprivate class TripDetailsViewModel {
+fileprivate class TripDetailsScreenModel {
     
     var trip: Trip
     
@@ -17,12 +17,12 @@ fileprivate class TripDetailsViewModel {
     }
 }
 
-struct TripDetailsView: View {
+struct TripDetailsScreen: View {
     
-    @State fileprivate var model: TripDetailsViewModel
+    @State fileprivate var model: TripDetailsScreenModel
     
     init(trip: Trip) {
-        self.model = TripDetailsViewModel(trip: trip)
+        self.model = TripDetailsScreenModel(trip: trip)
     }
 
     var body: some View {
@@ -70,5 +70,5 @@ struct TripDetailsView: View {
 }
 
 #Preview {
-    TripDetailsView(trip: TripResponse.tripResponse!.trip!.first!)
+    TripDetailsScreen(trip: TripResponse.tripResponse!.trip!.first!)
 }

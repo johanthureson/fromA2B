@@ -27,7 +27,7 @@ struct StopChoiceButtonView: View {
         }
         .padding()
         .sheet(isPresented: $showingSheet) {
-            StopSelectionView(selectedStopLocation: selectedStopLocation)
+            StopSelectionScreen(selectedStopLocation: selectedStopLocation)
         }
     }
 }
