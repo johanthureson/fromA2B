@@ -106,7 +106,6 @@
 		4DD356E32A8E91A2009E3ACE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD356E22A8E91A2009E3ACE /* Alamofire */; };
 		4DD356E62A8E9A4E009E3ACE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */; };
 		4DD356E82A8E9A7A009E3ACE /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */; };
-		4DDD8A112B3CC697005227C5 /* Hidden.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DDD8A102B3CC697005227C5 /* Hidden.plist */; };
 		4DF3D2112AA0FD0700C4320D /* AccessTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2002AA0FD0700C4320D /* AccessTokenManager.swift */; };
 		4DF3D2122AA0FD0700C4320D /* AccessTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2002AA0FD0700C4320D /* AccessTokenManager.swift */; };
 		4DF3D2132AA0FD0700C4320D /* AccessTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2002AA0FD0700C4320D /* AccessTokenManager.swift */; };
@@ -242,7 +241,6 @@
 		4D9A51A82A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
-		4DDD8A102B3CC697005227C5 /* Hidden.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Hidden.plist; sourceTree = "<group>"; };
 		4DF3D2002AA0FD0700C4320D /* AccessTokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessTokenManager.swift; sourceTree = "<group>"; };
 		4DF3D2012AA0FD0700C4320D /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		4DF3D2032AA0FD0700C4320D /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -348,14 +346,6 @@
 			path = TripResponse;
 			sourceTree = "<group>";
 		};
-		4D8674B52B3CAEE500330C22 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				4DDD8A102B3CC697005227C5 /* Hidden.plist */,
-			);
-			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
 		4D8814732A94D35100B4D252 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,7 +367,6 @@
 				4DF9D60C2A9F4A48003D210A /* fromA2BwatchApp Watch AppUITests */,
 				4DF9D69A2A9F5D44003D210A /* fromA2Bwidget */,
 				4DF9D6952A9F5D44003D210A /* Frameworks */,
-				4D8674B52B3CAEE500330C22 /* SupportingFiles */,
 				4D9A51852A2EA2EF00647958 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -776,7 +765,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDD8A112B3CC697005227C5 /* Hidden.plist in Resources */,
 				4D9A518F2A2EA2F000647958 /* Preview Assets.xcassets in Resources */,
 				4D2D91992A796609005F18CB /* location_origin.json in Resources */,
 				4D2D919A2A79660D005F18CB /* trip.json in Resources */,
