@@ -18,7 +18,7 @@ final class NetworkAPITests: XCTestCase {
         configuration.protocolClasses = [MockingURLProtocol.self] + (configuration.protocolClasses ?? [])
         let sessionManager = Session(configuration: configuration)
         
-        let apiEndpoint = URL(string: "https://api.resrobot.se")!// "https://api.resrobot.se/v2.1/trip?format=json&originId=740066612&destId=740046109&passlist=true&showPassingPoints=true&accessId=661da78d-bf7c-4b44-8f33-c02ebc44228a")!
+        let apiEndpoint = URL(string: "https://api.resrobot.se")!// "https://api.resrobot.se/v2.1/trip?format=json&originId=740066612&destId=740046109&passlist=true&showPassingPoints=true&accessId=\(StaticFunctions.getApiKey())")")!
         let expectedTrips = TripResponse.tripResponse!.trip!
         let requestExpectation = expectation(description: "Request should finish")
         

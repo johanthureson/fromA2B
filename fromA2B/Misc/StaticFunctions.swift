@@ -26,5 +26,13 @@ struct StaticFunctions {
         return nil
     }
     
+    static func getApiKey() -> String? {
+        if let path = Bundle.main.path(forResource: "Hidden", ofType: "plist") {
+            let keys = NSDictionary(contentsOfFile: path)
+            return keys?["accessId"] as? String ?? nil
+        }
+        return nil
+    }
+    
 }
 

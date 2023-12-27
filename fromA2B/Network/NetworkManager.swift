@@ -31,7 +31,7 @@ actor NetworkManager: GlobalActor {
 
     func get(path: String, parameters: Parameters?) async throws -> Data {
         var parametersWithAccessId = parameters
-        parametersWithAccessId?["accessId"] = "661da78d-bf7c-4b44-8f33-c02ebc44228a"
+        parametersWithAccessId?["accessId"] = StaticFunctions.getApiKey()
 
        // You must resume the continuation exactly once
         return try await withCheckedThrowingContinuation { continuation in
