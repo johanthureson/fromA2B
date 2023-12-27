@@ -86,6 +86,7 @@ struct StopSelectionScreen: View {
             .accessibility(identifier: "back_button")
             
             TextField("Bus stop name", text: $model.busStopTextFieldString)
+                .disableAutocorrection(true)
                 .textFieldStyle(.roundedBorder)
                 .padding()
                 .focused($focusedField, equals: .field)
