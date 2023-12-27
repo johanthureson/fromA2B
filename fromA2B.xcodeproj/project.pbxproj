@@ -346,6 +346,13 @@
 			path = TripResponse;
 			sourceTree = "<group>";
 		};
+		4D8674B52B3CAEE500330C22 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		4D8814732A94D35100B4D252 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +374,7 @@
 				4DF9D60C2A9F4A48003D210A /* fromA2BwatchApp Watch AppUITests */,
 				4DF9D69A2A9F5D44003D210A /* fromA2Bwidget */,
 				4DF9D6952A9F5D44003D210A /* Frameworks */,
+				4D8674B52B3CAEE500330C22 /* SupportingFiles */,
 				4D9A51852A2EA2EF00647958 /* Products */,
 			);
 			sourceTree = "<group>";
