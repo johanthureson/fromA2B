@@ -50,7 +50,6 @@
 		4D8048ED2A97A28D00C69747 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
 		4D8048F02A97DDEE00C69747 /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8048EF2A97DDEE00C69747 /* Mocker */; };
 		4D8048F22A98A3E300C69747 /* TripResultsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8048F12A98A3E300C69747 /* TripResultsScreenTests.swift */; };
-		4D8340112B3CD45700C55FED /* Hidden.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D8340102B3CD45700C55FED /* Hidden.plist */; };
 		4D8814752A94D36600B4D252 /* StopChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8814742A94D36600B4D252 /* StopChoiceButtonView.swift */; };
 		4D88147D2A96109100B4D252 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 4D88147C2A96109100B4D252 /* ViewInspector */; };
 		4D88147E2A96138800B4D252 /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91652A6F4724005F18CB /* StopResponse.swift */; };
@@ -225,7 +224,6 @@
 		4D2D919F2A7966DC005F18CB /* StaticFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFunctions.swift; sourceTree = "<group>"; };
 		4D7BFB372A9DF5C700FC9CE1 /* NetworkAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPITests.swift; sourceTree = "<group>"; };
 		4D8048F12A98A3E300C69747 /* TripResultsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResultsScreenTests.swift; sourceTree = "<group>"; };
-		4D8340102B3CD45700C55FED /* Hidden.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Hidden.plist; sourceTree = "<group>"; };
 		4D8814742A94D36600B4D252 /* StopChoiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopChoiceButtonView.swift; sourceTree = "<group>"; };
 		4D8814A82A9615B300B4D252 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		4D8814AA2A961D5E00B4D252 /* TripSearchScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchScreenTests.swift; sourceTree = "<group>"; };
@@ -447,7 +445,6 @@
 		4DD356E02A8E8BB6009E3ACE /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				4D8340102B3CD45700C55FED /* Hidden.plist */,
 				4D2D919F2A7966DC005F18CB /* StaticFunctions.swift */,
 				4D9A51872A2EA2EF00647958 /* fromA2BApp.swift */,
 				4D9A518B2A2EA2F000647958 /* Assets.xcassets */,
@@ -768,7 +765,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D8340112B3CD45700C55FED /* Hidden.plist in Resources */,
 				4D9A518F2A2EA2F000647958 /* Preview Assets.xcassets in Resources */,
 				4D2D91992A796609005F18CB /* location_origin.json in Resources */,
 				4D2D919A2A79660D005F18CB /* trip.json in Resources */,
