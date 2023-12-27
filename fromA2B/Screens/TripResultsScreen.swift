@@ -17,20 +17,17 @@ class TripResultsScreenModel {
     var isLoading = false
     private let requestManager = RequestManager()
 
-    var preview = false
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
     var errorMessage = ""
     var trips: [Trip] = []
     
     init(
-        preview: Bool = false,
         fromStopLocation: StopLocation? = nil,
         toStopLocation: StopLocation? = nil,
         trips: [Trip] = [Trip](),
         errorMessage: String = ""
     ) {
-        self.preview = preview
         self.fromStopLocation = fromStopLocation
         self.toStopLocation = toStopLocation
         self.trips = trips
@@ -131,13 +128,13 @@ struct TripResultsScreen: View {
         .padding()
         .onAppear {
             Task {
-                if !model.preview {
+                if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil) {
                     await model.fetchTrips()
                 }
             }
         }
         .onAppear {
-            if !model.preview {
+            if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil) {
                 saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
             }
         }
@@ -164,5 +161,5 @@ struct TripResultsScreen: View {
 }
 
 #Preview {
-    TripResultsScreen(model: TripResultsScreenModel(preview: true, trips: TripResponse.tripResponse!.trip!))
+    TripResultsScreen(model: TripResultsScreenModel(trips: TripResponse.tripResponse!.trip!))
 }
