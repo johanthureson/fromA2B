@@ -224,7 +224,6 @@
 		4D2D919F2A7966DC005F18CB /* StaticFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFunctions.swift; sourceTree = "<group>"; };
 		4D7BFB372A9DF5C700FC9CE1 /* NetworkAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPITests.swift; sourceTree = "<group>"; };
 		4D8048F12A98A3E300C69747 /* TripResultsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripResultsScreenTests.swift; sourceTree = "<group>"; };
-		4D8674B82B3CAF4600330C22 /* Hidden.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Hidden.plist; sourceTree = "<group>"; };
 		4D8814742A94D36600B4D252 /* StopChoiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopChoiceButtonView.swift; sourceTree = "<group>"; };
 		4D8814A82A9615B300B4D252 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		4D8814AA2A961D5E00B4D252 /* TripSearchScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchScreenTests.swift; sourceTree = "<group>"; };
@@ -350,7 +349,6 @@
 		4D8674B52B3CAEE500330C22 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				4D8674B82B3CAF4600330C22 /* Hidden.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
