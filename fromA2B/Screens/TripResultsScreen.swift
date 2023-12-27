@@ -137,7 +137,9 @@ struct TripResultsScreen: View {
             }
         }
         .onAppear {
-            saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
+            if !model.preview {
+                saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
+            }
         }
         .overlay {
             if model.isLoading {
