@@ -28,14 +28,9 @@ struct StaticFunctions {
     }
     
     static func getApiKey() -> String? {
-#if DEBUG
-#if TEST
+#if DEBUG && TEST
+        // Tests won't compile otherwise
         return nil
-#else
-        let keychain = KeychainSwift()
-        let apiKey = keychain.get("ResRobotAccessId")
-        return apiKey
-#endif
 #else
         let keychain = KeychainSwift()
         let apiKey = keychain.get("ResRobotAccessId")
