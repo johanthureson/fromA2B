@@ -34,12 +34,12 @@ struct StaticFunctions {
 #else
         let keychain = KeychainSwift()
         let apiKey = keychain.get("ResRobotAccessId")
-        return "661da78d-bf7c-4b44-8f33-c02ebc44228a"
+        return apiKey
 #endif
 #else
         let keychain = KeychainSwift()
         let apiKey = keychain.get("ResRobotAccessId")
-        return "661da78d-bf7c-4b44-8f33-c02ebc44228a"
+        return apiKey
 #endif
     }
     
