@@ -30,7 +30,7 @@ struct StaticFunctions {
     static func getApiKey() -> String? {
 #if DEBUG
 #if TEST
-        return nil
+        return "661da78d-bf7c-4b44-8f33-c02ebc44228a"
 #else
         let keychain = KeychainSwift()
         let apiKey = keychain.get("ResRobotAccessId")
