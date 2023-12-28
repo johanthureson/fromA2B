@@ -20,6 +20,8 @@ struct ContentScreen: View {
     }
 }
 
+#if DEBUG
 #Preview {
     ContentScreen()
 }
+#endif

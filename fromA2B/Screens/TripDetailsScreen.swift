@@ -69,6 +69,8 @@ struct TripDetailsScreen: View {
 
 }
 
+#if DEBUG
 #Preview {
     TripDetailsScreen(trip: TripResponse.tripResponse!.trip!.first!)
 }
+#endif
