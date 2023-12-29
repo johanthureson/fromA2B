@@ -28,7 +28,7 @@ struct StaticFunctions {
     
     static func getApiKey() -> String? {
         
-#if RELEASE && TEST
+#if TEST
         // Xcode Cloud won't work otherwise
         return nil
 #else
