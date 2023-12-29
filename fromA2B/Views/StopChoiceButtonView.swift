@@ -32,7 +32,9 @@ struct StopChoiceButtonView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     StopChoiceButtonView(directionText: "From",
                          selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }
+#endif
