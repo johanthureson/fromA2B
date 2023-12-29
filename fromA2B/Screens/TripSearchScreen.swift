@@ -42,13 +42,7 @@ struct TripSearchScreen: View {
             .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
             .padding()
             
-            List {
-                ForEach(fromToModels) { fromToModel in
-                    NavigationLink(getFromToString(fromToModel: fromToModel)) {
-                        getTripResultsScreen(fromToModel: fromToModel)
-                    }
-                }
-            }
+            savedTripSearches()
         }
     }
     
@@ -65,6 +59,16 @@ struct TripSearchScreen: View {
     
     // Saved trip searches
     
+    private func savedTripSearches() -> some View {
+        List {
+            ForEach(fromToModels) { fromToModel in
+                NavigationLink(getFromToString(fromToModel: fromToModel)) {
+                    getTripResultsScreen(fromToModel: fromToModel)
+                }
+            }
+        }
+    }
+
     private func getFromToString(fromToModel: FromToModel) -> String {
         let from = fromToModel.fromStopLocation?.name ?? "from"
         let to = fromToModel.toStopLocation?.name ?? "to"
