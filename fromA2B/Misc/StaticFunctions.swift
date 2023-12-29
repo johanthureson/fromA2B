@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 struct StaticFunctions {
 
@@ -27,11 +28,14 @@ struct StaticFunctions {
     }
     
     static func getApiKey() -> String? {
-        if let path = Bundle.main.path(forResource: "Hidden", ofType: "plist") {
-            let keys = NSDictionary(contentsOfFile: path)
-            return keys?["accessId"] as? String ?? nil
-        }
+#if DEBUG && TEST
+        // Tests won't compile otherwise
         return nil
+#else
+        let keychain = KeychainSwift()
+        let apiKey = keychain.get("ResRobotAccessId")
+        return apiKey
+#endif
     }
     
 }
