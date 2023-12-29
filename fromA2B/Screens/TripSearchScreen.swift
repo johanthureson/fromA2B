@@ -52,6 +52,8 @@ struct TripSearchScreen: View {
         }
     }
     
+    // New trip search
+    
     private func getTripResultsScreen(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
@@ -61,17 +63,19 @@ struct TripSearchScreen: View {
         return TripResultsScreen(model: tripResultsScreenModel)
     }
     
-    private func getTripResultsScreen(fromToModel: FromToModel) -> some View {
-        let tripResultsScreenModel = TripResultsScreenModel(
-            fromStopLocation: fromToModel.fromStopLocation,
-            toStopLocation: fromToModel.toStopLocation)
-        return TripResultsScreen(model: tripResultsScreenModel)
-    }
+    // Saved trip searches
     
     private func getFromToString(fromToModel: FromToModel) -> String {
         let from = fromToModel.fromStopLocation?.name ?? "from"
         let to = fromToModel.toStopLocation?.name ?? "to"
         return from + "\n -> \n" + to
+    }
+
+    private func getTripResultsScreen(fromToModel: FromToModel) -> some View {
+        let tripResultsScreenModel = TripResultsScreenModel(
+            fromStopLocation: fromToModel.fromStopLocation,
+            toStopLocation: fromToModel.toStopLocation)
+        return TripResultsScreen(model: tripResultsScreenModel)
     }
 
 }
