@@ -27,18 +27,11 @@ struct StaticFunctions {
     }
     
     static func getApiKey() -> String? {
-        
-#if RELEASE && TEST
-        // Xcode Cloud won't work otherwise
-        return nil
-#else
         if let path = Bundle.main.path(forResource: "Hidden", ofType: "plist") {
             let keys = NSDictionary(contentsOfFile: path)
             return keys?["accessId"] as? String ?? nil
         }
         return nil
-#endif
-        
     }
     
 }
