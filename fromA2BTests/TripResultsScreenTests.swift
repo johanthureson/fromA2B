@@ -34,7 +34,7 @@ final class TripResultsScreenTests: XCTestCase {
                 }
 
                 let trips = try JSONDecoder().decode([Trip].self, from: data!)
-                XCTAssertEqual([Trip](), expectedTrips)
+                XCTAssertEqual(trips, expectedTrips)
             } catch {
                 XCTFail(error.localizedDescription)
             }
