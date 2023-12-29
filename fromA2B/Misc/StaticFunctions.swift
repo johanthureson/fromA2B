@@ -33,7 +33,6 @@ struct StaticFunctions {
         return nil
 #else
         let keychain = KeychainSwift()
-        keychain.set("661da78d-bf7c-4b44-8f33-c02ebc44228a", forKey: "ResRobotAccessId")
         let apiKey = keychain.get("ResRobotAccessId")
         return apiKey
 #endif
