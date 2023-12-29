@@ -85,7 +85,7 @@ struct StopSelectionScreen: View {
             .padding()
             .accessibility(identifier: "back_button")
             
-            TextField("Bus stop name", text: $model.busStopTextFieldString)
+            TextField("Name of stop", text: $model.busStopTextFieldString)
                 .disableAutocorrection(true)
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -122,7 +122,7 @@ struct StopSelectionScreen: View {
         }
         .overlay {
             if model.isLoading {
-                ProgressView("Finding Stops near you...")
+                ProgressView("Finding stops near you...")
             }
         }
     }
