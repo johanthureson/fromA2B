@@ -160,6 +160,8 @@ struct TripResultsScreen: View {
     }
 }
 
+#if DEBUG
 #Preview {
     TripResultsScreen(model: TripResultsScreenModel(trips: TripResponse.tripResponse!.trip!))
 }
+#endif
