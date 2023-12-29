@@ -128,11 +128,9 @@ struct StopSelectionScreen: View {
     }
 }
 
-#if DEBUG
 #Preview {
     StopSelectionScreen(
         stops: StopResponse.originStopResponse?.stopLocationOrCoordLocation,
         selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation)
     )
 }
-#endif

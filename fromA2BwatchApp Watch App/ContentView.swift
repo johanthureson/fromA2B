@@ -22,8 +22,6 @@ struct ContentScreen: View {
 
 /*
 #Preview {
- #if DEBUG
     ContentScreen()
- #endif
 }
 */

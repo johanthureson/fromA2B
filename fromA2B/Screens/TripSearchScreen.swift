@@ -76,7 +76,6 @@ struct TripSearchScreen: View {
 
 }
 
-#if DEBUG
 #Preview {
     TripSearchScreen()
         .environment(\.appModel,
@@ -84,4 +83,3 @@ struct TripSearchScreen: View {
                         fromStopLocation:
                             StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation))
 }
-#endif
