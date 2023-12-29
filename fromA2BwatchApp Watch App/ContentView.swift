@@ -20,8 +20,6 @@ struct ContentScreen: View {
     }
 }
 
-/*
 #Preview {
     ContentScreen()
 }
-*/
