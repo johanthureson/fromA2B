@@ -52,7 +52,7 @@ struct TripSearchScreenView: View {
     
     private func searchButton(bindableAppModel: AppModel) -> some View {
         NavigationLink("Search") {
-            getTripResultsScreenView(bindableAppModel: bindableAppModel)
+            linkedTripResultsScreenView(bindableAppModel: bindableAppModel)
         }
         .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
         .padding()
@@ -60,7 +60,7 @@ struct TripSearchScreenView: View {
     
     // New trip search
     
-    private func getTripResultsScreenView(bindableAppModel: AppModel) -> some View {
+    private func linkedTripResultsScreenView(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
