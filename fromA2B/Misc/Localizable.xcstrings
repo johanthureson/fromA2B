@@ -147,40 +147,6 @@
           }
         }
       }
-    },
-    "tripSearchScreen.helloWorld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hello, World!"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hej, Världen!"
-          }
-        }
-      }
-    },
-    "tripSearchScreen.modelUpdateWorks" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "model update works!"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "model-uppdateringen fungerar!"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"

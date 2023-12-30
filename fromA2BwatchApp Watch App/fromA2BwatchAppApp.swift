@@ -11,7 +11,7 @@ import SwiftUI
 struct fromA2BwatchApp_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentScreen()
+            ContentView()
         }
         .modelContainer(for: FromToModel.self)
     }

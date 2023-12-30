@@ -1,5 +1,5 @@
 //
-//  StopSelectionScreen.swift
+//  StopSelectionScreenView.swift
 //  fromA2B
 //
 //  Created by Johan Thureson on 2023-07-22.
@@ -9,7 +9,7 @@ import SwiftUI
 import Observation
 
 @Observable
-fileprivate class StopSelectionScreenModel {
+fileprivate class StopSelectionScreenViewModel {
     
     var isLoading = false
     private let requestManager = RequestManager()
@@ -57,7 +57,7 @@ fileprivate class StopSelectionScreenModel {
 
 }
 
-struct StopSelectionScreen: View {
+struct StopSelectionScreenView: View {
     
     enum FocusField: Hashable {
       case field
@@ -67,11 +67,11 @@ struct StopSelectionScreen: View {
     @Environment(\.presentationMode) var presentationMode
 
     @Binding var selectedStopLocation: StopLocation?
-    @State fileprivate var model: StopSelectionScreenModel
+    @State fileprivate var model: StopSelectionScreenViewModel
     
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
-        _model = State(initialValue: StopSelectionScreenModel(stops: stops))
+        _model = State(initialValue: StopSelectionScreenViewModel(stops: stops))
         _selectedStopLocation = selectedStopLocation
     }
 
@@ -130,7 +130,7 @@ struct StopSelectionScreen: View {
 
 #if DEBUG
 #Preview {
-    StopSelectionScreen(
+    StopSelectionScreenView(
         stops: StopResponse.originStopResponse?.stopLocationOrCoordLocation,
         selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation)
     )

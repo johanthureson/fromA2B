@@ -1,5 +1,5 @@
 //
-//  ContentScreen.swift
+//  ContentView.swift
 //  fromA2B
 //
 //  Created by Johan Thureson on 2023-06-06.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentScreen: View {
+struct ContentView: View {
     
     @State var appModel = AppModel()
 
@@ -15,7 +15,7 @@ struct ContentScreen: View {
         
         TabView {
             
-            TripSearchScreen()
+            TripSearchScreenView()
                 .tabItem {
                     Label("Trip Search", systemImage: "magnifyingglass")
                 }

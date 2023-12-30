@@ -1,5 +1,5 @@
 //
-//  TripResultsScreenTests.swift
+//  TripResultsScreenViewTests.swift
 //  fromA2BTests
 //
 //  Created by Johan Thureson on 2023-08-25.
@@ -8,7 +8,7 @@
 import XCTest
 import Mocker
 
-final class TripResultsScreenTests: XCTestCase {
+final class TripResultsScreenViewTests: XCTestCase {
     
     /// It should correctly fetch and parse the user.
     func testUserFetching() {

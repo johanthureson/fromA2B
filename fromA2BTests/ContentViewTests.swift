@@ -1,5 +1,5 @@
 //
-//  ContentScreenTests.swift
+//  ContentViewTests.swift
 //  fromA2BTests
 //
 //  Created by Johan Thureson on 2023-08-23.
@@ -10,11 +10,11 @@ import SwiftUI
 import ViewInspector
 @testable import fromA2B
 
-final class ContentScreenTests: XCTestCase {
+final class ContentViewTests: XCTestCase {
     
     func testTabItemTitle() throws {
         let expected = "Trip Search"
-        let view = ContentScreen()
+        let view = ContentView()
         let tabTitle = try view
           .inspect()
           .find(text: expected)

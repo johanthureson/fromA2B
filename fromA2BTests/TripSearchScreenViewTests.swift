@@ -1,5 +1,5 @@
 //
-//  TripSearchScreenTests.swift
+//  TripSearchScreenViewTests.swift
 //  fromA2BTests
 //
 //  Created by Johan Thureson on 2023-08-23.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class TripSearchScreenTests: XCTestCase {
+final class TripSearchScreenViewTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

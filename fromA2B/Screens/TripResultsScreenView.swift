@@ -1,5 +1,5 @@
 //
-//  TripResultsScreen.swift
+//  TripResultsScreenView.swift
 //  fromA2B
 //
 //  Created by Johan Thureson on 2023-07-22.
@@ -12,7 +12,7 @@ import SwiftData
 
 
 @Observable
-class TripResultsScreenModel {
+class TripResultsScreenViewModel {
     
     var isLoading = false
     private let requestManager = RequestManager()
@@ -60,10 +60,10 @@ class TripResultsScreenModel {
     }
 }
 
-struct TripResultsScreen: View {
+struct TripResultsScreenView: View {
     
     @Environment(\.modelContext) private var modelContext
-    @State var model: TripResultsScreenModel
+    @State var model: TripResultsScreenViewModel
     
     @Query var fromToModels: [FromToModel]
 
@@ -109,7 +109,7 @@ struct TripResultsScreen: View {
             List {
                 ForEach(model.trips) { trip in
                     
-                    NavigationLink(destination: TripDetailsScreen(trip: trip) ) {
+                    NavigationLink(destination: TripDetailsScreenView(trip: trip) ) {
                         VStack {
                             fromToText(trip: trip)
                                 .padding()
@@ -158,6 +158,6 @@ struct TripResultsScreen: View {
 
 #if DEBUG
 #Preview {
-    TripResultsScreen(model: TripResultsScreenModel(trips: TripResponse.tripResponse!.trip!))
+    TripResultsScreenView(model: TripResultsScreenViewModel(trips: TripResponse.tripResponse!.trip!))
 }
 #endif
