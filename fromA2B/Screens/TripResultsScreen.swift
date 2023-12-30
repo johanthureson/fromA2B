@@ -127,14 +127,10 @@ struct TripResultsScreen: View {
         }
         .padding()
         .onAppear {
-            Task {
-                if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil) {
+            if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil) {
+                Task {
                     await model.fetchTrips()
                 }
-            }
-        }
-        .onAppear {
-            if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil) {
                 saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
             }
         }
