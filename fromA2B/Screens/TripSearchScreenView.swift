@@ -93,7 +93,7 @@ struct TripSearchScreenView: View {
     
     
     
-    // MARK: - computing functions
+    // MARK: - computing function
 
     private func getFromToString(fromToModel: FromToModel) -> String {
         let from = fromToModel.fromStopLocation?.name ?? "from"
