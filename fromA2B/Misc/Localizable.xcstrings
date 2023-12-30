@@ -110,13 +110,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "from"
+            "value" : "From: "
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "från"
+            "value" : "Från: "
           }
         }
       }
@@ -127,13 +127,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "to"
+            "value" : "To: "
           }
         },
         "sv" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "till"
+            "state" : "needs_review",
+            "value" : "Till: "
           }
         }
       }
