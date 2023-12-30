@@ -11,13 +11,11 @@ import SwiftData
 
 @Observable
 fileprivate class TripSearchScreenModel {
-    
     var fromString = String(localized: "stopButtonView.from")
     var toString = String(localized: "stopButtonView.to")
 }
 
 struct TripSearchScreen: View {
-
     @Environment(\.appModel) private var appModel
     private var screenModel = TripSearchScreenModel()
     @Query var fromToModels: [FromToModel]
@@ -81,7 +79,6 @@ struct TripSearchScreen: View {
             toStopLocation: fromToModel.toStopLocation)
         return TripResultsScreen(model: tripResultsScreenModel)
     }
-
 }
 
 #if DEBUG
