@@ -52,7 +52,7 @@ struct TripSearchScreenView: View {
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
             fromStopLocation: bindableAppModel.fromStopLocation,
             toStopLocation: bindableAppModel.toStopLocation)
-        return TripResultsScreenView(model: tripResultsScreenViewModel)
+        return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     
     // Saved trip searches
@@ -77,7 +77,7 @@ struct TripSearchScreenView: View {
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
             fromStopLocation: fromToModel.fromStopLocation,
             toStopLocation: fromToModel.toStopLocation)
-        return TripResultsScreenView(model: tripResultsScreenViewModel)
+        return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
 }
 

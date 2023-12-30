@@ -67,11 +67,11 @@ struct StopSelectionScreenView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @Binding var selectedStopLocation: StopLocation?
-    @State fileprivate var model: StopSelectionScreenViewModel
+    @State fileprivate var viewModel: StopSelectionScreenViewModel
     
     
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
-        _model = State(initialValue: StopSelectionScreenViewModel(stops: stops))
+        _viewModel = State(initialValue: StopSelectionScreenViewModel(stops: stops))
         _selectedStopLocation = selectedStopLocation
     }
 
@@ -85,7 +85,7 @@ struct StopSelectionScreenView: View {
             .padding()
             .accessibility(identifier: "back_button")
             
-            TextField("Name of stop", text: $model.busStopTextFieldString)
+            TextField("Name of stop", text: $viewModel.busStopTextFieldString)
                 .disableAutocorrection(true)
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -95,20 +95,20 @@ struct StopSelectionScreenView: View {
                 }
                 .onSubmit {
                     Task {
-                        await model.fetchStops()
+                        await viewModel.fetchStops()
                     }
                 }
             
             Button("Search") {
                 Task {
-                    await model.fetchStops()
+                    await viewModel.fetchStops()
                 }
             }
             .padding()
             .accessibility(identifier: "search_button")
 
             List {
-                ForEach(model.stops ?? []) { stopLocationOrCoordLocation in
+                ForEach(viewModel.stops ?? []) { stopLocationOrCoordLocation in
                     VStack {
                         Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
                     }
@@ -121,7 +121,7 @@ struct StopSelectionScreenView: View {
             
         }
         .overlay {
-            if model.isLoading {
+            if viewModel.isLoading {
                 ProgressView("Finding stops near you...")
             }
         }

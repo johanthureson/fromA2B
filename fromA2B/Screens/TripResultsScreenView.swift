@@ -63,7 +63,7 @@ class TripResultsScreenViewModel {
 struct TripResultsScreenView: View {
     
     @Environment(\.modelContext) private var modelContext
-    @State var model: TripResultsScreenViewModel
+    @State var viewModel: TripResultsScreenViewModel
     
     @Query var fromToModels: [FromToModel]
 
@@ -71,13 +71,13 @@ struct TripResultsScreenView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            if model.errorMessage != "" {
-                Text(model.errorMessage)
+            if viewModel.errorMessage != "" {
+                Text(viewModel.errorMessage)
             }
             
             Button {
-                let fromToModel = FromToModel(fromStopLocation: model.fromStopLocation,
-                                              toStopLocation: model.toStopLocation)
+                let fromToModel = FromToModel(fromStopLocation: viewModel.fromStopLocation,
+                                              toStopLocation: viewModel.toStopLocation)
                 if !saved {
                     modelContext.insert(fromToModel)
                 } else {
@@ -107,7 +107,7 @@ struct TripResultsScreenView: View {
             .padding(.top)
 
             List {
-                ForEach(model.trips) { trip in
+                ForEach(viewModel.trips) { trip in
                     
                     NavigationLink(destination: TripDetailsScreenView(trip: trip) ) {
                         VStack {
@@ -129,13 +129,13 @@ struct TripResultsScreenView: View {
         .onAppear {
             if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil) {
                 Task {
-                    await model.fetchTrips()
+                    await viewModel.fetchTrips()
                 }
-                saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: model.fromStopLocation, toStopLocation: model.toStopLocation))
+                saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: viewModel.fromStopLocation, toStopLocation: viewModel.toStopLocation))
             }
         }
         .overlay {
-            if model.isLoading {
+            if viewModel.isLoading {
                 ProgressView("Finding Trips near you...")
             }
         }
@@ -158,6 +158,6 @@ struct TripResultsScreenView: View {
 
 #if DEBUG
 #Preview {
-    TripResultsScreenView(model: TripResultsScreenViewModel(trips: TripResponse.tripResponse!.trip!))
+    TripResultsScreenView(viewModel: TripResultsScreenViewModel(trips: TripResponse.tripResponse!.trip!))
 }
 #endif

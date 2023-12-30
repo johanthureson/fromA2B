@@ -19,7 +19,7 @@ fileprivate class TripSearchScreenViewModel {
 struct TripSearchScreenView: View {
 
 //    @Environment(\.appModel) private var appModel
-    @State private var model = TripSearchScreenViewModel()
+    @State private var viewModel = TripSearchScreenViewModel()
     @Query var fromToModels: [FromToModel]
 
     var body: some View {
@@ -28,11 +28,11 @@ struct TripSearchScreenView: View {
 
         NavigationStack {
             /*
-            StopChoiceButtonView(directionText: model.from,
+            StopChoiceButtonView(directionText: viewModel.from,
                                  selectedStopLocation: $bindableAppModel.fromStopLocation)
             .accessibility(identifier: "from_button")
             
-            StopChoiceButtonView(directionText: model.to,
+            StopChoiceButtonView(directionText: viewModel.to,
                                  selectedStopLocation: $bindableAppModel.toStopLocation)
             .accessibility(identifier: "to_button")
 
@@ -60,14 +60,14 @@ struct TripSearchScreenView: View {
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
             fromStopLocation: bindableAppModel.fromStopLocation,
             toStopLocation: bindableAppModel.toStopLocation)
-        return TripResultsScreenView(model: tripResultsScreenViewModel)
+        return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     
     private func getTripResultsScreenView(fromToModel: FromToModel) -> some View {
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
             fromStopLocation: fromToModel.fromStopLocation,
             toStopLocation: fromToModel.toStopLocation)
-        return TripResultsScreenView(model: tripResultsScreenViewModel)
+        return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     */
     /*

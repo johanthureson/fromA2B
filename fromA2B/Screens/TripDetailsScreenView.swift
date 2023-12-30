@@ -19,20 +19,20 @@ fileprivate class TripDetailsScreenViewModel {
 
 struct TripDetailsScreenView: View {
     
-    @State fileprivate var model: TripDetailsScreenViewModel
+    @State fileprivate var viewModel: TripDetailsScreenViewModel
     
     init(trip: Trip) {
-        self.model = TripDetailsScreenViewModel(trip: trip)
+        self.viewModel = TripDetailsScreenViewModel(trip: trip)
     }
 
     var body: some View {
         
         VStack {
-            fromToText(trip: model.trip)
+            fromToText(trip: viewModel.trip)
                 .padding()
                 .font(.title2)
             
-            ForEach(model.trip.legList?.leg ?? []) { leg in
+            ForEach(viewModel.trip.legList?.leg ?? []) { leg in
                 
                 VStack {
                     timeToTime(leg: leg)
