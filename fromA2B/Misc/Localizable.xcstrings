@@ -64,8 +64,27 @@
         }
       }
     },
-    "Bus stop name" : {
-      "extractionState" : "stale",
+    "Finding stops near you..." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hitta hållplatser nära dig..."
+          }
+        }
+      }
+    },
+    "Finding Trips near you..." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hitta resor nära dig"
+          }
+        }
+      }
+    },
+    "Name of stop" : {
       "localizations" : {
         "sv" : {
           "stringUnit" : {
@@ -74,15 +93,6 @@
           }
         }
       }
-    },
-    "Finding stops near you..." : {
-
-    },
-    "Finding Trips near you..." : {
-
-    },
-    "Name of stop" : {
-
     },
     "Search" : {
       "localizations" : {
