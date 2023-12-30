@@ -19,7 +19,7 @@ fileprivate class TripSearchScreenModel {
 struct TripSearchScreen: View {
 
     @Environment(\.appModel) private var appModel
-    @State private var screenModel = TripSearchScreenModel()
+    private var screenModel = TripSearchScreenModel()
     @Query var fromToModels: [FromToModel]
 
     var body: some View {
