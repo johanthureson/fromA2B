@@ -19,7 +19,7 @@ fileprivate class TripSearchScreenModel {
 struct TripSearchScreen: View {
 
     @Environment(\.appModel) private var appModel
-    @State private var model = TripSearchScreenModel()
+    @State private var screenModel = TripSearchScreenModel()
     @Query var fromToModels: [FromToModel]
 
     var body: some View {
@@ -28,11 +28,11 @@ struct TripSearchScreen: View {
 
         NavigationStack {
             
-            StopChoiceButtonView(directionText: model.fromString,
+            StopChoiceButtonView(directionText: screenModel.fromString,
                                  selectedStopLocation: $bindableAppModel.fromStopLocation)
             .accessibility(identifier: "from_button")
             
-            StopChoiceButtonView(directionText: model.toString,
+            StopChoiceButtonView(directionText: screenModel.toString,
                                  selectedStopLocation: $bindableAppModel.toStopLocation)
             .accessibility(identifier: "to_button")
 
