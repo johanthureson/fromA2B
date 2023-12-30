@@ -79,45 +79,13 @@ struct StopSelectionScreenView: View {
         
         VStack {
             
-            Button("Back to Main") {
-                presentationMode.wrappedValue.dismiss()
-            }
-            .padding()
-            .accessibility(identifier: "back_button")
+            backButton()
             
-            TextField("Name of stop", text: $viewModel.busStopTextFieldString)
-                .disableAutocorrection(true)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-                .focused($focusedField, equals: .field)
-                .onAppear {
-                    self.focusedField = .field
-                }
-                .onSubmit {
-                    Task {
-                        await viewModel.fetchStops()
-                    }
-                }
+            stopTextField()
             
-            Button("Search") {
-                Task {
-                    await viewModel.fetchStops()
-                }
-            }
-            .padding()
-            .accessibility(identifier: "search_button")
+            searchButton()
 
-            List {
-                ForEach(viewModel.stops ?? []) { stopLocationOrCoordLocation in
-                    VStack {
-                        Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
-                    }
-                    .onTapGesture {
-                        self.selectedStopLocation = stopLocationOrCoordLocation.stopLocation
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }
-            }
+            stopSelectionList()
             
         }
         .overlay {
@@ -126,6 +94,59 @@ struct StopSelectionScreenView: View {
             }
         }
     }
+    
+    
+    
+    // MARK: - body views
+    
+    private func backButton() -> some View {
+        Button("Back to Main") {
+            presentationMode.wrappedValue.dismiss()
+        }
+        .padding()
+        .accessibility(identifier: "back_button")
+    }
+
+    private func stopTextField() -> some View {
+        TextField("Name of stop", text: $viewModel.busStopTextFieldString)
+            .disableAutocorrection(true)
+            .textFieldStyle(.roundedBorder)
+            .padding()
+            .focused($focusedField, equals: .field)
+            .onAppear {
+                self.focusedField = .field
+            }
+            .onSubmit {
+                Task {
+                    await viewModel.fetchStops()
+                }
+            }
+    }
+    
+    private func searchButton() -> some View {
+        Button("Search") {
+            Task {
+                await viewModel.fetchStops()
+            }
+        }
+        .padding()
+        .accessibility(identifier: "search_button")
+    }
+    
+    private func stopSelectionList() -> some View {
+        List {
+            ForEach(viewModel.stops ?? []) { stopLocationOrCoordLocation in
+                VStack {
+                    Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
+                }
+                .onTapGesture {
+                    self.selectedStopLocation = stopLocationOrCoordLocation.stopLocation
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }
+        }
+    }
+
 }
 
 #if DEBUG
