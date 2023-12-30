@@ -36,6 +36,8 @@ struct TripSearchScreenView: View {
         }
     }
     
+    
+    
     // MARK: - Subviews
     
     private func fromButton(selectedStopLocation: Binding<StopLocation?>) -> some View {
@@ -52,15 +54,25 @@ struct TripSearchScreenView: View {
     
     private func searchButton(bindableAppModel: AppModel) -> some View {
         NavigationLink("Search") {
-            linkedTripResultsScreenView(bindableAppModel: bindableAppModel)
+            newSearchLinkedTripResultsScreenView(bindableAppModel: bindableAppModel)
         }
         .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
         .padding()
     }
     
+    private func savedTripSearchesList() -> some View {
+        List {
+            ForEach(fromToModels) { fromToModel in
+                NavigationLink(getFromToString(fromToModel: fromToModel)) {
+                    savedSearchLinkedTripResultsScreenView(fromToModel: fromToModel)
+                }
+            }
+        }
+    }
+    
     // New trip search
     
-    private func linkedTripResultsScreenView(bindableAppModel: AppModel) -> some View {
+    private func newSearchLinkedTripResultsScreenView(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
@@ -71,14 +83,11 @@ struct TripSearchScreenView: View {
     
     // Saved trip searches
     
-    private func savedTripSearchesList() -> some View {
-        List {
-            ForEach(fromToModels) { fromToModel in
-                NavigationLink(getFromToString(fromToModel: fromToModel)) {
-                    getTripResultsScreenView(fromToModel: fromToModel)
-                }
-            }
-        }
+    private func savedSearchLinkedTripResultsScreenView(fromToModel: FromToModel) -> some View {
+        let tripResultsScreenViewModel = TripResultsScreenViewModel(
+            fromStopLocation: fromToModel.fromStopLocation,
+            toStopLocation: fromToModel.toStopLocation)
+        return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     
     private func getFromToString(fromToModel: FromToModel) -> String {
@@ -86,13 +95,7 @@ struct TripSearchScreenView: View {
         let to = fromToModel.toStopLocation?.name ?? "to"
         return from + "\n -> \n" + to
     }
-    
-    private func getTripResultsScreenView(fromToModel: FromToModel) -> some View {
-        let tripResultsScreenViewModel = TripResultsScreenViewModel(
-            fromStopLocation: fromToModel.fromStopLocation,
-            toStopLocation: fromToModel.toStopLocation)
-        return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
-    }
+
 }
 
 #if DEBUG
