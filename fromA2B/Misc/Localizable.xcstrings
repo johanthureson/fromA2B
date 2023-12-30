@@ -65,6 +65,7 @@
       }
     },
     "Bus stop name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "sv" : {
           "stringUnit" : {
@@ -74,10 +75,13 @@
         }
       }
     },
-    "Finding Stops near you..." : {
+    "Finding stops near you..." : {
 
     },
     "Finding Trips near you..." : {
+
+    },
+    "Name of stop" : {
 
     },
     "Search" : {
