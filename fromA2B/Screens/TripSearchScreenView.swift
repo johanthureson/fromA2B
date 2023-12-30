@@ -16,6 +16,7 @@ fileprivate class TripSearchScreenViewModel {
 }
 
 struct TripSearchScreenView: View {
+    
     @Environment(\.appModel) private var appModel
     private var viewModel = TripSearchScreenViewModel()
     @Query var fromToModels: [FromToModel]
@@ -38,7 +39,7 @@ struct TripSearchScreenView: View {
     
     
     
-    // MARK: - Subviews
+    // MARK: - body views
     
     private func fromButton(selectedStopLocation: Binding<StopLocation?>) -> some View {
         StopChoiceButtonView(directionText: viewModel.fromString,
@@ -70,8 +71,10 @@ struct TripSearchScreenView: View {
         }
     }
     
-    // New trip search
     
+    
+    // MARK: - linked views
+
     private func newSearchLinkedTripResultsScreenView(bindableAppModel: AppModel) -> some View {
         appModel.fromStopLocation = bindableAppModel.fromStopLocation
         appModel.toStopLocation = bindableAppModel.toStopLocation
@@ -81,8 +84,6 @@ struct TripSearchScreenView: View {
         return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     
-    // Saved trip searches
-    
     private func savedSearchLinkedTripResultsScreenView(fromToModel: FromToModel) -> some View {
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
             fromStopLocation: fromToModel.fromStopLocation,
@@ -90,12 +91,16 @@ struct TripSearchScreenView: View {
         return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     
+    
+    
+    // MARK: - computing functions
+
     private func getFromToString(fromToModel: FromToModel) -> String {
         let from = fromToModel.fromStopLocation?.name ?? "from"
         let to = fromToModel.toStopLocation?.name ?? "to"
         return from + "\n -> \n" + to
     }
-
+    
 }
 
 #if DEBUG
