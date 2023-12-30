@@ -84,19 +84,7 @@ final class fromA2BUITests: XCTestCase {
         let collectionViewsQuery = app2.collectionViews
         collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["Alvik T-bana (Stockholm kn)"]/*[[".cells.staticTexts[\"Alvik T-bana (Stockholm kn)\"]",".staticTexts[\"Alvik T-bana (Stockholm kn)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app2/*@START_MENU_TOKEN@*/.staticTexts["<>"]/*[[".buttons[\"to, <>\"]",".staticTexts[\"<>\"]",".staticTexts[\"stop_name\"]",".buttons[\"to_button\"]"],[[[-1,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app2/*@START_MENU_TOKEN@*/.keys["C"]/*[[".keyboards.keys[\"C\"]",".keys[\"C\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-        let eKey = app2/*@START_MENU_TOKEN@*/.keys["e"]/*[[".keyboards.keys[\"e\"]",".keys[\"e\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        eKey.tap()
-        
-        let nKey = app2/*@START_MENU_TOKEN@*/.keys["n"]/*[[".keyboards.keys[\"n\"]",".keys[\"n\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        nKey.tap()
-        app2/*@START_MENU_TOKEN@*/.keys["t"]/*[[".keyboards.keys[\"t\"]",".keys[\"t\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app2/*@START_MENU_TOKEN@*/.keys["r"]/*[[".keyboards.keys[\"r\"]",".keys[\"r\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app2/*@START_MENU_TOKEN@*/.keys["a"]/*[[".keyboards.keys[\"a\"]",".keys[\"a\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app2.keys["l"].tap()
-        eKey.tap()
-        nKey.tap()
+        app2.textFields.firstMatch.typeText("Centralen")
         app.buttons["search_button"].tap()
         collectionViewsQuery/*@START_MENU_TOKEN@*/.staticTexts["T-Centralen T-bana (Stockholm kn)"]/*[[".cells.staticTexts[\"T-Centralen T-bana (Stockholm kn)\"]",".staticTexts[\"T-Centralen T-bana (Stockholm kn)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app2/*@START_MENU_TOKEN@*/.staticTexts["T-Centralen T-bana (Stockholm kn)"]/*[[".buttons[\"to, T-Centralen T-bana (Stockholm kn)\"]",".staticTexts[\"T-Centralen T-bana (Stockholm kn)\"]",".staticTexts[\"stop_name\"]",".buttons[\"to_button\"]"],[[[-1,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
@@ -104,7 +92,7 @@ final class fromA2BUITests: XCTestCase {
             
 //        let button1 = app2.staticTexts["T-Centralen T-bana (Stockholm kn)"]
 //        let button2 = app2.staticTexts["zzzT-Centralen T-bana (Stockholm kn)"]
-        XCTAssert(app.buttons["to_button"].label == "to, T-Centralen T-bana (Stockholm kn)" || app.buttons["to_button"].label == "till, T-Centralen T-bana (Stockholm kn)")
+        XCTAssert(app.buttons["to_button"].label == "To, T-Centralen T-bana (Stockholm kn)" || app.buttons["to_button"].label == "Till, T-Centralen T-bana (Stockholm kn)")
 //        XCTAssert(app.buttons["from_button"].staticTexts["stop_name"].label == "T-Centralen T-bana (Stockholm kn)")
 
 //        XCTAssertNotNil(button1)
