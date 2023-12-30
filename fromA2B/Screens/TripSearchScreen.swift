@@ -12,8 +12,8 @@ import SwiftData
 @Observable
 fileprivate class TripSearchScreenModel {
     
-    var from = String(localized: "stopButtonView.from")
-    var to = String(localized: "stopButtonView.to")
+    var fromString = String(localized: "stopButtonView.from")
+    var toString = String(localized: "stopButtonView.to")
 }
 
 struct TripSearchScreen: View {
@@ -28,11 +28,11 @@ struct TripSearchScreen: View {
 
         NavigationStack {
             
-            StopChoiceButtonView(directionText: model.from,
+            StopChoiceButtonView(directionText: model.fromString,
                                  selectedStopLocation: $bindableAppModel.fromStopLocation)
             .accessibility(identifier: "from_button")
             
-            StopChoiceButtonView(directionText: model.to,
+            StopChoiceButtonView(directionText: model.toString,
                                  selectedStopLocation: $bindableAppModel.toStopLocation)
             .accessibility(identifier: "to_button")
 
