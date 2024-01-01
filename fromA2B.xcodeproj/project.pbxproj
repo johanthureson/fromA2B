@@ -111,7 +111,6 @@
 		4D9A51A92A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51A82A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift */; };
 		4DD356E32A8E91A2009E3ACE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD356E22A8E91A2009E3ACE /* Alamofire */; };
 		4DD356E62A8E9A4E009E3ACE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */; };
-		4DD356E82A8E9A7A009E3ACE /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */; };
 		4DF3D2142AA0FD0700C4320D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2012AA0FD0700C4320D /* APIConstants.swift */; };
 		4DF3D2152AA0FD0700C4320D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2012AA0FD0700C4320D /* APIConstants.swift */; };
 		4DF3D2162AA0FD0700C4320D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2012AA0FD0700C4320D /* APIConstants.swift */; };
@@ -239,7 +238,6 @@
 		4D9A51A62A2EA2F000647958 /* fromA2BUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BUITests.swift; sourceTree = "<group>"; };
 		4D9A51A82A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		4DF3D2012AA0FD0700C4320D /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		4DF3D2032AA0FD0700C4320D /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		4DF3D2042AA0FD0700C4320D /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -458,7 +456,6 @@
 		4DD356E42A8E9A2C009E3ACE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4DD356E72A8E9A7A009E3ACE /* NetworkAPI.swift */,
 				4DD356E52A8E9A4E009E3ACE /* NetworkManager.swift */,
 				4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */,
 			);
@@ -732,7 +729,6 @@
 				4D2D91842A6F4732005F18CB /* ServiceDays.swift in Sources */,
 				4D2D917C2A6F4732005F18CB /* Product.swift in Sources */,
 				4D2D91662A6F4724005F18CB /* TechnicalMessage.swift in Sources */,
-				4DD356E82A8E9A7A009E3ACE /* NetworkAPI.swift in Sources */,
 				4D2D91922A7945D5005F18CB /* StopResponse+json.swift in Sources */,
 				4D2D91892A6F4732005F18CB /* Leg.swift in Sources */,
 				4DF3D2172AA0FD0700C4320D /* RequestManager.swift in Sources */,
