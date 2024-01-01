@@ -58,7 +58,7 @@ struct TripSearchScreenView: View {
     private func savedTripSearchesList() -> some View {
         List {
             ForEach(fromToModels) { fromToModel in
-                NavigationLink(getFromToString(fromToModel: fromToModel)) {
+                NavigationLink(viewModel.getFromToString(fromToModel: fromToModel)) {
                     savedSearchLinkedTripResultsScreenView(fromToModel: fromToModel)
                 }
             }
@@ -83,16 +83,6 @@ struct TripSearchScreenView: View {
             fromStopLocation: fromToModel.fromStopLocation,
             toStopLocation: fromToModel.toStopLocation)
         return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
-    }
-    
-    
-    
-    // MARK: - computing function
-
-    private func getFromToString(fromToModel: FromToModel) -> String {
-        let from = fromToModel.fromStopLocation?.name ?? "from"
-        let to = fromToModel.toStopLocation?.name ?? "to"
-        return from + "\n -> \n" + to
     }
     
 }
