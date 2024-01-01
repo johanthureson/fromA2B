@@ -58,9 +58,6 @@ struct TripResultsScreenView: View {
             if !saved {
                 modelContext.insert(fromToModel)
             } else {
-                if fromToModels.contains(fromToModel) {
-                    print()
-                }
                 modelContext.delete(fromToModel)
             }
             
@@ -70,7 +67,6 @@ struct TripResultsScreenView: View {
                 print(error.localizedDescription)
             }
             saved = fromToModels.count >= 0 && fromToModels.contains(fromToModel)
-            print()
             
         } label: {
             VStack {
