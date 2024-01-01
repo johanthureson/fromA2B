@@ -11,18 +11,18 @@ import Observation
 @Observable
 fileprivate class StopSelectionScreenViewModel {
     
-    var isLoading = false
-    private let requestManager = RequestManager()
-
-    var busStopTextFieldString: String = ""
-    var stops: [StopLocationOrCoordLocation]?
-    var errorMessage = ""
-    
     init(busStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
         self.busStopTextFieldString = busStopName
         self.stops = stops
         self.errorMessage = errorMessage
     }
+    
+    var busStopTextFieldString: String = ""
+    var stops: [StopLocationOrCoordLocation]?
+    var errorMessage = ""
+
+    var isLoading = false
+    private let requestManager = RequestManager()
     
     func fetchStops() async {
         
@@ -74,6 +74,8 @@ struct StopSelectionScreenView: View {
         _viewModel = State(initialValue: StopSelectionScreenViewModel(stops: stops))
         _selectedStopLocation = selectedStopLocation
     }
+    
+    
 
     var body: some View {
         
