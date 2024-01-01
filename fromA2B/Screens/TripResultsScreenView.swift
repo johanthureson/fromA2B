@@ -19,60 +19,17 @@ struct TripResultsScreenView: View {
     @State var saved = false
 
     var body: some View {
+        
         VStack(spacing: 16) {
+            
             if viewModel.errorMessage != "" {
                 Text(viewModel.errorMessage)
             }
             
-            Button {
-                let fromToModel = FromToModel(fromStopLocation: viewModel.fromStopLocation,
-                                              toStopLocation: viewModel.toStopLocation)
-                if !saved {
-                    modelContext.insert(fromToModel)
-                } else {
-                    if fromToModels.contains(fromToModel) {
-                        print()
-                    }
-                    modelContext.delete(fromToModel)
-                }
-                
-                do {
-                    try modelContext.save()
-                } catch {
-                    print(error.localizedDescription)
-                }
-                saved = fromToModels.count >= 0 && fromToModels.contains(fromToModel)
-                print()
-                
-            } label: {
-                VStack {
-                    if saved {
-                        Image(systemName: "star.fill")
-                    } else {
-                        Image(systemName: "star")
-                    }
-                }
-            }
-            .padding(.top)
-
-            List {
-                ForEach(viewModel.trips) { trip in
-                    
-                    NavigationLink(destination: TripDetailsScreenView(trip: trip) ) {
-                        VStack {
-                            fromToText(trip: trip)
-                                .padding()
-                                .font(.title2)
-                            
-                            ForEach(trip.legList?.leg ?? []) { leg in
-                                fromToText(leg: leg)
-                                    .padding()
-                            }
-                        }
-                    }
-                }
-            }
-            .listStyle(.inset)
+            starButton()
+            
+            tripsList()
+            
         }
         .padding()
         .onAppear {
@@ -103,6 +60,65 @@ struct TripResultsScreenView: View {
         let toText = leg.destination?.name ?? ""
         return Text(fromText + " -> " + toText)
     }
+
+    
+    
+    // MARK: - body views
+
+    private func starButton() -> some View {
+        Button {
+            let fromToModel = FromToModel(fromStopLocation: viewModel.fromStopLocation,
+                                          toStopLocation: viewModel.toStopLocation)
+            if !saved {
+                modelContext.insert(fromToModel)
+            } else {
+                if fromToModels.contains(fromToModel) {
+                    print()
+                }
+                modelContext.delete(fromToModel)
+            }
+            
+            do {
+                try modelContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+            saved = fromToModels.count >= 0 && fromToModels.contains(fromToModel)
+            print()
+            
+        } label: {
+            VStack {
+                if saved {
+                    Image(systemName: "star.fill")
+                } else {
+                    Image(systemName: "star")
+                }
+            }
+        }
+        .padding(.top)
+    }
+    
+    private func tripsList() -> some View {
+        List {
+            ForEach(viewModel.trips) { trip in
+                
+                NavigationLink(destination: TripDetailsScreenView(trip: trip) ) {
+                    VStack {
+                        fromToText(trip: trip)
+                            .padding()
+                            .font(.title2)
+                        
+                        ForEach(trip.legList?.leg ?? []) { leg in
+                            fromToText(leg: leg)
+                                .padding()
+                        }
+                    }
+                }
+            }
+        }
+        .listStyle(.inset)
+    }
+    
 }
 
 
