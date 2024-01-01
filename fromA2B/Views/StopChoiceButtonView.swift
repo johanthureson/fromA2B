@@ -32,6 +32,10 @@ struct StopChoiceButtonView: View {
     }
 }
 
+
+
+// MARK: - Preview
+
 #if DEBUG
 #Preview {
     StopChoiceButtonView(directionText: "From",

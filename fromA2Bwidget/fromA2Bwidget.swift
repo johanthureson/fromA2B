@@ -66,6 +66,10 @@ struct fromA2Bwidget: Widget {
     }
 }
 
+
+
+// MARK: - Preview
+
 #Preview(as: .systemSmall) {
     fromA2Bwidget()
 } timeline: {

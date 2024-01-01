@@ -105,6 +105,10 @@ struct TripResultsScreenView: View {
     }
 }
 
+
+
+// MARK: - Preview
+
 #if DEBUG
 #Preview {
     TripResultsScreenView(viewModel: TripResultsScreenViewModel(trips: TripResponse.tripResponse!.trip!))

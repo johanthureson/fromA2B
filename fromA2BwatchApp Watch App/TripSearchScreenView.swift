@@ -80,6 +80,11 @@ struct TripSearchScreenView: View {
 
 }
 /*
+
+ 
+ 
+ // MARK: - Preview
+
 #if DEBUG
 #Preview {
  TripSearchScreenView()

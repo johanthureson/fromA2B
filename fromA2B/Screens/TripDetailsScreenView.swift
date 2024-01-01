@@ -59,6 +59,10 @@ struct TripDetailsScreenView: View {
 
 }
 
+
+
+// MARK: - Preview
+
 #if DEBUG
 #Preview {
     TripDetailsScreenView(trip: TripResponse.tripResponse!.trip!.first!)
