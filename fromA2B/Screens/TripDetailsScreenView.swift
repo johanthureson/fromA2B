@@ -7,19 +7,9 @@
 
 import SwiftUI
 
-@Observable
-fileprivate class TripDetailsScreenViewModel {
-    
-    var trip: Trip
-    
-    init(trip: Trip) {
-        self.trip = trip
-    }
-}
-
 struct TripDetailsScreenView: View {
     
-    @State fileprivate var viewModel: TripDetailsScreenViewModel
+    @State private var viewModel: TripDetailsScreenViewModel
     
     init(trip: Trip) {
         self.viewModel = TripDetailsScreenViewModel(trip: trip)

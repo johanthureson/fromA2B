@@ -9,12 +9,6 @@ import SwiftUI
 import Observation
 import SwiftData
 
-@Observable
-fileprivate class TripSearchScreenViewModel {
-    var fromString = String(localized: "stopButtonView.from")
-    var toString = String(localized: "stopButtonView.to")
-}
-
 struct TripSearchScreenView: View {
     
     @Environment(\.appModel) private var appModel
