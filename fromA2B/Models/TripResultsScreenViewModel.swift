@@ -5,8 +5,7 @@
 //  Created by Johan Thureson on 2024-01-01.
 //
 
-import SwiftUI
-import SwiftData
+import Observation
 
 @Observable
 class TripResultsScreenViewModel {
