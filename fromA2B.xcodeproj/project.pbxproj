@@ -265,22 +265,10 @@
 		4DF3D23F2AA123AF00C4320D /* NewNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNetworkTests.swift; sourceTree = "<group>"; };
 		4DF3D2462AA125DC00C4320D /* AnimalsRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsRequestMock.swift; sourceTree = "<group>"; };
 		4DF3D2472AA125DC00C4320D /* APIManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerMock.swift; sourceTree = "<group>"; };
-		4DF9D5F22A9F4A46003D210A /* fromA2BwatchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchAppApp.swift; sourceTree = "<group>"; };
-		4DF9D5F42A9F4A46003D210A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4DF9D5F62A9F4A47003D210A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4DF9D5F92A9F4A47003D210A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4DF9D6032A9F4A47003D210A /* fromA2BwatchApp_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchApp_Watch_AppTests.swift; sourceTree = "<group>"; };
-		4DF9D60D2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchApp_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		4DF9D60F2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4DF9D61E2A9F4AF9003D210A /* TripSearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSearchScreenView.swift; sourceTree = "<group>"; };
 		4DF9D6442A9F4E68003D210A /* FromToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToModel.swift; sourceTree = "<group>"; };
 		4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		4DF9D6962A9F5D44003D210A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4DF9D6982A9F5D44003D210A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		4DF9D69B2A9F5D44003D210A /* fromA2BwidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2BwidgetBundle.swift; sourceTree = "<group>"; };
-		4DF9D69D2A9F5D44003D210A /* fromA2Bwidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromA2Bwidget.swift; sourceTree = "<group>"; };
-		4DF9D69F2A9F5D45003D210A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4DF9D6A12A9F5D45003D210A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,10 +378,6 @@
 				4D9A51862A2EA2EF00647958 /* fromA2B */,
 				4D9A519B2A2EA2F000647958 /* fromA2BTests */,
 				4D9A51A52A2EA2F000647958 /* fromA2BUITests */,
-				4DF9D5F12A9F4A46003D210A /* fromA2BwatchApp Watch App */,
-				4DF9D6022A9F4A47003D210A /* fromA2BwatchApp Watch AppTests */,
-				4DF9D60C2A9F4A48003D210A /* fromA2BwatchApp Watch AppUITests */,
-				4DF9D69A2A9F5D44003D210A /* fromA2Bwidget */,
 				4DF9D6952A9F5D44003D210A /* Frameworks */,
 				4D9A51852A2EA2EF00647958 /* Products */,
 			);
@@ -619,43 +603,6 @@
 			path = mock;
 			sourceTree = "<group>";
 		};
-		4DF9D5F12A9F4A46003D210A /* fromA2BwatchApp Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				4DF9D5F22A9F4A46003D210A /* fromA2BwatchAppApp.swift */,
-				4DF9D5F42A9F4A46003D210A /* ContentView.swift */,
-				4DF9D61E2A9F4AF9003D210A /* TripSearchScreenView.swift */,
-				4DF9D5F62A9F4A47003D210A /* Assets.xcassets */,
-				4DF9D5F82A9F4A47003D210A /* Preview Content */,
-			);
-			path = "fromA2BwatchApp Watch App";
-			sourceTree = "<group>";
-		};
-		4DF9D5F82A9F4A47003D210A /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				4DF9D5F92A9F4A47003D210A /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4DF9D6022A9F4A47003D210A /* fromA2BwatchApp Watch AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				4DF9D6032A9F4A47003D210A /* fromA2BwatchApp_Watch_AppTests.swift */,
-			);
-			path = "fromA2BwatchApp Watch AppTests";
-			sourceTree = "<group>";
-		};
-		4DF9D60C2A9F4A48003D210A /* fromA2BwatchApp Watch AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4DF9D60D2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITests.swift */,
-				4DF9D60F2A9F4A48003D210A /* fromA2BwatchApp_Watch_AppUITestsLaunchTests.swift */,
-			);
-			path = "fromA2BwatchApp Watch AppUITests";
-			sourceTree = "<group>";
-		};
 		4DF9D6952A9F5D44003D210A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,17 +610,6 @@
 				4DF9D6982A9F5D44003D210A /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4DF9D69A2A9F5D44003D210A /* fromA2Bwidget */ = {
-			isa = PBXGroup;
-			children = (
-				4DF9D69B2A9F5D44003D210A /* fromA2BwidgetBundle.swift */,
-				4DF9D69D2A9F5D44003D210A /* fromA2Bwidget.swift */,
-				4DF9D69F2A9F5D45003D210A /* Assets.xcassets */,
-				4DF9D6A12A9F5D45003D210A /* Info.plist */,
-			);
-			path = fromA2Bwidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
