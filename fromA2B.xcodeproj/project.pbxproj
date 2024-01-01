@@ -149,7 +149,7 @@
 		4DF3D23B2AA0FE5500C4320D /* AppUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2342AA0FE5500C4320D /* AppUserDefaultsKeys.swift */; };
 		4DF3D2402AA123AF00C4320D /* NewNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D23F2AA123AF00C4320D /* NewNetworkTests.swift */; };
 		4DF3D25D2AA1312E00C4320D /* APIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2472AA125DC00C4320D /* APIManagerMock.swift */; };
-		4DF3D25F2AA1313600C4320D /* AnimalsRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2462AA125DC00C4320D /* AnimalsRequestMock.swift */; };
+		4DF3D25F2AA1313600C4320D /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2462AA125DC00C4320D /* RequestMock.swift */; };
 		4DF9D6452A9F4E68003D210A /* FromToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D6442A9F4E68003D210A /* FromToModel.swift */; };
 		4DF9D6A92A9F6971003D210A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -263,7 +263,7 @@
 		4DF3D2102AA0FD0700C4320D /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		4DF3D2342AA0FE5500C4320D /* AppUserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaultsKeys.swift; sourceTree = "<group>"; };
 		4DF3D23F2AA123AF00C4320D /* NewNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNetworkTests.swift; sourceTree = "<group>"; };
-		4DF3D2462AA125DC00C4320D /* AnimalsRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsRequestMock.swift; sourceTree = "<group>"; };
+		4DF3D2462AA125DC00C4320D /* RequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
 		4DF3D2472AA125DC00C4320D /* APIManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManagerMock.swift; sourceTree = "<group>"; };
 		4DF9D6442A9F4E68003D210A /* FromToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromToModel.swift; sourceTree = "<group>"; };
 		4DF9D64F2A9F5220003D210A /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
@@ -597,7 +597,7 @@
 		4DF3D2452AA125DC00C4320D /* mock */ = {
 			isa = PBXGroup;
 			children = (
-				4DF3D2462AA125DC00C4320D /* AnimalsRequestMock.swift */,
+				4DF3D2462AA125DC00C4320D /* RequestMock.swift */,
 				4DF3D2472AA125DC00C4320D /* APIManagerMock.swift */,
 			);
 			path = mock;
@@ -858,7 +858,7 @@
 				4D8814952A96142C00B4D252 /* GisRoute.swift in Sources */,
 				4D88149C2A96142D00B4D252 /* Origin.swift in Sources */,
 				4DF3D22A2AA0FD0700C4320D /* RequestProtocol.swift in Sources */,
-				4DF3D25F2AA1313600C4320D /* AnimalsRequestMock.swift in Sources */,
+				4DF3D25F2AA1313600C4320D /* RequestMock.swift in Sources */,
 				4D8814892A96142100B4D252 /* TechnicalMessage.swift in Sources */,
 				4D8814A92A9615B300B4D252 /* ContentViewTests.swift in Sources */,
 				4DF3D23A2AA0FE5500C4320D /* AppUserDefaultsKeys.swift in Sources */,
