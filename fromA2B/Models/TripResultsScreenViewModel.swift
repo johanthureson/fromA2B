@@ -15,14 +15,14 @@ class TripResultsScreenViewModel {
 
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
-    var errorMessage = ""
+    var errorMessage: String?
     var trips: [Trip] = []
     
     init(
         fromStopLocation: StopLocation? = nil,
         toStopLocation: StopLocation? = nil,
         trips: [Trip] = [Trip](),
-        errorMessage: String = ""
+        errorMessage: String? = nil
     ) {
         self.fromStopLocation = fromStopLocation
         self.toStopLocation = toStopLocation
@@ -32,7 +32,7 @@ class TripResultsScreenViewModel {
 
     func fetchTrips() async {
         
-        errorMessage = ""
+        errorMessage = nil
         isLoading = true
         
         do {

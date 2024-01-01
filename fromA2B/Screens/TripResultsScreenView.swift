@@ -22,8 +22,8 @@ struct TripResultsScreenView: View {
         
         VStack(spacing: 16) {
             
-            if viewModel.errorMessage != "" {
-                Text(viewModel.errorMessage)
+            if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage)
             }
             
             starButton()
