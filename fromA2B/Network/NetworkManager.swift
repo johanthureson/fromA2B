@@ -21,13 +21,6 @@ actor NetworkManager: GlobalActor {
     }
 
     private let maxWaitTime = 15.0
-    
-    /*
-    var commonHeaders: HTTPHeaders = [
-        "user_id": "123",
-        "token": "xxx-xx"
-    ]
-     */
 
     func get(path: String, parameters: Parameters?) async throws -> Data {
         var parametersWithAccessId = parameters
