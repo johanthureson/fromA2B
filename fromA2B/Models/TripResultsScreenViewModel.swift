@@ -16,12 +16,12 @@ class TripResultsScreenViewModel {
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
     var errorMessage: String?
-    var trips: [Trip] = []
+    var trips: [Trip]
     
     init(
         fromStopLocation: StopLocation? = nil,
         toStopLocation: StopLocation? = nil,
-        trips: [Trip] = [Trip](),
+        trips: [Trip] = [],
         errorMessage: String? = nil
     ) {
         self.fromStopLocation = fromStopLocation

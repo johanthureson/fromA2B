@@ -10,7 +10,7 @@ import SwiftUI
 struct StopChoiceButtonView: View {
     
     @State var showingSheet = false
-    var directionText: String = ""
+    var directionText: String
     var selectedStopLocation: Binding<StopLocation?>
 
     var body: some View {

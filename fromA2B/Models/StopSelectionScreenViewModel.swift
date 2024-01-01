@@ -16,7 +16,7 @@ class StopSelectionScreenViewModel {
         self.errorMessage = errorMessage
     }
     
-    var busStopTextFieldString: String = ""
+    var busStopTextFieldString: String
     var stops: [StopLocationOrCoordLocation]?
     var errorMessage = ""
 

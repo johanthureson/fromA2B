@@ -9,6 +9,7 @@ import Observation
 
 @Observable
 class TripSearchScreenViewModel {
+    
     var fromString = String(localized: "stopButtonView.from")
     var toString = String(localized: "stopButtonView.to")
     
