@@ -47,20 +47,6 @@ struct TripResultsScreenView: View {
         }
     }
     
-    private func fromToText(trip: Trip) -> some View {
-        
-        let fromText = trip.origin?.name ?? ""
-        let toText = trip.destination?.name ?? ""
-        return Text(fromText + " -> " + toText)
-    }
-    
-    private func fromToText(leg: Leg) -> some View {
-        
-        let fromText = leg.origin?.name ?? ""
-        let toText = leg.destination?.name ?? ""
-        return Text(fromText + " -> " + toText)
-    }
-
     
     
     // MARK: - body views
@@ -119,6 +105,22 @@ struct TripResultsScreenView: View {
         .listStyle(.inset)
     }
     
+    
+    
+    // MARK: - subviews
+
+    private func fromToText(trip: Trip) -> some View {
+        let fromText = trip.origin?.name ?? ""
+        let toText = trip.destination?.name ?? ""
+        return Text(fromText + " -> " + toText)
+    }
+    
+    private func fromToText(leg: Leg) -> some View {
+        let fromText = leg.origin?.name ?? ""
+        let toText = leg.destination?.name ?? ""
+        return Text(fromText + " -> " + toText)
+    }
+
 }
 
 
