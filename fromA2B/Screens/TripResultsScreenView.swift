@@ -58,7 +58,9 @@ struct TripResultsScreenView: View {
             if !saved {
                 modelContext.insert(fromToModel)
             } else {
-                modelContext.delete(fromToModel)
+                if let fromToModelToDelete = fromToModels.first(where: {$0.fromStopLocation == viewModel.fromStopLocation && $0.toStopLocation == viewModel.toStopLocation}) {
+                    modelContext.delete(fromToModelToDelete)
+                }
             }
             
             do {
