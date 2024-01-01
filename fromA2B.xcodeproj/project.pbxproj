@@ -133,9 +133,6 @@
 		4DF3D2232AA0FD0700C4320D /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2092AA0FD0700C4320D /* APIToken.swift */; };
 		4DF3D2242AA0FD0700C4320D /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2092AA0FD0700C4320D /* APIToken.swift */; };
 		4DF3D2252AA0FD0700C4320D /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2092AA0FD0700C4320D /* APIToken.swift */; };
-		4DF3D2262AA0FD0700C4320D /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D20C2AA0FD0700C4320D /* AuthTokenRequest.swift */; };
-		4DF3D2272AA0FD0700C4320D /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D20C2AA0FD0700C4320D /* AuthTokenRequest.swift */; };
-		4DF3D2282AA0FD0700C4320D /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D20C2AA0FD0700C4320D /* AuthTokenRequest.swift */; };
 		4DF3D2292AA0FD0700C4320D /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D20D2AA0FD0700C4320D /* RequestProtocol.swift */; };
 		4DF3D22A2AA0FD0700C4320D /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D20D2AA0FD0700C4320D /* RequestProtocol.swift */; };
 		4DF3D22B2AA0FD0700C4320D /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D20D2AA0FD0700C4320D /* RequestProtocol.swift */; };
@@ -259,7 +256,6 @@
 		4DF3D2052AA0FD0700C4320D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		4DF3D2072AA0FD0700C4320D /* DataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		4DF3D2092AA0FD0700C4320D /* APIToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
-		4DF3D20C2AA0FD0700C4320D /* AuthTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenRequest.swift; sourceTree = "<group>"; };
 		4DF3D20D2AA0FD0700C4320D /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		4DF3D20F2AA0FD0700C4320D /* StopsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsRequest.swift; sourceTree = "<group>"; };
 		4DF3D2102AA0FD0700C4320D /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
@@ -532,28 +528,11 @@
 		4DF3D20A2AA0FD0700C4320D /* request */ = {
 			isa = PBXGroup;
 			children = (
-				4DF3D20B2AA0FD0700C4320D /* auth */,
 				4DF3D20D2AA0FD0700C4320D /* RequestProtocol.swift */,
-				4DF3D20E2AA0FD0700C4320D /* animals */,
+				4DF3D20F2AA0FD0700C4320D /* StopsRequest.swift */,
 				4DF3D2102AA0FD0700C4320D /* RequestType.swift */,
 			);
 			path = request;
-			sourceTree = "<group>";
-		};
-		4DF3D20B2AA0FD0700C4320D /* auth */ = {
-			isa = PBXGroup;
-			children = (
-				4DF3D20C2AA0FD0700C4320D /* AuthTokenRequest.swift */,
-			);
-			path = auth;
-			sourceTree = "<group>";
-		};
-		4DF3D20E2AA0FD0700C4320D /* animals */ = {
-			isa = PBXGroup;
-			children = (
-				4DF3D20F2AA0FD0700C4320D /* StopsRequest.swift */,
-			);
-			path = animals;
 			sourceTree = "<group>";
 		};
 		4DF3D2322AA0FE5500C4320D /* utils */ = {
@@ -792,7 +771,6 @@
 				4D2D91852A6F4732005F18CB /* TripResponse.swift in Sources */,
 				4D1C7DE62B42D5C5006B9EEE /* StopSelectionScreenViewModel.swift in Sources */,
 				4D2D91842A6F4732005F18CB /* ServiceDays.swift in Sources */,
-				4DF3D2262AA0FD0700C4320D /* AuthTokenRequest.swift in Sources */,
 				4D2D917C2A6F4732005F18CB /* Product.swift in Sources */,
 				4D2D91662A6F4724005F18CB /* TechnicalMessage.swift in Sources */,
 				4DD356E82A8E9A7A009E3ACE /* NetworkAPI.swift in Sources */,
@@ -852,7 +830,6 @@
 				4DF3D2182AA0FD0700C4320D /* RequestManager.swift in Sources */,
 				4DF3D25D2AA1312E00C4320D /* APIManagerMock.swift in Sources */,
 				4DF3D22D2AA0FD0700C4320D /* StopsRequest.swift in Sources */,
-				4DF3D2272AA0FD0700C4320D /* AuthTokenRequest.swift in Sources */,
 				4D8814872A96142100B4D252 /* StopLocation.swift in Sources */,
 				4D88148B2A96142100B4D252 /* Icon.swift in Sources */,
 				4DF3D2242AA0FD0700C4320D /* APIToken.swift in Sources */,
@@ -896,7 +873,6 @@
 				4DF3D23B2AA0FE5500C4320D /* AppUserDefaultsKeys.swift in Sources */,
 				4DF3D2252AA0FD0700C4320D /* APIToken.swift in Sources */,
 				4D88147F2A96138900B4D252 /* StopResponse.swift in Sources */,
-				4DF3D2282AA0FD0700C4320D /* AuthTokenRequest.swift in Sources */,
 				4D88148F2A96142100B4D252 /* TechnicalMessage.swift in Sources */,
 				4D8814A52A96142D00B4D252 /* Destination.swift in Sources */,
 				4D88148E2A96142100B4D252 /* StopLocationOrCoordLocation.swift in Sources */,
