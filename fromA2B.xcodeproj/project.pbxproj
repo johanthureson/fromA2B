@@ -304,15 +304,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D1C7DE22B42D4E6006B9EEE /* jsonCodableModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D2D91652A6F4724005F18CB /* StopResponse.swift */,
+				4D2D915D2A6F46D9005F18CB /* StopResponse */,
+				4D2D91762A6F4731005F18CB /* TripResponse.swift */,
+				4D2D915E2A6F46E7005F18CB /* TripResponse */,
+			);
+			path = jsonCodableModels;
+			sourceTree = "<group>";
+		};
 		4D2D915C2A6F46D0005F18CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4DF9D6442A9F4E68003D210A /* FromToModel.swift */,
 				4D18955A2A6BB9C600F3570A /* AppModel.swift */,
-				4D2D91652A6F4724005F18CB /* StopResponse.swift */,
-				4D2D91762A6F4731005F18CB /* TripResponse.swift */,
-				4D2D915D2A6F46D9005F18CB /* StopResponse */,
-				4D2D915E2A6F46E7005F18CB /* TripResponse */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +396,7 @@
 				4DD356DF2A8E8B8D009E3ACE /* Screens */,
 				4D8814732A94D35100B4D252 /* Views */,
 				4D2D915C2A6F46D0005F18CB /* Models */,
+				4D1C7DE22B42D4E6006B9EEE /* jsonCodableModels */,
 				4DF3D1FE2AA0FD0700C4320D /* api */,
 				4DF3D2322AA0FE5500C4320D /* utils */,
 				4DD356E42A8E9A2C009E3ACE /* Network */,
