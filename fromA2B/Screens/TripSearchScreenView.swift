@@ -28,6 +28,7 @@ struct TripSearchScreenView: View {
             searchButton(bindableAppModel: bindableAppModel)
             
             savedTripSearchesList()
+            
         }
     }
     
