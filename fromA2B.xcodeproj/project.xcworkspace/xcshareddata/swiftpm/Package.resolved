@@ -1,30 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "alamofire",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire.git",
-      "state" : {
-        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
-        "version" : "5.7.1"
-      }
-    },
-    {
       "identity" : "keychain-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/evgenyneu/keychain-swift",
       "state" : {
         "revision" : "d108a1fa6189e661f91560548ef48651ed8d93b9",
         "version" : "20.0.0"
-      }
-    },
-    {
-      "identity" : "mocker",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/WeTransfer/Mocker",
-      "state" : {
-        "revision" : "4384e015cae4916a6828252467a4437173c7ae17",
-        "version" : "3.0.1"
       }
     },
     {

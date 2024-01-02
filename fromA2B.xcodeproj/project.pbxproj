@@ -54,7 +54,6 @@
 		4D7916B32B3D899800F29570 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D7916B22B3D899800F29570 /* KeychainSwift */; };
 		4D8048EC2A97A28D00C69747 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
 		4D8048ED2A97A28D00C69747 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4D2D915A2A6EC3DB005F18CB /* Localizable.xcstrings */; };
-		4D8048F02A97DDEE00C69747 /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8048EF2A97DDEE00C69747 /* Mocker */; };
 		4D8814752A94D36600B4D252 /* StopChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8814742A94D36600B4D252 /* StopChoiceButtonView.swift */; };
 		4D88147D2A96109100B4D252 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 4D88147C2A96109100B4D252 /* ViewInspector */; };
 		4D88147E2A96138800B4D252 /* StopResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2D91652A6F4724005F18CB /* StopResponse.swift */; };
@@ -108,7 +107,6 @@
 		4D9A519D2A2EA2F000647958 /* fromA2BTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A519C2A2EA2F000647958 /* fromA2BTests.swift */; };
 		4D9A51A72A2EA2F000647958 /* fromA2BUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51A62A2EA2F000647958 /* fromA2BUITests.swift */; };
 		4D9A51A92A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9A51A82A2EA2F000647958 /* fromA2BUITestsLaunchTests.swift */; };
-		4DD356E32A8E91A2009E3ACE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD356E22A8E91A2009E3ACE /* Alamofire */; };
 		4DF3D2142AA0FD0700C4320D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2012AA0FD0700C4320D /* APIConstants.swift */; };
 		4DF3D2152AA0FD0700C4320D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2012AA0FD0700C4320D /* APIConstants.swift */; };
 		4DF3D2162AA0FD0700C4320D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3D2012AA0FD0700C4320D /* APIConstants.swift */; };
@@ -255,8 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D7916B32B3D899800F29570 /* KeychainSwift in Frameworks */,
-				4DD356E32A8E91A2009E3ACE /* Alamofire in Frameworks */,
-				4D8048F02A97DDEE00C69747 /* Mocker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,8 +550,6 @@
 			);
 			name = fromA2B;
 			packageProductDependencies = (
-				4DD356E22A8E91A2009E3ACE /* Alamofire */,
-				4D8048EF2A97DDEE00C69747 /* Mocker */,
 				4D7916B22B3D899800F29570 /* KeychainSwift */,
 			);
 			productName = fromA2B;
@@ -635,9 +629,7 @@
 			);
 			mainGroup = 4D9A517B2A2EA2EF00647958;
 			packageReferences = (
-				4DD356E12A8E91A2009E3ACE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4D88147B2A96109100B4D252 /* XCRemoteSwiftPackageReference "ViewInspector" */,
-				4D8048EE2A97DDEE00C69747 /* XCRemoteSwiftPackageReference "Mocker" */,
 				4D7916B12B3D899800F29570 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 4D9A51852A2EA2EF00647958 /* Products */;
@@ -1164,28 +1156,12 @@
 				minimumVersion = 20.0.0;
 			};
 		};
-		4D8048EE2A97DDEE00C69747 /* XCRemoteSwiftPackageReference "Mocker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WeTransfer/Mocker";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.1;
-			};
-		};
 		4D88147B2A96109100B4D252 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nalexn/ViewInspector";
 			requirement = {
 				kind = exactVersion;
 				version = 0.9.7;
-			};
-		};
-		4DD356E12A8E91A2009E3ACE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1196,20 +1172,10 @@
 			package = 4D7916B12B3D899800F29570 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
-		4D8048EF2A97DDEE00C69747 /* Mocker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4D8048EE2A97DDEE00C69747 /* XCRemoteSwiftPackageReference "Mocker" */;
-			productName = Mocker;
-		};
 		4D88147C2A96109100B4D252 /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4D88147B2A96109100B4D252 /* XCRemoteSwiftPackageReference "ViewInspector" */;
 			productName = ViewInspector;
-		};
-		4DD356E22A8E91A2009E3ACE /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4DD356E12A8E91A2009E3ACE /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
