@@ -127,6 +127,11 @@ struct TripResultsScreenView: View {
 
 #if DEBUG
 #Preview {
-    TripResultsScreenView(viewModel: TripResultsScreenViewModel(trips: TripResponse.tripResponse!.trip!))
+    TripResultsScreenView(
+        viewModel: TripResultsScreenViewModel(
+            trips: TripResponse.tripResponse!.trip!,
+            errorMessage: "Error message"
+        )
+    )
 }
 #endif
