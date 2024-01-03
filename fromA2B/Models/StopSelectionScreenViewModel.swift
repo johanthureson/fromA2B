@@ -33,7 +33,14 @@ class StopSelectionScreenViewModel {
                 StopsRequest.getStops(
                     busStopName: busStopTextFieldString))
             
-            stops = stopRespons.stopLocationOrCoordLocation
+            stops = []
+            if let aquiredStops = stopRespons.stopLocationOrCoordLocation {
+                for stop in aquiredStops {
+                    if stop.stopLocation != nil {
+                        stops?.append(stop)
+                    }
+                }
+            }
             
             await stopLoading()
             
