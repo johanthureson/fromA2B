@@ -10,7 +10,11 @@ import Observation
 @Observable
 class StopSelectionScreenViewModel {
     
-    init(busStopTextFieldString: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
+    init(
+        busStopTextFieldString: String = "",
+        stops: [StopLocationOrCoordLocation]? = nil,
+        errorMessage: String? = nil
+    ) {
         self.busStopTextFieldString = busStopTextFieldString
         self.stops = stops
         self.errorMessage = errorMessage
@@ -18,14 +22,14 @@ class StopSelectionScreenViewModel {
     
     var busStopTextFieldString: String
     var stops: [StopLocationOrCoordLocation]?
-    var errorMessage = ""
+    var errorMessage: String?
 
     var isLoading = false
     private let requestManager = RequestManager()
     
     func fetchStops() async {
         
-        errorMessage = ""
+        errorMessage = nil
         isLoading = true
         
         do {
