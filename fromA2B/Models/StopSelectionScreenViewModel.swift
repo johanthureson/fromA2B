@@ -50,7 +50,7 @@ class StopSelectionScreenViewModel {
             await stopLoading()
         } catch {
             await stopLoading()
-            errorMessage = "Fetch data failed"
+            errorMessage = error.localizedDescription
         }
     }
     
