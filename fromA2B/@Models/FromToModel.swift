@@ -12,10 +12,12 @@ import SwiftData
 class FromToModel: Equatable {
     var fromStopLocation: StopLocation?
     var toStopLocation: StopLocation?
+    var changedDate: Date?
     
     init(fromStopLocation: StopLocation? = nil, toStopLocation: StopLocation? = nil) {
         self.fromStopLocation = fromStopLocation
         self.toStopLocation = toStopLocation
+        self.changedDate = Date()
     }
     
     static func == (lhs: FromToModel, rhs: FromToModel) -> Bool {

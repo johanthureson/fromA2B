@@ -13,7 +13,8 @@ struct TripSearchScreenView: View {
     
     @Environment(\.appModel) private var appModel
     private var viewModel = TripSearchScreenViewModel()
-    @Query var fromToModels: [FromToModel]
+    @Query(sort: \FromToModel.changedDate, order: .reverse)
+    var fromToModels: [FromToModel]
     
     var body: some View {
         
@@ -27,9 +28,10 @@ struct TripSearchScreenView: View {
             
             searchButton(bindableAppModel: bindableAppModel)
             
-            savedTripSearchesList()
+            tripSearchHistoryList()
             
         }
+
     }
     
     
@@ -56,7 +58,7 @@ struct TripSearchScreenView: View {
         .padding()
     }
     
-    private func savedTripSearchesList() -> some View {
+    private func tripSearchHistoryList() -> some View {
         List {
             ForEach(fromToModels) { fromToModel in
                 NavigationLink(viewModel.getFromToString(fromToModel: fromToModel)) {
@@ -75,14 +77,16 @@ struct TripSearchScreenView: View {
         appModel.toStopLocation = bindableAppModel.toStopLocation
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
             fromStopLocation: bindableAppModel.fromStopLocation,
-            toStopLocation: bindableAppModel.toStopLocation)
+            toStopLocation: bindableAppModel.toStopLocation,
+            fromToModels: fromToModels)
         return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     
     private func savedSearchLinkedTripResultsScreenView(fromToModel: FromToModel) -> some View {
         let tripResultsScreenViewModel = TripResultsScreenViewModel(
             fromStopLocation: fromToModel.fromStopLocation,
-            toStopLocation: fromToModel.toStopLocation)
+            toStopLocation: fromToModel.toStopLocation,
+            fromToModels: fromToModels)
         return TripResultsScreenView(viewModel: tripResultsScreenViewModel)
     }
     

@@ -14,15 +14,9 @@ struct TripResultsScreenView: View {
     @Environment(\.modelContext) private var modelContext
     @State var viewModel: TripResultsScreenViewModel
     
-    @Query var fromToModels: [FromToModel]
-
-    @State var saved = false
-
     var body: some View {
         
         VStack(spacing: 16) {
-            
-            starButton()
             
             tripsList()
             
@@ -32,8 +26,8 @@ struct TripResultsScreenView: View {
             if (ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == nil) {
                 Task {
                     await viewModel.fetchTrips()
+                    viewModel.updateSearchHistory(modelContext: modelContext)
                 }
-                saved = fromToModels.count >= 0 && fromToModels.contains(FromToModel(fromStopLocation: viewModel.fromStopLocation, toStopLocation: viewModel.toStopLocation))
             }
         }
         .overlay {
@@ -57,37 +51,6 @@ struct TripResultsScreenView: View {
     
     
     // MARK: - body views
-
-    private func starButton() -> some View {
-        Button {
-            let fromToModel = FromToModel(fromStopLocation: viewModel.fromStopLocation,
-                                          toStopLocation: viewModel.toStopLocation)
-            if !saved {
-                modelContext.insert(fromToModel)
-            } else {
-                if let fromToModelToDelete = fromToModels.first(where: {$0.fromStopLocation == viewModel.fromStopLocation && $0.toStopLocation == viewModel.toStopLocation}) {
-                    modelContext.delete(fromToModelToDelete)
-                }
-            }
-            
-            do {
-                try modelContext.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-            saved = fromToModels.count >= 0 && fromToModels.contains(fromToModel)
-            
-        } label: {
-            VStack {
-                if saved {
-                    Image(systemName: "star.fill")
-                } else {
-                    Image(systemName: "star")
-                }
-            }
-        }
-        .padding(.top)
-    }
     
     private func tripsList() -> some View {
         List {
