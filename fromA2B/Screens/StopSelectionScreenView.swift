@@ -20,7 +20,6 @@ struct StopSelectionScreenView: View {
     @Binding var selectedStopLocation: StopLocation?
     @State private var viewModel: StopSelectionScreenViewModel
     
-    
     init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
         _viewModel = State(initialValue: StopSelectionScreenViewModel(stops: stops))
         _selectedStopLocation = selectedStopLocation
