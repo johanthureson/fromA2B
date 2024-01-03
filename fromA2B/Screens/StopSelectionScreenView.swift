@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Observation
+import SwiftData
 
 struct StopSelectionScreenView: View {
     
@@ -16,10 +17,14 @@ struct StopSelectionScreenView: View {
 
     @FocusState private var focusedField: FocusField?
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.modelContext) private var modelContext
 
     @Binding var selectedStopLocation: StopLocation?
     @State private var viewModel: StopSelectionScreenViewModel
     
+    @Query(sort: \StopModel.changedDate, order: .reverse)
+    var stopModels: [StopModel]
+
     init(
         busStopTextFieldString: String = "",
         stops: [StopLocationOrCoordLocation]? = nil,
@@ -38,7 +43,7 @@ struct StopSelectionScreenView: View {
     }
     
     
-
+    
     var body: some View {
         
         VStack {
@@ -49,7 +54,16 @@ struct StopSelectionScreenView: View {
             
             searchButton()
 
-            stopSelectionList()
+            if let viewModelStops = viewModel.stops, viewModelStops.count > 0 {
+                
+                stopSearchList()
+
+                
+            } else {
+                
+                stopHistoryList()
+                
+            }
             
         }
         .overlay {
@@ -108,20 +122,49 @@ struct StopSelectionScreenView: View {
         .accessibility(identifier: "search_button")
     }
     
-    private func stopSelectionList() -> some View {
-        List {
-            ForEach(viewModel.stops ?? []) { stopLocationOrCoordLocation in
-                VStack {
-                    Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
+    private func stopHistoryList() -> some View {
+        VStack {
+            Text("History")
+            List {
+                ForEach(stopModels) { stopModel in
+                    Text(stopModel.stopLocation?.name ?? "")
+                        .onTapGesture {
+                            self.selectedStopLocation = stopModel.stopLocation
+                            if let localSelectedStopLocation = self.selectedStopLocation {
+                                viewModel.updateStopHistory(modelContext: modelContext,
+                                                            stopModels: stopModels,
+                                                            selectedStopLocation: localSelectedStopLocation)
+                            }
+                            presentationMode.wrappedValue.dismiss()
+                        }
                 }
-                .onTapGesture {
-                    self.selectedStopLocation = stopLocationOrCoordLocation.stopLocation
-                    presentationMode.wrappedValue.dismiss()
+                
+            }
+        }
+    }
+    
+    private func stopSearchList() -> some View {
+        VStack {
+            Text("Search")
+            List {
+                ForEach(viewModel.stops ?? []) { stopLocationOrCoordLocation in
+                    VStack {
+                        Text(stopLocationOrCoordLocation.stopLocation?.name ?? "")
+                    }
+                    .onTapGesture {
+                        self.selectedStopLocation = stopLocationOrCoordLocation.stopLocation
+                        if let localSelectedStopLocation = self.selectedStopLocation {
+                            viewModel.updateStopHistory(modelContext: modelContext,
+                                                        stopModels: stopModels,
+                                                        selectedStopLocation: localSelectedStopLocation)
+                        }
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
         }
     }
-
+    
 }
 
 

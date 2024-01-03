@@ -6,6 +6,8 @@
 //
 
 import Observation
+import SwiftData
+import Foundation
 
 @Observable
 class StopSelectionScreenViewModel {
@@ -26,6 +28,7 @@ class StopSelectionScreenViewModel {
 
     var isLoading = false
     private let requestManager = RequestManager()
+    let maxNumberOfStopsInHistory = 20
     
     func fetchStops() async {
         
@@ -54,6 +57,28 @@ class StopSelectionScreenViewModel {
     @MainActor
     func stopLoading() async {
         isLoading = false
+    }
+    
+    func updateStopHistory(modelContext: ModelContext, stopModels: [StopModel], selectedStopLocation: StopLocation) {
+        let stopModel = StopModel(stopLocation: selectedStopLocation)
+        let saved = stopModels.count >= 0 && stopModels.contains(stopModel)
+        if !saved {
+            if stopModels.count >= maxNumberOfStopsInHistory {
+                if let oldestStop = stopModels.last {
+                    modelContext.delete(oldestStop)
+                }
+            }
+            modelContext.insert(stopModel)
+        } else {
+            if let stopModelToUpdate = stopModels.first(where: {$0.stopLocation == stopModel.stopLocation}) {
+                stopModelToUpdate.changedDate = Date()
+            }
+        }
+        do {
+            try modelContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
 }

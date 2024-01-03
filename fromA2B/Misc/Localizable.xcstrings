@@ -94,6 +94,16 @@
         }
       }
     },
+    "History" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historia"
+          }
+        }
+      }
+    },
     "Name of stop" : {
       "localizations" : {
         "sv" : {

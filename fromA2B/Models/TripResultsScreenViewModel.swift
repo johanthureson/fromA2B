@@ -54,7 +54,7 @@ class TripResultsScreenViewModel {
         }
     }
     
-    func updateSearchHistory(modelContext: ModelContext) /*async*/ {
+    func updateSearchHistory(modelContext: ModelContext) {
         let fromToModel = FromToModel(fromStopLocation: self.fromStopLocation,
                                       toStopLocation: self.toStopLocation)
         let saved = self.fromToModels.count >= 0 && self.fromToModels.contains(fromToModel)
