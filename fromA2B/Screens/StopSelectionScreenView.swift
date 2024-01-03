@@ -57,6 +57,17 @@ struct StopSelectionScreenView: View {
                 ProgressView("Finding stops near you...")
             }
         }
+        .alert(isPresented: Binding<Bool>(
+            get: { viewModel.errorMessage != nil },
+            set: { _ in viewModel.errorMessage = nil }
+        )) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.errorMessage ?? "Unknown error"),
+                dismissButton: .default(Text("OK"))
+            )
+        }
+        
     }
     
     
@@ -118,12 +129,20 @@ struct StopSelectionScreenView: View {
 // MARK: - Preview
 
 #if DEBUG
+
 #Preview {
     StopSelectionScreenView(
         busStopTextFieldString: "Logdansplan",
         stops: StopResponse.originStopResponse?.stopLocationOrCoordLocation,
-        selectedStopLocation: Binding.constant(nil),
-        errorMessage: "Error message"
+        selectedStopLocation: Binding.constant(nil)
     )
 }
+
+#Preview {
+        StopSelectionScreenView(
+            selectedStopLocation: Binding.constant(nil),
+            errorMessage: "Error message"
+        )
+}
+
 #endif

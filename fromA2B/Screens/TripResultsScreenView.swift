@@ -22,10 +22,6 @@ struct TripResultsScreenView: View {
         
         VStack(spacing: 16) {
             
-            if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage)
-            }
-            
             starButton()
             
             tripsList()
@@ -45,6 +41,17 @@ struct TripResultsScreenView: View {
                 ProgressView("Finding Trips near you...")
             }
         }
+        .alert(isPresented: Binding<Bool>(
+            get: { viewModel.errorMessage != nil },
+            set: { _ in viewModel.errorMessage = nil }
+        )) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.errorMessage ?? "Unknown error"),
+                dismissButton: .default(Text("OK"))
+            )
+        }
+
     }
     
     
@@ -126,12 +133,21 @@ struct TripResultsScreenView: View {
 // MARK: - Preview
 
 #if DEBUG
+
 #Preview {
     TripResultsScreenView(
         viewModel: TripResultsScreenViewModel(
-            trips: TripResponse.tripResponse!.trip!,
+            trips: TripResponse.tripResponse!.trip!
+        )
+    )
+}
+
+#Preview {
+    TripResultsScreenView(
+        viewModel: TripResultsScreenViewModel(
             errorMessage: "Error message"
         )
     )
 }
+
 #endif
