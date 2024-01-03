@@ -64,6 +64,16 @@
         }
       }
     },
+    "Error" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
+    },
     "Finding stops near you..." : {
       "localizations" : {
         "sv" : {
@@ -90,6 +100,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hållplatsnamn"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
