@@ -6,19 +6,21 @@
 //
 
 import Foundation
-import KeychainSwift
 
 struct StaticFunctions {
     
+    /*
+     According to this article:
+     https://nshipster.com/secrets/
+     "Client Secrecy is Impossible",
+     so I will leave this key in the open.
+     Setting up a server to host the key is not the scope of this project.
+     But would be recommended otherwise.
+     The worst that can happen is that someone uses my quota.
+     But easier for that person would be to get a free key of their own.
+     */
     static func getApiKey() -> String? {
-#if DEBUG && TEST
-        // Tests won't compile otherwise
-        return nil
-#else
-        let keychain = KeychainSwift()
-        let apiKey = keychain.get("ResRobotAccessId")
-        return apiKey
-#endif
+        return "8036e1f4-06df-47e6-8477-f76939124550"
     }
     
 }
