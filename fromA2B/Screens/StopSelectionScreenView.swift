@@ -110,7 +110,7 @@ struct StopSelectionScreenView: View {
 #Preview {
     StopSelectionScreenView(
         stops: StopResponse.originStopResponse?.stopLocationOrCoordLocation,
-        selectedStopLocation: .constant(StopResponse.originStopResponse?.stopLocationOrCoordLocation?.first?.stopLocation)
+        selectedStopLocation: Binding.constant(nil)
     )
 }
 #endif
