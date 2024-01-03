@@ -7,7 +7,6 @@
 
 import XCTest
 import SwiftUI
-//import ViewInspector
 @testable import fromA2B
 
 
