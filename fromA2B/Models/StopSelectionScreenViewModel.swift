@@ -10,8 +10,8 @@ import Observation
 @Observable
 class StopSelectionScreenViewModel {
     
-    init(busStopName: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
-        self.busStopTextFieldString = busStopName
+    init(busStopTextFieldString: String = "", stops: [StopLocationOrCoordLocation]? = nil, errorMessage: String = "") {
+        self.busStopTextFieldString = busStopTextFieldString
         self.stops = stops
         self.errorMessage = errorMessage
     }

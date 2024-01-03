@@ -20,8 +20,8 @@ struct StopSelectionScreenView: View {
     @Binding var selectedStopLocation: StopLocation?
     @State private var viewModel: StopSelectionScreenViewModel
     
-    init(stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
-        _viewModel = State(initialValue: StopSelectionScreenViewModel(stops: stops))
+    init(busStopTextFieldString: String = "", stops: [StopLocationOrCoordLocation]? = nil, selectedStopLocation: Binding<StopLocation?>) {
+        _viewModel = State(initialValue: StopSelectionScreenViewModel(busStopTextFieldString: busStopTextFieldString,stops: stops))
         _selectedStopLocation = selectedStopLocation
     }
     
@@ -108,6 +108,7 @@ struct StopSelectionScreenView: View {
 #if DEBUG
 #Preview {
     StopSelectionScreenView(
+        busStopTextFieldString: "Logdansplan",
         stops: StopResponse.originStopResponse?.stopLocationOrCoordLocation,
         selectedStopLocation: Binding.constant(nil)
     )
