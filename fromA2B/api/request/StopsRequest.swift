@@ -19,7 +19,7 @@ enum StopsRequest: RequestProtocol {
                 params["input"] = busStopName
             }
             params["accessId"] = StaticFunctions.getApiKey()
-
+            
             return params
         }
     }

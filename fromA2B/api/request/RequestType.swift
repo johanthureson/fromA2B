@@ -1,4 +1,4 @@
 enum RequestType: String {
-  case GET
-  case POST
+    case GET
+    case POST
 }
