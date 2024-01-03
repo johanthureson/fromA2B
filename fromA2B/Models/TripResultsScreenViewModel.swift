@@ -41,9 +41,7 @@ class TripResultsScreenViewModel {
                     originId: fromStopLocation?.extId,
                     destId: toStopLocation?.extId))
             trips = tripResponse.trip ?? [Trip]()
-            
             await stopLoading()
-            
         } catch {
             await stopLoading()
             errorMessage = "Fetch data failed"

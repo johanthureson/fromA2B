@@ -32,7 +32,6 @@ class StopSelectionScreenViewModel {
             let stopRespons: StopResponse = try await requestManager.perform(
                 StopsRequest.getStops(
                     busStopName: busStopTextFieldString))
-            
             stops = []
             if let aquiredStops = stopRespons.stopLocationOrCoordLocation {
                 for stop in aquiredStops {
@@ -41,9 +40,7 @@ class StopSelectionScreenViewModel {
                     }
                 }
             }
-            
             await stopLoading()
-            
         } catch {
             await stopLoading()
             errorMessage = "Fetch data failed"
