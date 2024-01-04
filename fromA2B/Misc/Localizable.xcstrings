@@ -134,6 +134,16 @@
         }
       }
     },
+    "Search for trip" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sök resa"
+          }
+        }
+      }
+    },
     "stopButtonView.from" : {
       "extractionState" : "manual",
       "localizations" : {

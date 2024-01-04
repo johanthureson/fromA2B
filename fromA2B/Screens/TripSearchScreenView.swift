@@ -51,7 +51,7 @@ struct TripSearchScreenView: View {
     }
     
     private func searchButton(bindableAppModel: AppModel) -> some View {
-        NavigationLink("Search") {
+        NavigationLink("Search for trip") {
             newSearchLinkedTripResultsScreenView(bindableAppModel: bindableAppModel)
         }
         .disabled(appModel.fromStopLocation == nil || appModel.toStopLocation == nil)
