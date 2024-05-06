@@ -61,8 +61,11 @@ struct TripSearchScreenView: View {
     private func tripSearchHistoryList() -> some View {
         List {
             ForEach(fromToModels) { fromToModel in
-                NavigationLink(viewModel.getFromToString(fromToModel: fromToModel)) {
+                NavigationLink {
                     savedSearchLinkedTripResultsScreenView(fromToModel: fromToModel)
+                } label: {
+                    Text(viewModel.getFromToString(fromToModel: fromToModel))
+                        .borderedCaption()
                 }
             }
         }

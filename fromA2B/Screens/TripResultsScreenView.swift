@@ -58,13 +58,10 @@ struct TripResultsScreenView: View {
                 
                 NavigationLink(destination: TripDetailsScreenView(trip: trip) ) {
                     VStack {
-                        fromToText(trip: trip)
-                            .padding()
-                            .font(.title2)
+                        trip.fromToText()
                         
                         ForEach(trip.legList?.leg ?? []) { leg in
-                            fromToText(leg: leg)
-                                .padding()
+                            leg.fromToText()
                         }
                     }
                 }
@@ -73,22 +70,6 @@ struct TripResultsScreenView: View {
         .listStyle(.inset)
     }
     
-    
-    
-    // MARK: - subviews
-
-    private func fromToText(trip: Trip) -> some View {
-        let fromText = trip.origin?.name ?? ""
-        let toText = trip.destination?.name ?? ""
-        return Text(fromText + " -> " + toText)
-    }
-    
-    private func fromToText(leg: Leg) -> some View {
-        let fromText = leg.origin?.name ?? ""
-        let toText = leg.destination?.name ?? ""
-        return Text(fromText + " -> " + toText)
-    }
-
 }
 
 
